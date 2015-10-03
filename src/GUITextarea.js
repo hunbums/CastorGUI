@@ -14,6 +14,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.textareaPosition = {x:options.x, y:options.y};
 		this.textareaSize = {width:options.w, height:options.h};
 		this.value = options.value || "";
+		this.placeholder = options.placeholder;
 		this.background = options.background || "white";		
 		this.color = options.color || "black";
 		this.zIndex = options.zIndex || 1;
@@ -49,7 +50,11 @@ var CASTORGUI = CASTORGUI || {};
 			element.appendChild(textarea);
 		}
 		this.guiElements.push(textarea);
-    };	
+    };
+
+	CASTORGUI.GUITextarea.prototype.getValue = function() {
+		return this.value;
+	};
 
 	CASTORGUI.GUITextarea.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
