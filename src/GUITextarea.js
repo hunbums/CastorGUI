@@ -55,6 +55,10 @@ var CASTORGUI = CASTORGUI || {};
 	CASTORGUI.GUITextarea.prototype.getValue = function() {
 		return this.value;
 	};
+	
+	CASTORGUI.GUITextarea.prototype.setValue = function(val) {
+		this.value = val;
+	};
 
 	CASTORGUI.GUITextarea.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));

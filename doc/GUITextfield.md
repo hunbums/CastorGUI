@@ -26,6 +26,9 @@ Name | Type | Description
 ###getValue() → void
 Get the value element
 
+###setValue() → void
+Set the value element
+
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 
