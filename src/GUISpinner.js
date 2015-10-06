@@ -52,7 +52,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(number);
 		}
-		this.guiElements.push(number);
+		this.addGuiElements(number);
     };	
 
 	CASTORGUI.GUISpinner.prototype.dispose = function() {

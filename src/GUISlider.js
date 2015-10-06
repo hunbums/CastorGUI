@@ -56,7 +56,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(slider);
 		}
-		this.guiElements.push(slider);
+		this.addGuiElements(slider);
     };	
 
 	CASTORGUI.GUISlider.prototype.dispose = function() {

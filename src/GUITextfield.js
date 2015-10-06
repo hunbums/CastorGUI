@@ -53,7 +53,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(textfield);
 		}
-		this.guiElements.push(textfield);
+		this.addGuiElements(textfield);
     };
 	
 	CASTORGUI.GUITextfield.prototype.getValue = function() {

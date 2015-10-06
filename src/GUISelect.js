@@ -42,7 +42,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(select);
 		}
-		this.guiElements.push(select);
+		this.addGuiElements(select);
     };	
 	
 	CASTORGUI.GUISelect.prototype.addOptions = function(value, text) {

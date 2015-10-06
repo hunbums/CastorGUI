@@ -49,7 +49,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(textarea);
 		}
-		this.guiElements.push(textarea);
+		this.addGuiElements(textarea);
     };
 
 	CASTORGUI.GUITextarea.prototype.getValue = function() {

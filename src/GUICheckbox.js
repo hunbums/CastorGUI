@@ -44,7 +44,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(checkbox);
 		}
-		this.guiElements.push(checkbox);
+		this.addGuiElements(checkbox);
     };	
 
 	CASTORGUI.GUICheckbox.prototype.dispose = function() {

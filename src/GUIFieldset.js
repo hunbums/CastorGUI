@@ -44,7 +44,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(legend);
 		}
-		this.guiElements.push(fieldset);
+		this.addGuiElements(fieldset);
     };
 	
 	CASTORGUI.GUIFieldset.prototype.add = function(element)

@@ -43,7 +43,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(radio);
 		}
-		this.guiElements.push(radio);
+		this.addGuiElements(radio);
     };	
 
 	CASTORGUI.GUIRadio.prototype.dispose = function() {

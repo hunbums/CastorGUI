@@ -1,6 +1,25 @@
-var canvas = document.getElementById("game");
+var canvas = document.getElementById("game");	
 var engine = new BABYLON.Engine(canvas, true);	
-var scene, box;
+var scene, box, guisystem;
+
+var createGUI = function () {
+	
+	guisystem = new CASTORGUI.GUIManager(canvas);
+
+	var optionsDialog = {w: (guisystem.getCanvasWidth().width - 20), h: 100, x: 8, y: (guisystem.getCanvasWidth().height - 110)};
+	var dialog = new CASTORGUI.GUIDialog("dialog", optionsDialog, guisystem);
+	dialog.setVisible(true);
+
+	var text = new CASTORGUI.GUIText("textDialog", { size: 15, text: "Display text here" }, guisystem, false);
+	dialog.add(text);
+	
+	var button = new CASTORGUI.GUITexture("button", "http://ww1.prweb.com/prfiles/2014/04/10/11752526/gI_134971_best-image-web-hosting.png", {w: 250, h: 250, x: 0, y: 0}, guisystem, function() {
+		
+		guisystem.dispose();
+	});	
+};
+
+/*
 
 var createGUI = function()
 {
@@ -8,8 +27,8 @@ var createGUI = function()
 	
 	// GUI manager
 	var css = "button{cursor:pointer;}";
-	var guisystem = new CASTORGUI.GUIManager(canvas, css);
-	
+	guisystem = new CASTORGUI.GUIManager(canvas, css);
+
 	// GUI life
 	var guiTextureLife_0 = new CASTORGUI.GUITexture("life0", "data/coeur.png", {w:50,h:50,x:10,y:0}, guisystem, null);
 	var guiTextureLife_25 = new CASTORGUI.GUITexture("life25", "data/coeur.png", {w:50,h:50,x:60,y:0}, guisystem, null);
@@ -69,7 +88,9 @@ var createGUI = function()
 		}
 	};
 	var button = new CASTORGUI.GUIButton("button", {x:(guisystem.getCanvasWidth().width / 2 - 100), y: 10, w:200, h:35, value:"Click me five times"}, guisystem, myFunction);	
+	
 };
+*/
 
 var createScene = function () {	
 

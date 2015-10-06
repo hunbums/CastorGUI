@@ -82,7 +82,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(this.progress);
 		}
-		this.guiElements.push(this.progress);
+		this.addGuiElements(this.progress);
     };
 
 	CASTORGUI.GUIProgress.prototype.updateValue = function(value) {

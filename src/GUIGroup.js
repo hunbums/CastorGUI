@@ -23,16 +23,17 @@ var CASTORGUI = CASTORGUI || {};
 
     CASTORGUI.GUIGroup.prototype.dispose = function() {
         var that = this;
-		this.elementsGoup.forEach(function(e) {						
-			var node = that.getElementById(e.id);
-			that.html.removeChild(node);
+		this.elementsGoup.forEach(function(e) {	
+			if(that.getElementById(e.id)) {
+				that.html.removeChild(that.getElementById(e.id));
+			}
 		});
 		return;
     };
 	
-	 CASTORGUI.GUIGroup.prototype.setVisible = function(bool) {
+	CASTORGUI.GUIGroup.prototype.setVisible = function(bool) {
 		var display;
-		 var that = this;
+		var that = this;
 		if(bool == true) {
 			display = "block";
 			this.groupVisible = true;			

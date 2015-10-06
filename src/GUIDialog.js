@@ -92,7 +92,7 @@ var CASTORGUI = CASTORGUI || {};
 			dialog.style.cursor = "pointer";
 		}	
 		
-		this.guiElements.push(dialog);
+		this.addGuiElements(dialog);
     };
 	
 	CASTORGUI.GUIDialog.prototype._getSizeImage = function(URL, callback) {

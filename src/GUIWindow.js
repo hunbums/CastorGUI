@@ -104,7 +104,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.getElementById(this.id+"_titre").appendChild(close);
 		this.getElementById(this.id).appendChild(contentWindow);
 		
-		this.guiElements.push(window);
+		this.addGuiElements(window);
     };
 
 	CASTORGUI.GUIWindow.prototype.add = function(element)

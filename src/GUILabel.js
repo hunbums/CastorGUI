@@ -40,7 +40,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(label);
 		}
-		this.guiElements.push(label);
+		this.addGuiElements(label);
     };	
 
 	CASTORGUI.GUILabel.prototype.dispose = function() {

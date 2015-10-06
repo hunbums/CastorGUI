@@ -80,7 +80,7 @@ var CASTORGUI = CASTORGUI || {};
 		} else {
 			element.appendChild(this.meter);
 		}
-		this.guiElements.push(this.meter);
+		this.addGuiElements(this.meter);
     };
 
 	CASTORGUI.GUIMeter.prototype.updateValue = function(value) {

@@ -77,7 +77,7 @@ var CASTORGUI = CASTORGUI || {};
 			}			
 			element.appendChild(this.textElement);
 		}
-		this.guiElements.push(this.textElement);
+		this.addGuiElements(this.textElement);
     };
 	
 	CASTORGUI.GUIText.prototype.updateText = function(texte){		
