@@ -53,11 +53,12 @@ var CASTORGUI = CASTORGUI || {};
     };
 
 	CASTORGUI.GUITextarea.prototype.getValue = function() {
-		return this.value;
+		return this.getElementById(this.id).value;
 	};
 	
 	CASTORGUI.GUITextarea.prototype.setValue = function(val) {
 		this.value = val;
+		this.getElementById(this.id).value = val;
 	};
 
 	CASTORGUI.GUITextarea.prototype.dispose = function() {
