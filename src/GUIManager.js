@@ -1,4 +1,4 @@
-var CASTORGUI = CASTORGUI || {};
+﻿var CASTORGUI = CASTORGUI || {};
 var guiElements = [];
 
 var objectCreate = function(proto) { //Alternative aux anciens navigateurs qui ne dispose pas de la methode Object.create()

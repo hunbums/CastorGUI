@@ -1,4 +1,4 @@
-var CASTORGUI = CASTORGUI || {};
+﻿var CASTORGUI = CASTORGUI || {};
 
 !(function(moduleName, definition) {
 	if (typeof define === 'function' && typeof define.amd === 'object') {

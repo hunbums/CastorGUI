@@ -1,4 +1,4 @@
-var CASTORGUI = CASTORGUI || {};
+﻿var CASTORGUI = CASTORGUI || {};
 
 (function() {   
     
