@@ -15,7 +15,8 @@
 		this.colorWindow = options.bakgroundColor || "rgba(0,0,0,0.5)";
 		this.imageWindow = options.bakgroundImage || "";
 		this.colorContent = options.colorContent || "rgba(0,0,0,0.1)";
-		this.imageContent = options.imageContent;		
+		this.imageContent = options.imageContent;	
+		this.buttonClose = Boolean(options.closeButton) || true;
 		
 		this.borderWindow = options.borderWindow || "2px solid black";	
 		this.borderContent = options.borderContent || "0";
@@ -32,7 +33,7 @@
 		
 		this.title = options.textTitle || "Title window";
 		
-		this.draggable = options.draggable || true;
+		this.draggable = Boolean(options.draggable) || true;
 		
 		this.zIndex = options.zIndex || 1;
 		this.windowVisible = false;
@@ -76,18 +77,20 @@
 		titreWindow.innerHTML = this.title;
 		titreWindow.style.color = this.colorTextTitle;
 		
-		var close = document.createElement("button");
-		close.innerHTML = "X";
-		close.id = this.id+"_button";
-		close.style.position = "absolute";
-		close.style.borderRadius = "12px";
-		close.style.border = "2px solid black";
-		close.style.left = this.windowSize.width - 12+"px";		
-		close.style.marginTop = "-12px";
-		close.style.width = "25px";
-		close.style.height = "25px";
-		close.style.zIndex = 10000;
-		close.onclick = function () { document.body.removeChild(window);};		
+		if(this.buttonClose == true) {
+			var close = document.createElement("button");
+			close.innerHTML = "X";
+			close.id = this.id+"_button";
+			close.style.position = "absolute";
+			close.style.borderRadius = "12px";
+			close.style.border = "2px solid black";
+			close.style.left = this.windowSize.width - 12+"px";		
+			close.style.marginTop = "-12px";
+			close.style.width = "25px";
+			close.style.height = "25px";
+			close.style.zIndex = 10000;
+			close.onclick = function () { this.getElementById(this.id).setVisible(false); };		
+		}
 		
 		var contentWindow = document.createElement("div");
 		contentWindow.style.width = this.windowSize.width;
