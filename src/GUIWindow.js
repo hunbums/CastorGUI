@@ -10,31 +10,23 @@
 		this.className = options.className || "";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.windowPosition = {x:options.x, y:options.y};
-		this.windowSize = {width:options.w, height:options.h};	
-		
+		this.windowSize = {width:options.w, height:options.h};			
 		this.colorWindow = options.bakgroundColor || "rgba(0,0,0,0.5)";
 		this.imageWindow = options.bakgroundImage || "";
 		this.colorContent = options.colorContent || "rgba(0,0,0,0.1)";
-		this.imageContent = options.imageContent;	
-		this.buttonClose = Boolean(options.closeButton) || true;
-		
+		this.imageContent = options.imageContent;
+		this.buttonClose = typeof options.closeButton || true;		
 		this.borderWindow = options.borderWindow || "2px solid black";	
 		this.borderContent = options.borderContent || "0";
 		this.borderTitle = options.borderTitle || "1px solid black";
-		this.radiusWindow = options.radiusWindow || 8;
-		
+		this.radiusWindow = options.radiusWindow || 8;		
 		this.colorTitle = options.colorTitle || "rgba(0,0,0,0.4)";		
-		this.imageTitle = options.imageTitle || "";
-		
-		this.heightTitle = options.heightTitle || 30;
-		
+		this.imageTitle = options.imageTitle || "";		
+		this.heightTitle = options.heightTitle || 30;		
 		this.textAlign = options.titleTextAlign || "center";	
-		this.colorTextTitle = options.titleColor || "white";
-		
-		this.title = options.textTitle || "Title window";
-		
-		this.draggable = Boolean(options.draggable) || true;
-		
+		this.colorTextTitle = options.titleColor || "white";		
+		this.title = options.textTitle || "Title window";		
+		this.draggable = options.draggable || true;		
 		this.zIndex = options.zIndex || 1;
 		this.windowVisible = false;
 		
@@ -77,6 +69,7 @@
 		titreWindow.innerHTML = this.title;
 		titreWindow.style.color = this.colorTextTitle;
 		
+		var that = this;
 		if(this.buttonClose == true) {
 			var close = document.createElement("button");
 			close.innerHTML = "X";
@@ -89,7 +82,7 @@
 			close.style.width = "25px";
 			close.style.height = "25px";
 			close.style.zIndex = 10000;
-			close.onclick = function () { this.getElementById(this.id).setVisible(false); };		
+			close.onclick = function () { that.getElementById(that.id).style.display = "none"; that.windowVisible = false; };		
 		}
 		
 		var contentWindow = document.createElement("div");
@@ -104,7 +97,9 @@
 		
 		this.html.appendChild(window);		
 		this.getElementById(this.id).appendChild(titreWindow);
-		this.getElementById(this.id+"_titre").appendChild(close);
+		if(this.buttonClose == true) {
+			this.getElementById(this.id+"_titre").appendChild(close);
+		}
 		this.getElementById(this.id).appendChild(contentWindow);
 		
 		this.addGuiElements(window);
