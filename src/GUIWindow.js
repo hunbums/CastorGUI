@@ -15,7 +15,7 @@
 		this.imageWindow = options.bakgroundImage || "";
 		this.colorContent = options.colorContent || "rgba(0,0,0,0.1)";
 		this.imageContent = options.imageContent;
-		this.buttonClose = typeof options.closeButton || true;		
+		this.buttonClose = typeof options.closeButton;		
 		this.borderWindow = options.borderWindow || "2px solid black";	
 		this.borderContent = options.borderContent || "0";
 		this.borderTitle = options.borderTitle || "1px solid black";
@@ -26,7 +26,7 @@
 		this.textAlign = options.titleTextAlign || "center";	
 		this.colorTextTitle = options.titleColor || "white";		
 		this.title = options.textTitle || "Title window";		
-		this.draggable = options.draggable || true;		
+		this.draggable = typeof options.draggable;		
 		this.zIndex = options.zIndex || 1;
 		this.windowVisible = false;
 		
@@ -51,7 +51,7 @@
 		window.style.backgroundImage = this.imageWindow;
 		window.style.border = this.borderWindow;
 		window.style.display = "none";
-		if(this.draggable == true) {
+		if(this.draggable == true || this.draggable == "undefined") {
 			window.draggable = "true";
 			window.ondragstart = CASTORGUI.draggable(window);
 		}
@@ -70,7 +70,7 @@
 		titreWindow.style.color = this.colorTextTitle;
 		
 		var that = this;
-		if(this.buttonClose == true) {
+		if(this.buttonClose == true || this.buttonClose == "undefined") {
 			var close = document.createElement("button");
 			close.innerHTML = "X";
 			close.id = this.id+"_button";
@@ -97,7 +97,7 @@
 		
 		this.html.appendChild(window);		
 		this.getElementById(this.id).appendChild(titreWindow);
-		if(this.buttonClose == true) {
+		if(this.buttonClose == true || this.buttonClose == "undefined") {
 			this.getElementById(this.id+"_titre").appendChild(close);
 		}
 		this.getElementById(this.id).appendChild(contentWindow);
