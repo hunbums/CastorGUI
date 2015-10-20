@@ -56,7 +56,15 @@
 			element.appendChild(div);
 		}
 		this.addGuiElements(div);
-    };	
+    };
+
+	CASTORGUI.GUIPanel.prototype.add = function(element)
+	{
+		var contentPanel = this.getElementById(this.id);
+		contentPanel.style.zIndex = this.zIndex + 1;
+		element.style.zIndex + 2;
+		element.addElement(false, contentPanel);
+	};
 
 	CASTORGUI.GUIPanel.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));

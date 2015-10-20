@@ -109,7 +109,9 @@
 
 	CASTORGUI.GUIWindow.prototype.add = function(element)
 	{
-		var contentForm = this.getElementById(this.id+"_content");		
+		var contentForm = this.getElementById(this.id+"_content");	
+		contentForm.style.zIndex = this.zIndex + 1;
+		element.style.zIndex + 2;
 		element.addElement(false, contentForm);
 	};	
 
