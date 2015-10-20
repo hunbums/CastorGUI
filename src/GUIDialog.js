@@ -21,7 +21,7 @@
 		this.urlImage = options.urlImage || null;
 		this.callback = callback || null;
 		this.radius = options.radius || 8;
-		this.zIndex = options.zIndex || 1;
+		this.zIndex = options.zIndex || 0;
 		this.dialogVisible = false;		
 		
 		if(append == true) {

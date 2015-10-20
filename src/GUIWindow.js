@@ -27,7 +27,7 @@
 		this.colorTextTitle = options.titleColor || "white";		
 		this.title = options.textTitle || "Title window";		
 		this.draggable = typeof options.draggable;		
-		this.zIndex = options.zIndex || 1;
+		this.zIndex = options.zIndex || 0;
 		this.windowVisible = false;
 		
 		this.addElement();
@@ -67,6 +67,7 @@
 		titreWindow.style.border = this.borderTitle;
 		titreWindow.style.cursor = "move";
 		titreWindow.innerHTML = this.title;
+		titreWindow.style.zIndex = this.zIndex + 1;
 		titreWindow.style.color = this.colorTextTitle;
 		
 		var that = this;
@@ -94,6 +95,7 @@
 		contentWindow.style.background = this.colorContent;
 		contentWindow.style.backgroundImage = this.imageContent;
 		contentWindow.style.border = this.borderContent;
+		contentWindow.style.zIndex = this.zIndex + 2;
 		
 		this.html.appendChild(window);		
 		this.getElementById(this.id).appendChild(titreWindow);
