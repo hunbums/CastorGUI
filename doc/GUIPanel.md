@@ -25,6 +25,9 @@ Name | Type | Description
 
 ##Methods
 
+###add(element) → void
+add element in the GUIPanel
+
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible (false by default)
 
