@@ -29,7 +29,7 @@ var createGUI = function()
 	var optionsGUIText = {
 		x: 10,
 		y: guisystem.getCanvasWidth().height - 40,
-		text: "CastorGUI created by Dad72",
+		text: "CastorGUI created by Dad72 for CastorEngine and BabylonJS",
 		color: "#fff809"
 	};
 	var createdBy = new CASTORGUI.GUIText("createdBy", optionsGUIText, guisystem);
