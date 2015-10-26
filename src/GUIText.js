@@ -35,18 +35,18 @@
 	CASTORGUI.GUIText.prototype.addElement = function(append, element) {		
 		this.font = this.textSize+"px "+this.police;
 		this.textElement = document.createElement("div");	
-		this.textElement.style.position = "absolute";			
-		if(append == true) {
-			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w+"px";
-			this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h+"px";
+		this.textElement.style.position = "absolute";	
+		this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w+"px";
+		this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h+"px";
+		if(append == true) {			
 			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
-			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";
-			this.textElement.style.display = "block";
-			this.textElement.style.whiteSpace = "nowrap";
+			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";			
 		} else {
 			this.textElement.style.top = this.textPosition.y+"px";
 			this.textElement.style.left = this.textPosition.x+"px";
 		}		
+		this.textElement.style.display = "block";
+		this.textElement.style.whiteSpace = "nowrap";
 		this.textElement.style.font = this.font;
 		this.textElement.style.color = this.color;
 		this.textElement.style.fontStyle = this.italic;

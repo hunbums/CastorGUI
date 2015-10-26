@@ -13,7 +13,9 @@
 	- Fixed Close Button for GUIWindow [PR](https://github.com/dad72/CastorGUI/commit/35ca62469cc2ad4819e79c0ed54285a41e988cd0) [dad72](https://github.com/dad72/CastorGUI)
 	- Fixed GUIWindow [PR](https://github.com/dad72/CastorGUI/commit/267d26a65b878da438023b71bb0f8dc99d33e31e) [dad72](https://github.com/dad72/CastorGUI)
 	- Fixed dispose for GUIManager [PR](https://github.com/dad72/CastorGUI/commit/d811089d6878505dd973894b7fb790e751bb810f) [dad72](https://github.com/dad72/CastorGUI)
-	- Fixed ZIndex element comntainer [PR](https://github.com/dad72/CastorGUI/commit/c4152ee2cfefc27bd25ea4c015281b919f296483) [dad72](https://github.com/dad72/CastorGUI)
+	- Fixed ZIndex element container [PR](https://github.com/dad72/CastorGUI/commit/c4152ee2cfefc27bd25ea4c015281b919f296483) [dad72](https://github.com/dad72/CastorGUI)
+	- Fixed position of elements added in container [dad72](https://github.com/dad72/CastorGUI)
+	- Fixed callback in GUITexture [dad72](https://github.com/dad72/CastorGUI)
 
 - Update
 	- Updated demo [dad72](https://github.com/dad72/CastorGUI)

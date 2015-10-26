@@ -38,9 +38,14 @@
 		this.meter.max= this.max;
 		this.meter.value= this.value;
 		this.meter.style.width = this.meterSize.width+"px";
-		this.meter.style.height = this.meterSize.height+"px";		
-		this.meter.style.top = (this.meterPosition.y + this.getCanvasOrigine().top)+"px";
-		this.meter.style.left = (this.meterPosition.x + this.getCanvasOrigine().left)+"px";
+		this.meter.style.height = this.meterSize.height+"px";	
+		if(append == true) {				
+			this.meter.style.top = (this.meterPosition.y + this.getCanvasOrigine().top)+"px";
+			this.meter.style.left = (this.meterPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			this.meter.style.top = this.meterPosition.y+"px";
+			this.meter.style.left = this.meterPosition.x+"px";
+		}
 		this.meter.style.position = "absolute";
 		this.meter.id = this.id;	
 		this.meter.name = this.id;	

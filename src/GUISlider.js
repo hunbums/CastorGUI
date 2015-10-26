@@ -38,9 +38,14 @@
 		slider.stip = this.stip;
 		slider.className = this.className;
 		slider.style.width = this.sliderSize.width+"px";
-		slider.style.height = this.sliderSize.height+"px";		
-		slider.style.top = (this.sliderPosition.y + this.getCanvasOrigine().top)+"px";
-		slider.style.left = (this.sliderPosition.x + this.getCanvasOrigine().left)+"px";
+		slider.style.height = this.sliderSize.height+"px";	
+		if(append == true) {				
+			slider.style.top = (this.sliderPosition.y + this.getCanvasOrigine().top)+"px";
+			slider.style.left = (this.sliderPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			slider.style.top = this.sliderPosition.y+"px";
+			slider.style.left = this.sliderPosition.x+"px";
+		}
 		slider.style.position = "absolute";
 		slider.id = this.id;	
 		slider.name = this.id;	

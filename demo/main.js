@@ -15,8 +15,8 @@ var createGUI = function()
 	var guiTextureLife_25 = new CASTORGUI.GUITexture("life25", "data/coeur.png", {w:50,h:50,x:60,y:0}, guisystem, null);
 	var guiTextureLife_50 = new CASTORGUI.GUITexture("life50", "data/coeur.png", {w:50,h:50,x:110,y:0}, guisystem, null);
 	var guiTextureLife_75 = new CASTORGUI.GUITexture("life75", "data/coeur.png", {w:50,h:50,x:160,y:0}, guisystem, null);
-	var guiTextureLife_100 = new CASTORGUI.GUITexture("life100", "data/coeur.png", {w:50,h:50,x:210,y:0}, guisystem, null);	
-	
+	var guiTextureLife_100 = new CASTORGUI.GUITexture("life100", "data/coeur.png", {w:50,h:50,x:210,y:0}, guisystem, null);		
+		
 	// GUI group
 	var groupLife = new CASTORGUI.GUIGroup("groupLife", null, guisystem);
 	groupLife.add(guiTextureLife_0);

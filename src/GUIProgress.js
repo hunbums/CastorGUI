@@ -37,11 +37,16 @@
 		this.progress = document.createElement("progress");
 		this.progress.min = this.min;
 		this.progress.max = this.max;
-		this.progress.value = this.value;		
+		this.progress.value = this.value;
 		this.progress.style.width = this.progressSize.width+"px";
-		this.progress.style.height = this.progressSize.height+"px";		
-		this.progress.style.top = (this.progressPosition.y + this.getCanvasOrigine().top)+"px";
-		this.progress.style.left = (this.progressPosition.x + this.getCanvasOrigine().left)+"px";
+		this.progress.style.height = this.progressSize.height+"px";	
+		if(append == true) {				
+			this.progress.style.top = (this.progressPosition.y + this.getCanvasOrigine().top)+"px";
+			this.progress.style.left = (this.progressPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			this.progress.style.top = this.progressPosition.y+"px";
+			this.progress.style.left = this.progressPosition.x+"px";
+		}
 		this.progress.style.position = "absolute";
 		this.progress.id = this.id;
 		this.progress.className = this.className;	

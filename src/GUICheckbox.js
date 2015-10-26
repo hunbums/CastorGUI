@@ -30,8 +30,13 @@
 		checkbox.style.transform = "scale("+this.checkboxSize+")";
 		checkbox.style.WebkitTransform = "scale("+this.checkboxSize+")";
 		checkbox.style.zoom = ""+this.checkboxSize+"";
-		checkbox.style.top = (this.checkboxPosition.y + this.getCanvasOrigine().top)+"px";
-		checkbox.style.left = (this.checkboxPosition.x + this.getCanvasOrigine().left)+"px";
+		if(append == true) {
+			checkbox.style.top = (this.checkboxPosition.y + this.getCanvasOrigine().top)+"px";
+			checkbox.style.left = (this.checkboxPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			checkbox.style.top = this.checkboxPosition.y+"px";
+			checkbox.style.left = this.checkboxPosition.x+"px";
+		}
 		checkbox.style.position = "absolute";
 		checkbox.id = this.id;	
 		checkbox.name = this.id;

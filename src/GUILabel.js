@@ -26,8 +26,13 @@
 	
 	CASTORGUI.GUILabel.prototype.addElement = function(append, element)  {
 		var label = document.createElement("label");				
-		label.style.top = (this.labelPosition.y + this.getCanvasOrigine().top)+"px";
-		label.style.left = (this.labelPosition.x + this.getCanvasOrigine().left)+"px";
+		if(append == true) {
+			label.style.top = (this.labelPosition.y + this.getCanvasOrigine().top)+"px";
+			label.style.left = (this.labelPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			label.style.top = this.labelPosition.y+"px";
+			label.style.left = this.labelPosition.x+"px";
+		}
 		label.style.position = "absolute";
 		label.id = this.id;	
 		label.name = this.id;

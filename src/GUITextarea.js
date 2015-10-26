@@ -31,9 +31,14 @@
 	CASTORGUI.GUITextarea.prototype.addElement = function(append, element)  {
 		var textarea = document.createElement("textarea");		
 		textarea.cols = this.textareaSize.width;
-		textarea.rows = this.textareaSize.height;		
-		textarea.style.top = (this.textareaPosition.y + this.getCanvasOrigine().top)+"px";
-		textarea.style.left = (this.textareaPosition.x + this.getCanvasOrigine().left)+"px";
+		textarea.rows = this.textareaSize.height;	
+		if(append == true) {
+			textarea.style.top = (this.textareaPosition.y + this.getCanvasOrigine().top)+"px";
+			textarea.style.left = (this.textareaPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			textarea.style.top = this.textareaPosition.y+"px";
+			textarea.style.left = this.textareaPosition.x+"px";
+		}
 		textarea.style.position = "absolute";
 		textarea.id = this.id;	
 		textarea.name = this.id;

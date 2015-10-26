@@ -25,11 +25,16 @@
 	Extends(CASTORGUI.GUISelect, CASTORGUI.GUIManager);
 	
 	CASTORGUI.GUISelect.prototype.addElement = function(append, element)  {
-		var select = document.createElement("select");		
+		var select = document.createElement("select");
 		select.style.width = this.selectSize.width+"px";
-		select.style.height = this.selectSize.height+"px";		
-		select.style.top = (this.selectPosition.y + this.getCanvasOrigine().top)+"px";
-		select.style.left = (this.selectPosition.x + this.getCanvasOrigine().left)+"px";
+		select.style.height = this.selectSize.height+"px";	
+		if(append == true) {				
+			select.style.top = (this.selectPosition.y + this.getCanvasOrigine().top)+"px";
+			select.style.left = (this.selectPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			select.style.top = this.selectPosition.y+"px";
+			select.style.left = this.selectPosition.x+"px";
+		}
 		select.style.position = "absolute";
 		select.id = this.id;	
 		select.name = this.id;

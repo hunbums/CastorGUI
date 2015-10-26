@@ -20,11 +20,7 @@
 		
 		if(append == true) {
 			this.addElement(append);
-		}
-		
-		if(this.textureClicked) {
-			this.getElementById(""+this.id+"").addEventListener('click', this.textureClicked, false);
-        }		
+		}	
 	};
 	
 	Extends(CASTORGUI.GUITexture, CASTORGUI.GUIManager);
@@ -34,13 +30,22 @@
 		img.src = this.imageUrl;
 		img.style.width = this.imageSize.width+"px";
 		img.style.height = this.imageSize.height+"px";	
-		img.style.top = (this.imagePosition.y + this.getCanvasOrigine().top)+"px";
-		img.style.left = (this.imagePosition.x + this.getCanvasOrigine().left)+"px";
+		if(append == true) {			
+			img.style.top = (this.imagePosition.y + this.getCanvasOrigine().top)+"px";
+			img.style.left = (this.imagePosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			img.style.top = this.imagePosition.y+"px";
+			img.style.left = this.imagePosition.x+"px";
+		}
 		img.style.position = "absolute";
 		img.style.zIndex = this.zIndex;
 		img.id = this.id;	
 		img.name = this.id;
-		img.className = this.className;
+		img.className = this.className;		
+		if(this.textureClicked) {
+			var that = this;
+			img.addEventListener('click', that.textureClicked, false);
+        }
 		
 		if(append == true) {
 			this.html.appendChild(img);	

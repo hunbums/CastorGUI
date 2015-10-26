@@ -31,11 +31,16 @@
 	Extends(CASTORGUI.GUIButton, CASTORGUI.GUIManager);
 	
 	CASTORGUI.GUIButton.prototype.addElement = function(append, element)  {
-		var button = document.createElement("button");		
+		var button = document.createElement("button");	
 		button.style.width = this.buttonSize.width+"px";
-		button.style.height = this.buttonSize.height+"px";		
-		button.style.top = (this.buttonPosition.y + this.getCanvasOrigine().top)+"px";
-		button.style.left = (this.buttonPosition.x + this.getCanvasOrigine().left)+"px";
+		button.style.height = this.buttonSize.height+"px";
+		if(append == true) {					
+			button.style.top = (this.buttonPosition.y + this.getCanvasOrigine().top)+"px";
+			button.style.left = (this.buttonPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			button.style.top = this.buttonPosition.y+"px";
+			button.style.left = this.buttonPosition.x+"px";
+		}
 		button.innerHTML = this.value;
 		button.style.position = "absolute";
 		button.id = this.id;	

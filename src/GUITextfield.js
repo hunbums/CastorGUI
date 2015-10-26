@@ -33,9 +33,14 @@
 		var textfield = document.createElement("input");	
 		textfield.type = "text";
 		textfield.style.width = this.textfieldSize.width+"px";
-		textfield.style.height = this.textfieldSize.height+"px";		
-		textfield.style.top = (this.textfieldPosition.y + this.getCanvasOrigine().top)+"px";
-		textfield.style.left = (this.textfieldPosition.x + this.getCanvasOrigine().left)+"px";
+		textfield.style.height = this.textfieldSize.height+"px";
+		if(append == true) {					
+			textfield.style.top = (this.textfieldPosition.y + this.getCanvasOrigine().top)+"px";
+			textfield.style.left = (this.textfieldPosition.x + this.getCanvasOrigine().left)+"px";
+		} else{
+			textfield.style.top = this.textfieldPosition.y+"px";
+			textfield.style.left = this.textfieldPosition.x+"px";
+		}
 		textfield.style.position = "absolute";
 		textfield.id = this.id;	
 		textfield.name = this.id;

@@ -37,9 +37,14 @@
 		number.value= this.value;
 		number.stip = this.stip;
 		number.style.width = this.numberSize.width+"px";
-		number.style.height = this.numberSize.height+"px";		
-		number.style.top = (this.numberPosition.y + this.getCanvasOrigine().top)+"px";
-		number.style.left = (this.numberPosition.x + this.getCanvasOrigine().left)+"px";
+		number.style.height = this.numberSize.height+"px";	
+		if(append == true) {				
+			number.style.top = (this.numberPosition.y + this.getCanvasOrigine().top)+"px";
+			number.style.left = (this.numberPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			number.style.top = this.numberPosition.y+"px";
+			number.style.left = this.numberPosition.x+"px";
+		}
 		number.style.position = "absolute";
 		number.id = this.id;	
 		number.name = this.id;

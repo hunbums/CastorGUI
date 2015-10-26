@@ -29,8 +29,13 @@
 		radio.type = "radio";
 		radio.style.transform = "scale("+this.radioSize+")";
 		radio.style.zoom = ""+this.radioSize+"";			
-		radio.style.top = (this.radioPosition.y + this.getCanvasOrigine().top)+"px";
-		radio.style.left = (this.radioPosition.x + this.getCanvasOrigine().left)+"px";
+		if(append == true) {
+			radio.style.top = (this.radioPosition.y + this.getCanvasOrigine().top)+"px";
+			radio.style.left = (this.radioPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			radio.style.top = this.radioPosition.y+"px";
+			radio.style.left = this.radioPosition.x+"px";
+		}
 		radio.style.position = "absolute";
 		radio.id = this.id;	
 		radio.className = this.className;
