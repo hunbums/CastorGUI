@@ -16,6 +16,7 @@
 		this.min = options.min || 0;
 		this.max = options.max || 100;
 		this.stip = options.stip || 1;
+		
 		this.value = options.value || (this.max/2);
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
@@ -54,7 +55,7 @@
 			slider.style.writingMode = "bt-lr";
 			slider.style.WebkitAppearance = "slider-vertical";
 		}	
-		slider.onchange = this.onChangeSlider;
+		slider.oninput = this.onChangeSlider;
 		
 		if(append == true) {
 			this.html.appendChild(slider);

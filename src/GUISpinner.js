@@ -50,7 +50,7 @@
 		number.name = this.id;
 		number.className = this.className;
 		number.style.zIndex = this.zIndex;		
-		number.onchange = this.onChangeNumber;
+		number.oninput = this.onChangeNumber;
 		
 		if(append == true) {
 			this.html.appendChild(number);
