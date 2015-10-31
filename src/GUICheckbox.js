@@ -13,7 +13,7 @@
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.checkboxPosition = {x:options.x, y:options.y};
 		this.checkboxSize = options.size || 1.0;
-		this.zIndex = options.zIndex || 1;
+		this.zIndex = options.zIndex || 1.0;
 		this.checkboxVisible = true;
 		this.onClickCheckbox = callback || false;
 		
@@ -27,9 +27,8 @@
 	CASTORGUI.GUICheckbox.prototype.addElement = function(append, element)  {
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
-		checkbox.style.transform = "scale("+this.checkboxSize+")";
-		checkbox.style.WebkitTransform = "scale("+this.checkboxSize+")";
-		checkbox.style.zoom = ""+this.checkboxSize+"";
+		checkbox.style.width = (this.checkboxSize * 16)+"px";
+		checkbox.style.height = (this.checkboxSize * 16)+"px";
 		if(append == true) {
 			checkbox.style.top = (this.checkboxPosition.y + this.getCanvasOrigine().top)+"px";
 			checkbox.style.left = (this.checkboxPosition.x + this.getCanvasOrigine().left)+"px";
@@ -38,6 +37,8 @@
 			checkbox.style.left = this.checkboxPosition.x+"px";
 		}
 		checkbox.style.position = "absolute";
+		checkbox.style.padding = "0px";
+		checkbox.style.margin = "0px";
 		checkbox.id = this.id;	
 		checkbox.name = this.id;
 		checkbox.className = this.className;
