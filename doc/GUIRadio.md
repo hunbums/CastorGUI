@@ -21,6 +21,12 @@ Name | Type | Description
 
 ##Methods
 
+###isChecked(elementID) → void
+return if element is checked
+
+###setChecked(elementID, value) → void
+check element
+
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 

@@ -40,20 +40,21 @@
 		select.name = this.id;
 		select.className = this.className;
 		select.style.zIndex = this.zIndex;
-		select.onchange = this.onChangeSelectoptions;
-		
+		select.onchange = this.onChangeSelectoptions;	
+				
 		if(append == true) {
 			this.html.appendChild(select);	
 		} else {
 			element.appendChild(select);
 		}
+		
 		this.addGuiElements(select);
     };	
 	
 	CASTORGUI.GUISelect.prototype.addOptions = function(value, text) {
-		var options = document.createElement("options");
+		var options = document.createElement("option");
 		options.value = value;
-		options.innerHTML = text;
+		options.innerHTML = text;		
 		this.getElementById(this.id).appendChild(options);
 	};
 

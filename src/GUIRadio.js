@@ -49,7 +49,19 @@
 			element.appendChild(radio);
 		}
 		this.addGuiElements(radio);
-    };	
+    };
+
+	CASTORGUI.GUIRadio.prototype.isChecked = function(idElement)  {
+		if(document.getElementById(idElement).checked) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	
+	CASTORGUI.GUIRadio.prototype.setChecked = function(idElement, value)  {
+		document.getElementById(idElement).checked = value);
+	};	
 
 	CASTORGUI.GUIRadio.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
