@@ -27,8 +27,8 @@
 	CASTORGUI.GUIRadio.prototype.addElement = function(append, element)  {
 		var radio = document.createElement("input");
 		radio.type = "radio";
-		radio.style.transform = "scale("+this.radioSize+")";
-		radio.style.zoom = ""+this.radioSize+"";			
+		radio.style.width = (this.radioSize * 16)+"px";
+		radio.style.height = (this.radioSize * 16)+"px";		
 		if(append == true) {
 			radio.style.top = (this.radioPosition.y + this.getCanvasOrigine().top)+"px";
 			radio.style.left = (this.radioPosition.x + this.getCanvasOrigine().left)+"px";
@@ -37,6 +37,8 @@
 			radio.style.left = this.radioPosition.x+"px";
 		}
 		radio.style.position = "absolute";
+		radio.style.padding = "0px";
+		radio.style.margin = "0px";		
 		radio.id = this.id;	
 		radio.className = this.className;
 		radio.name = this.id;
@@ -48,11 +50,12 @@
 		} else {
 			element.appendChild(radio);
 		}
+		
 		this.addGuiElements(radio);
     };
 
 	CASTORGUI.GUIRadio.prototype.isChecked = function(idElement)  {
-		if(document.getElementById(idElement).checked) {
+		if(this.getElementById(idElement).checked) {
 			return true;
 		} else {
 			return false;
@@ -60,7 +63,7 @@
 	};
 	
 	CASTORGUI.GUIRadio.prototype.setChecked = function(idElement, value)  {
-		document.getElementById(idElement).checked = value;
+		this.getElementById(idElement).checked = value;
 	};	
 
 	CASTORGUI.GUIRadio.prototype.dispose = function() {
