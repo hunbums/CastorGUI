@@ -60,7 +60,7 @@
 	};
 	
 	CASTORGUI.GUIRadio.prototype.setChecked = function(idElement, value)  {
-		document.getElementById(idElement).checked = value);
+		document.getElementById(idElement).checked = value;
 	};	
 
 	CASTORGUI.GUIRadio.prototype.dispose = function() {
