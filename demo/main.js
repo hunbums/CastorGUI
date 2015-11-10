@@ -60,7 +60,7 @@ var createGUI = function()
 				click.push(click.length);
 				// GUI window
 				var form = new CASTORGUI.GUIWindow("form", {x:(guisystem.getCanvasWidth().width / 2 - 100), y:200 , w:200, h:200}, guisystem);				
-				var optionsGUIText = { x: 10,y: 35, text: "- This window is draggable.<br /><br />- Click the cube behind the window for refresh the scene.<br />", color: "white", size: 12 };
+				var optionsGUIText = { x: 10,y: 0, text: "- This window is draggable.<br /><br />- Click the cube behind the window for refresh the scene.<br />", color: "white", size: 12 };
 				var textForWindow = new CASTORGUI.GUIText("textInfo", optionsGUIText, guisystem, false);				
 				form.add(textForWindow);
 				form.setVisible(true);
@@ -68,8 +68,7 @@ var createGUI = function()
 			break;
 		}
 	};
-	var button = new CASTORGUI.GUIButton("button", {x:(guisystem.getCanvasWidth().width / 2 - 100), y: 10, w:200, h:35, value:"Click me five times"}, guisystem, myFunction);	
-	
+	var button = new CASTORGUI.GUIButton("button", {x:(guisystem.getCanvasWidth().width / 2 - 100), y: 10, w:200, h:35, value:"Click me five times"}, guisystem, myFunction);
 };
 
 var createScene = function () {	

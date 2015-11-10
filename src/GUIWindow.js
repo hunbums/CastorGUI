@@ -16,8 +16,7 @@
 		this.colorContent = options.colorContent || "rgba(0,0,0,0.1)";
 		this.imageContent = options.imageContent;
 		this.buttonClose = typeof options.closeButton;		
-		this.borderWindow = options.borderWindow || "2px solid black";	
-		this.borderContent = options.borderContent || "0";
+		this.borderWindow = options.borderWindow || "2px solid black";
 		this.borderTitle = options.borderTitle || "1px solid black";
 		this.radiusWindow = options.radiusWindow || 8;		
 		this.colorTitle = options.colorTitle || "rgba(0,0,0,0.4)";		
@@ -41,7 +40,6 @@
 		window.style.height = this.windowSize.height+"px";		
 		window.style.top = (this.windowPosition.y + this.getCanvasOrigine().top)+"px";
 		window.style.left = (this.windowPosition.x + this.getCanvasOrigine().left)+"px";
-		window.style.position = "absolute";
 		window.id = this.id;	
 		window.name = this.id;
 		window.className = this.className;
@@ -87,14 +85,14 @@
 		}
 		
 		var contentWindow = document.createElement("div");
-		contentWindow.style.width = this.windowSize.width;
+		contentWindow.style.width = this.windowSize.width+"px";
 		contentWindow.style.height = (this.windowSize.height - 40)+"px";
+		contentWindow.style.overflow = "auto";	
 		contentWindow.style.marginTop = "5px";
 		contentWindow.style.borderRadius = "8px";
-		contentWindow.id = this.id+"_content";
+		contentWindow.id = this.id+"_content";		
 		contentWindow.style.background = this.colorContent;
-		contentWindow.style.backgroundImage = this.imageContent;
-		contentWindow.style.border = this.borderContent;
+		contentWindow.style.backgroundImage = this.imageContent;		
 		contentWindow.style.zIndex = this.zIndex + 2;
 		
 		this.html.appendChild(window);		

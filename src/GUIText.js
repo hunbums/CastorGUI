@@ -34,8 +34,7 @@
 	
 	CASTORGUI.GUIText.prototype.addElement = function(append, element) {		
 		this.font = this.textSize+"px "+this.police;
-		this.textElement = document.createElement("div");	
-		this.textElement.style.position = "absolute";	
+		this.textElement = document.createElement("div");				
 		this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w+"px";
 		this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h+"px";
 		if(append == true) {			
@@ -44,8 +43,9 @@
 		} else {
 			this.textElement.style.top = this.textPosition.y+"px";
 			this.textElement.style.left = this.textPosition.x+"px";
-		}		
-		this.textElement.style.display = "block";
+		}	
+		this.textElement.style.position = "absolute";
+		//this.textElement.style.display = "block";
 		this.textElement.style.whiteSpace = "nowrap";
 		this.textElement.style.font = this.font;
 		this.textElement.style.color = this.color;
@@ -74,7 +74,8 @@
 			if(this.centerHorizontal == "true") {
 				this.textElement.style.width = "100%";
 				this.textElement.style.textAlign = "center";
-			}			
+			}	
+			this.textElement.style.position = "relative";
 			element.appendChild(this.textElement);
 		}
 		this.addGuiElements(this.textElement);
