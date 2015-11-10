@@ -45,7 +45,6 @@
 			this.textElement.style.left = this.textPosition.x+"px";
 		}	
 		this.textElement.style.position = "absolute";
-		//this.textElement.style.display = "block";
 		this.textElement.style.whiteSpace = "nowrap";
 		this.textElement.style.font = this.font;
 		this.textElement.style.color = this.color;
@@ -54,6 +53,7 @@
 		this.textElement.innerHTML = this.texte;
 		this.textElement.id = this.id;	
 		this.textElement.name = this.id;
+		this.textElement.classe = "GUIText";
 		this.textElement.style.zIndex = this.zIndex;
 		
 		if(append == true) {
