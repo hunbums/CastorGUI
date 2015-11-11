@@ -49,8 +49,8 @@
 		window.style.borderRadius = this.radiusWindow+"px";
 		window.style.backgroundImage = this.imageWindow;
 		window.style.border = this.borderWindow;
-		window.style.display = "none";
 		window.style.wordWrap = "break-word";
+		window.style.display = "none";		
 		if(this.draggable == true || this.draggable == "undefined") {
 			window.draggable = "true";
 			window.ondragstart = CASTORGUI.draggable(window);
@@ -69,6 +69,7 @@
 		titreWindow.innerHTML = this.title;
 		titreWindow.style.zIndex = this.zIndex + 1;
 		titreWindow.style.color = this.colorTextTitle;
+		titreWindow.style.wordWrap = "break-word";
 		
 		var that = this;
 		if(this.buttonClose == true || this.buttonClose == "undefined") {
@@ -87,12 +88,13 @@
 		}
 		
 		var contentWindow = document.createElement("div");
+		contentWindow.id = this.id+"_content";	
 		contentWindow.style.width = this.windowSize.width+"px";
 		contentWindow.style.height = (this.windowSize.height - 40)+"px";
 		contentWindow.style.overflow = this.overflow;
+		contentWindow.style.wordBreak = "keep-all";
 		contentWindow.style.marginTop = "5px";
-		contentWindow.style.borderRadius = "8px";
-		contentWindow.id = this.id+"_content";		
+		contentWindow.style.borderRadius = "8px";			
 		contentWindow.style.background = this.colorContent;
 		contentWindow.style.backgroundImage = this.imageContent;
 		contentWindow.style.zIndex = this.zIndex + 2;

@@ -23,6 +23,7 @@
 		this.position = options.position || "absolute";		
 		this.centerVertical = options.centerVertical || false;
 		this.centerHorizontal = options.centerHorizontal || false;
+		this.inline = options.inline || false;
 		this.textVisible = true;
 		this.textElement = null;
 		this.font = null;
@@ -36,9 +37,13 @@
 	
 	CASTORGUI.GUIText.prototype.addElement = function(append, element) {		
 		this.font = this.textSize+"px "+this.police;
-		this.textElement = document.createElement("div");				
-		this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w+"px";
-		this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h+"px";
+		this.textElement = document.createElement("span");		
+		if(this.inline == false) {	
+			this.textElement.style.width = "auto";
+		} else {
+			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w+"px";
+		}
+		this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h+"px";		
 		if(append == true) {			
 			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
 			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";			
@@ -46,8 +51,8 @@
 			this.textElement.style.top = this.textPosition.y+"px";
 			this.textElement.style.left = this.textPosition.x+"px";
 		}	
+		this.textElement.style.display = "block";
 		this.textElement.style.position = this.position;
-		this.textElement.style.whiteSpace = "nowrap";
 		this.textElement.style.font = this.font;
 		this.textElement.style.color = this.color;
 		this.textElement.style.fontStyle = this.italic;

@@ -25,6 +25,7 @@ Name | Type | Description
 * **centerHorizontal**: text align center horizontal (string) =&gt; "false" by default (optional) 
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 * **classe**: classe css. By default is GUIText
+* **inline**: text inline or no. false by default.
 
 ##Methods
 
