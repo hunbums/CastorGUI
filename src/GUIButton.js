@@ -9,7 +9,7 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;
-		this.className = options.className || "";
+		this.classe = options.classe || "GUIButton";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.buttonPosition = {x:options.x, y:options.y};
 		this.buttonSize = {width:options.w, height:options.h};
@@ -46,7 +46,7 @@
 		button.id = this.id;	
 		button.name = this.id;
 		button.style.zIndex = this.zIndex;
-		button.className = this.className;
+		button.classe = this.classe;
 		button.style.background = this.colorButton;
 		button.style.borderRadius = this.borderRadiusButton;
 		button.style.backgroundImage = this.imageButton;		

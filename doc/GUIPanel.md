@@ -21,7 +21,7 @@ Name | Type | Description
 * **borderRadiusPanel**: radius border of panel (string)  =&gt; "10px" by default
 * **borderPanel**: border of panel (string)  =&gt; "2px solid black" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **classee**: css classe to customize the element. By default is GUIPanel
 
 ##Methods
 

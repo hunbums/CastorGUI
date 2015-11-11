@@ -8,7 +8,8 @@
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;		
+		this.id = id;	
+		this.classe = options.classe || "GUIMeter";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.divPosition = {x:options.x, y:options.y};
 		this.divSize = {width:options.w, height:options.h};
@@ -16,7 +17,6 @@
 		this.borderRadiusDiv = options.borderRadiusPanel || "10px";
 		this.imageDiv = options.backgroundImage || null;
 		this.colorDiv = options.backgroundColor || "black";
-		this.className = options.className || "";
 		this.borderDiv = options.borderPanel || "2px solid black";
 		this.zIndex = options.zIndex || 1;
 		
@@ -39,10 +39,10 @@
 		}		
 		div.id = this.id;	
 		div.name = this.id;
-		div.className = this.className;		
+		div.classe = this.classe;		
 		div.style.position = "absolute";		
 		div.style.zIndex = this.zIndex;		
-		if(this.className == "") {
+		if(this.classe == "") {
 			div.style.backgroundImage = this.imageDiv;	
 			div.style.backgroundColor = this.colorDiv;
 			div.style.borderRadius = this.borderRadiusDiv;

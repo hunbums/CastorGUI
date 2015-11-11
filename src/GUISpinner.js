@@ -9,7 +9,7 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.className = options.className || "";
+		this.classe = options.classe || "GUISpinner";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.numberPosition = {x:options.x, y:options.y};
 		this.numberSize = {width:options.w, height:options.h};	
@@ -48,7 +48,7 @@
 		number.style.position = "absolute";
 		number.id = this.id;	
 		number.name = this.id;
-		number.className = this.className;
+		number.classe = this.classe;
 		number.style.zIndex = this.zIndex;		
 		number.oninput = this.onChangeNumber;
 		

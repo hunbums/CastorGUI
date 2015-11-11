@@ -9,7 +9,8 @@
 		this.append = append;
 		if(append == null || append == undefined) { this.append = true; }
 		
-		this.id = id;		
+		this.id = id;
+		this.classe = options.classe || "GUIText";
 		this.html = document.body || document.getElementsByTagName('body')[0];						
 		this.textPosition = {x:options.x, y:options.y};
 		this.textSize = options.size || 30;	
@@ -19,6 +20,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.bold = options.bold || ""; // bold
 		this.italic = options.italic || ""; //italic
+		this.position = options.position || "absolute";		
 		this.centerVertical = options.centerVertical || false;
 		this.centerHorizontal = options.centerHorizontal || false;
 		this.textVisible = true;
@@ -44,7 +46,7 @@
 			this.textElement.style.top = this.textPosition.y+"px";
 			this.textElement.style.left = this.textPosition.x+"px";
 		}	
-		this.textElement.style.position = "absolute";
+		this.textElement.style.position = this.position;
 		this.textElement.style.whiteSpace = "nowrap";
 		this.textElement.style.font = this.font;
 		this.textElement.style.color = this.color;
@@ -53,7 +55,7 @@
 		this.textElement.innerHTML = this.texte;
 		this.textElement.id = this.id;	
 		this.textElement.name = this.id;
-		this.textElement.classe = "GUIText";
+		this.textElement.classe = this.classe;
 		this.textElement.style.zIndex = this.zIndex;
 		
 		if(append == true) {
@@ -75,7 +77,6 @@
 				this.textElement.style.width = "100%";
 				this.textElement.style.textAlign = "center";
 			}	
-			this.textElement.style.position = "relative";
 			element.appendChild(this.textElement);
 		}
 		this.addGuiElements(this.textElement);

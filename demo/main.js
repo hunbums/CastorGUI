@@ -30,7 +30,8 @@ var createGUI = function()
 		x: 10,
 		y: guisystem.getCanvasWidth().height - 40,
 		text: "CastorGUI created by Dad72 for CastorEngine and BabylonJS",
-		color: "#fff809"
+		color: "#fff809",
+		position: "absolute"
 	};
 	var createdBy = new CASTORGUI.GUIText("createdBy", optionsGUIText, guisystem);
 	
@@ -60,7 +61,7 @@ var createGUI = function()
 				click.push(click.length);
 				// GUI window
 				var form = new CASTORGUI.GUIWindow("form", {x:(guisystem.getCanvasWidth().width / 2 - 100), y:200 , w:200, h:200}, guisystem);				
-				var optionsGUIText = { x: 10,y: 0, text: "- This window is draggable.<br /><br />- Click the cube behind the window for refresh the scene.<br />", color: "white", size: 12 };
+				var optionsGUIText = {position: "relative", x: 10,y: 0, text: "- This window is draggable.<br /><br />- Click the cube behind the window for refresh the scene.<br />", color: "white", size: 12 };
 				var textForWindow = new CASTORGUI.GUIText("textInfo", optionsGUIText, guisystem, false);				
 				form.add(textForWindow);
 				form.setVisible(true);

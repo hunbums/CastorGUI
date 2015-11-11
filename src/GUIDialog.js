@@ -10,7 +10,7 @@
 				
 		this.id = id;
 		this.html = document.body || document.getElementsByTagName('body')[0];	
-		this.className = options.className || "";
+		this.classe = options.classe || "GUIDialog";
 		this.dialogSize = {width:options.w, height:options.h};				
 		this.dialogPosition = {x:options.x, y:options.y};
 		this.borderDialog = options.border || "2px solid black";
@@ -40,7 +40,7 @@
 		dialog.style.position = "absolute";
 		dialog.id = this.id;
 		dialog.name = this.id;
-		dialog.className = this.className;
+		dialog.classe = this.classe;
 		dialog.style.zIndex = this.zIndex;
 		dialog.style.background = this.colorDialog;
 		dialog.style.borderRadius = this.radius+"px";

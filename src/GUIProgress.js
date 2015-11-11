@@ -10,7 +10,7 @@
 		
 		this.progress = null;
 		this.id = id;	
-		this.className = options.className || "";
+		this.classe = options.classe || "GUIProgress";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.progressPosition = {x:options.x, y:options.y};
 		this.progressSize = {width:options.w, height:options.h};	
@@ -49,7 +49,7 @@
 		}
 		this.progress.style.position = "absolute";
 		this.progress.id = this.id;
-		this.progress.className = this.className;	
+		this.progress.classe = this.classe;	
 		this.progress.name = this.id;	
 		this.progress.style.zIndex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {
