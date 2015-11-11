@@ -14,10 +14,12 @@
 		this.divPosition = {x:options.x, y:options.y};
 		this.divSize = {width:options.w, height:options.h};
 		this.divVisible = false;
+		this.overflow = options.overflow || "auto";
 		this.borderRadiusDiv = options.borderRadiusPanel || "10px";
 		this.imageDiv = options.backgroundImage || null;
 		this.colorDiv = options.backgroundColor || "black";
 		this.borderDiv = options.borderPanel || "2px solid black";
+		this.position = options.position || "";	
 		this.zIndex = options.zIndex || 1;
 		
 		if(append == true) {
@@ -40,14 +42,13 @@
 		div.id = this.id;	
 		div.name = this.id;
 		div.classe = this.classe;		
-		div.style.position = "absolute";		
-		div.style.zIndex = this.zIndex;		
-		if(this.classe == "") {
-			div.style.backgroundImage = this.imageDiv;	
-			div.style.backgroundColor = this.colorDiv;
-			div.style.borderRadius = this.borderRadiusDiv;
-			div.style.border = this.borderDiv;
-		}
+		div.style.position = this.position;
+		div.style.overflow = this.overflow;
+		div.style.zIndex = this.zIndex;			
+		div.style.backgroundImage = this.imageDiv;	
+		div.style.backgroundColor = this.colorDiv;
+		div.style.borderRadius = this.borderRadiusDiv;
+		div.style.border = this.borderDiv;		
 		div.style.display = "none";
 		
 		if(append == true) {

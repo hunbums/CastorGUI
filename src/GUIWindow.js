@@ -15,7 +15,8 @@
 		this.imageWindow = options.bakgroundImage || "";
 		this.colorContent = options.colorContent || "rgba(0,0,0,0.1)";
 		this.imageContent = options.imageContent;
-		this.buttonClose = typeof options.closeButton;		
+		this.buttonClose = typeof options.closeButton;	
+		this.overflow = options.overflow || "auto";
 		this.borderWindow = options.borderWindow || "2px solid black";
 		this.borderTitle = options.borderTitle || "1px solid black";
 		this.radiusWindow = options.radiusWindow || 8;		
@@ -49,6 +50,7 @@
 		window.style.backgroundImage = this.imageWindow;
 		window.style.border = this.borderWindow;
 		window.style.display = "none";
+		window.style.wordWrap = "break-word";
 		if(this.draggable == true || this.draggable == "undefined") {
 			window.draggable = "true";
 			window.ondragstart = CASTORGUI.draggable(window);
@@ -57,7 +59,7 @@
 		var titreWindow = document.createElement("div");	
 		titreWindow.style.width = this.windowSize.width;		
 		titreWindow.style.height = this.heightTitle+"px";	
-		titreWindow.style.textAlign = this.textAlign;
+		titreWindow.style.textAlign = this.textAlign;		
 		titreWindow.style.borderRadius = "8px";
 		titreWindow.id = this.id+"_titre";		
 		titreWindow.style.background = this.colorTitle;
@@ -87,12 +89,12 @@
 		var contentWindow = document.createElement("div");
 		contentWindow.style.width = this.windowSize.width+"px";
 		contentWindow.style.height = (this.windowSize.height - 40)+"px";
-		contentWindow.style.overflow = "auto";	
+		contentWindow.style.overflow = this.overflow;
 		contentWindow.style.marginTop = "5px";
 		contentWindow.style.borderRadius = "8px";
 		contentWindow.id = this.id+"_content";		
 		contentWindow.style.background = this.colorContent;
-		contentWindow.style.backgroundImage = this.imageContent;		
+		contentWindow.style.backgroundImage = this.imageContent;
 		contentWindow.style.zIndex = this.zIndex + 2;
 		
 		this.html.appendChild(window);		

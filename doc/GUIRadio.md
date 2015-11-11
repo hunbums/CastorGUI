@@ -17,7 +17,7 @@ Name | Type | Description
 * **y**: position top of radio button (in pixel)
 * **size**: size of radio button (float) =&gt; "1.0" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classee**: css classe to customize the element. By default is GUIRadio
+* **classe**: css classe to customize the element. By default is GUIRadio
 
 ##Methods
 

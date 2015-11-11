@@ -54,27 +54,31 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 	};
 	
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {
-		el.style.opacity = 1;
-		(function fade_moin() {
-			if ((el.style.opacity -= 0.1) < 0.1) {
-				el.style.display = "none";
-				el.style.opacity = 0;
-			} else if(el.style.opacity > 0) {
-				requestAnimationFrame(fade_moin);
-			}
-		})();
+		if(el) {
+			el.style.opacity = 1;		
+			(function fade_moin() {
+				if ((el.style.opacity -= 0.1) < 0.1) {
+					el.style.display = "none";
+					el.style.opacity = 0;
+				} else if(el.style.opacity > 0) {
+					requestAnimationFrame(fade_moin);
+				}
+			})();
+		}
 	};
 
 	CASTORGUI.GUIManager.prototype.fadeIn = function(el){
-		el.style.opacity = 0;
-		el.style.display = "block";
-		(function fade_plus() {
-			var val = parseFloat(el.style.opacity);
-			if (!((val += 0.1) > 0.9)) {
-				el.style.opacity = 1;
-				requestAnimationFrame(fade_plus);
-			}
-		})();
+		if(el) {
+			el.style.opacity = 0;
+			el.style.display = "block";		
+			(function fade_plus() {
+				var val = parseFloat(el.style.opacity);
+				if (!((val += 0.1) > 0.9)) {
+					el.style.opacity = 1;
+					requestAnimationFrame(fade_plus);
+				}
+			})();
+		}
 	};
 	
 	CASTORGUI.GUIManager.prototype.getElementById = function(id) {

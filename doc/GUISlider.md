@@ -23,7 +23,7 @@ Name | Type | Description
 * **value**: Current value of the slider =&gt; 50 by default (optional)
 * **orient**: orientation of the slider =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classee**: css classe to customize the element. By default is GUISlider
+* **classe**: css classe to customize the element. By default is GUISlider
 
 ##Methods
 

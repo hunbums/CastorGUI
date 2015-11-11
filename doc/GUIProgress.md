@@ -26,7 +26,7 @@ Name | Type | Description
 * **backgroundValue**:  background value progress bar  =&gt; "#0f4fff" by default (optional)
 * **orient**: orientation of the progress bar =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classee**: css classe to customize the element. By default is GUIProgress
+* **classe**: css classe to customize the element. By default is GUIProgress
 
 ##Methods
 

@@ -19,7 +19,7 @@ Name | Type | Description
 * **x**: position left of image (in pixel)
 * **y**: position top of image (in pixel)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classee**: css classe to customize the element. By default is GUITextures
+* **classe**: css classe to customize the element. By default is GUITextures
 
 ##Methods
 

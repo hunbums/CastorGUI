@@ -23,7 +23,7 @@ Name | Type | Description
 * **value**: Current value of the input number =&gt; 50 by default (optional)
 * **orient**: orientation of the input number =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classee**: css classe to customize the element. By default is GUISpinner
+* **classe**: css classe to customize the element. By default is GUISpinner
 
 ##Methods
 

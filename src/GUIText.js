@@ -42,7 +42,7 @@
 		if(append == true) {			
 			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
 			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";			
-		} else {
+		} else {			
 			this.textElement.style.top = this.textPosition.y+"px";
 			this.textElement.style.left = this.textPosition.x+"px";
 		}	

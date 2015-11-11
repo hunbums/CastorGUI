@@ -13,6 +13,7 @@
 		this.classe = options.classe || "GUIDialog";
 		this.dialogSize = {width:options.w, height:options.h};				
 		this.dialogPosition = {x:options.x, y:options.y};
+		this.overflow = options.overflow || "auto";
 		this.borderDialog = options.border || "2px solid black";
 		this.colorDialog = options.backgroundColor || "rgba(0,0,0,0.5)";
 		this.imageDialog = options.backgroundImage || "";
@@ -46,7 +47,8 @@
 		dialog.style.borderRadius = this.radius+"px";
 		dialog.style.backgroundImage = this.imageDialog;
 		dialog.style.border = this.borderDialog;
-		dialog.style.display = "none";		
+		dialog.style.display = "none";	
+		dialog.style.overflow = this.overflow;
 		var eventButton = null;
 		
 		if(append == true) {
