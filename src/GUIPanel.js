@@ -19,7 +19,7 @@
 		this.imageDiv = options.backgroundImage || null;
 		this.colorDiv = options.backgroundColor || "black";
 		this.borderDiv = options.borderPanel || "2px solid black";
-		this.position = options.position || "";	
+		this.position = options.position || "absolute";	
 		this.zIndex = options.zIndex || 1;
 		
 		if(append == true) {
@@ -31,13 +31,24 @@
 	
 	CASTORGUI.GUIPanel.prototype.addElement = function(append, element)  {
 		var div = document.createElement("div");		
-		if(this.divSize) {
+		if(this.divSize.width > 0 || this.divSize.height > 0) {
 			div.style.width = this.divSize.width+"px";
 			div.style.height = this.divSize.height+"px";
-		}
-		if(this.divPosition) {
-			div.style.top = (this.divPosition.y + this.getCanvasOrigine().top)+"px";
-			div.style.left = (this.divPosition.x + this.getCanvasOrigine().left)+"px";
+		}		
+		if(append == true) {
+			if(this.divPosition.x > 0) {
+				div.style.left = (this.divPosition.x + this.getCanvasOrigine().left)+"px";
+			}	
+			if(this.divPosition.y > 0) {
+				div.style.top = (this.divPosition.y + this.getCanvasOrigine().top)+"px";
+			}
+		} else {
+			if(this.divPosition.x > 0) {
+				div.style.marginLeft = this.divPosition.x+"px";
+			}	
+			if(this.divPosition.y > 0) {
+				div.style.marginTop = this.divPosition.y+"px";
+			}
 		}		
 		div.id = this.id;	
 		div.name = this.id;
