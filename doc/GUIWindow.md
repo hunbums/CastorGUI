@@ -32,7 +32,7 @@ Name | Type | Description
 * **draggable**: Window draggable (bool)
 * **closeButton**: Button window display (bool)
 * **zIndex**: Depth of the element (int) =&gt; 1 by default
-* **classe**: Css classe to customize the element. By default is GUIWindow
+* **class**: Css class to customize the element. By default is GUIWindow
 * **overflow**: overflow auto or hidden (auto by default)
 
 ##Methods

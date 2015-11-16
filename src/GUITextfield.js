@@ -9,7 +9,7 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.classe = options.classe || "GUITextfield";
+		this.class = options.class || "GUITextfield";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.textfieldPosition = {x:options.x, y:options.y};
 		this.textfieldSize = {width:options.w, height:options.h};
@@ -44,7 +44,7 @@
 		textfield.style.position = "absolute";
 		textfield.id = this.id;	
 		textfield.name = this.id;
-		textfield.classe = this.classe;
+		textfield.class = this.class;
 		textfield.value = this.value;
 		textfield.placeholder = this.placeholder;
 		textfield.style.zIndex = this.zIndex;

@@ -19,7 +19,7 @@ Name | Type | Description
 * **value**: value of textfield (string)
 * **placeholder**: value by default of textfield (string)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classe**: css classe to customize the element. By default is GUITextfield
+* **class**: css class to customize the element. By default is GUITextfield
 
 ##Methods
 

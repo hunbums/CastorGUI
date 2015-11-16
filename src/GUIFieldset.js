@@ -9,7 +9,7 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.classe = options.classe || "GUIFieldset";
+		this.class = options.class || "GUIFieldset";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.fieldsetPosition = {x:options.x, y:options.y};
 		this.fieldsetSize = {width:options.w, height:options.h};
@@ -33,7 +33,7 @@
 		fieldset.style.position = "absolute";
 		fieldset.id = this.id;	
 		fieldset.name = this.id;
-		fieldset.classe = this.classe;
+		fieldset.class = this.class;
 		fieldset.style.zIndex = this.zIndex;
 		this.html.appendChild(fieldset);		
 		var legend = document.createElement("legend");

@@ -24,7 +24,7 @@ Name | Type | Description
 * **borderButton**: border of button (string)  =&gt; "2px solid black" by default
 * **colorText**: color text of button (string)  =&gt; "black" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classe**: css classe to customize the element. By default is GUIButton
+* **class**: css class to customize the element. By default is GUIButton
 
 ##Methods
 

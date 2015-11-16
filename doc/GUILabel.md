@@ -18,7 +18,7 @@ Name | Type | Description
 * **y**: position top of label (in pixel)
 * **text**: value text label (string)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **classe**: css classe to customize the element. By default is GUILabel
+* **class**: css class to customize the element. By default is GUILabel
 
 ##Methods
 
