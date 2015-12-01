@@ -98,6 +98,10 @@
 		CASTORGUI.addEventListener(document, 'selectstart', CASTORGUI.cancelDocumentSelection);
 		CASTORGUI.addEventListener(document, 'mousemove', CASTORGUI.repositionElement);
 		CASTORGUI.addEventListener(document, 'mouseup', CASTORGUI.removeDocumentListeners);
+		CASTORGUI.addEventListener(document, "touchstart", CASTORGUI.cancelDocumentSelection);
+		CASTORGUI.addEventListener(document, "touchmove", CASTORGUI.repositionElement);
+		CASTORGUI.addEventListener(document, "touchend", CASTORGUI.removeDocumentListeners);
+		CASTORGUI.addEventListener(document, "touchcancel", CASTORGUI.removeDocumentListeners);
 	};
 
 	CASTORGUI.getInitialPosition = function(element) {
@@ -142,7 +146,11 @@
 		CASTORGUI.removeEventListener(document, 'selectstart', CASTORGUI.cancelDocumentSelection);
 		CASTORGUI.removeEventListener(document, 'mousemove', CASTORGUI.repositionElement);
 		CASTORGUI.removeEventListener(document, 'mouseup', CASTORGUI.removeDocumentListeners);
-
+		CASTORGUI.removeEventListener(document, "touchstart", CASTORGUI.cancelDocumentSelection);
+		CASTORGUI.removeEventListener(document, "touchmove", CASTORGUI.repositionElement);
+		CASTORGUI.removeEventListener(document, "touchend", CASTORGUI.removeDocumentListeners);
+		CASTORGUI.removeEventListener(document, "touchcancel", CASTORGUI.removeDocumentListeners);
+		
 		var left = parseInt(currentElement.style.left, 10);
 		var top = parseInt(currentElement.style.top, 10);
 		CASTORGUI.triggerEvent('stop', { x: left, y: top, mouseEvent: event });
