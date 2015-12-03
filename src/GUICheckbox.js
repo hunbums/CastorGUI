@@ -51,7 +51,23 @@
 			element.appendChild(checkbox);
 		}
 		this.addGuiElements(checkbox);
-    };	
+    };
+
+	CASTORGUI.GUICheckbox.prototype.isChecked = function()  {
+		if(this.getElementById(this.id).checked) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	
+	CASTORGUI.GUICheckbox.prototype.setChecked = function(value)  {
+		if(value == true) { 
+			this.getElementById(this.id).checked = value;
+		} else{
+			this.getElementById(this.id).checked = false;
+		}
+	};	
 
 	CASTORGUI.GUICheckbox.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));

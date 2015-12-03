@@ -54,16 +54,20 @@
 		this.addGuiElements(radio);
     };
 
-	CASTORGUI.GUIRadio.prototype.isChecked = function(idElement)  {
-		if(this.getElementById(idElement).checked) {
+	CASTORGUI.GUIRadio.prototype.isChecked = function()  {
+		if(this.getElementById(this.id).checked) {
 			return true;
 		} else {
 			return false;
 		}
 	};
 	
-	CASTORGUI.GUIRadio.prototype.setChecked = function(idElement, value)  {
-		this.getElementById(idElement).checked = value;
+	CASTORGUI.GUIRadio.prototype.setChecked = function(value)  {
+		if(value == true) { 
+			this.getElementById(this.id).checked = value;
+		} else{
+			this.getElementById(this.id).checked = false;
+		}
 	};	
 
 	CASTORGUI.GUIRadio.prototype.dispose = function() {

@@ -21,10 +21,10 @@ Name | Type | Description
 
 ##Methods
 
-###isChecked(elementID) → void
+###isChecked() → void
 return if element is checked
 
-###setChecked(elementID, value) → void
+###setChecked(value) → void
 check element
 
 ###setVisible(bool, fade) → void
