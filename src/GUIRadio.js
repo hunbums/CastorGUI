@@ -8,7 +8,8 @@
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;	
+		this.id = id;
+		this.name = options.name || "NameRadio"+id;
 		this.class = options.class || "GUIRadio";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.radioPosition = {x:options.x, y:options.y};
@@ -16,6 +17,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.radioVisible = true;
 		this.onClickRadio = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -40,8 +42,9 @@
 		radio.style.padding = "0px";
 		radio.style.margin = "0px";		
 		radio.id = this.id;	
+		radio.tabindex = this.tabindex;
 		radio.class = this.class;
-		radio.name = this.id;
+		radio.name = this.name;
 		radio.style.zIndex = this.zIndex;
 		radio.onclick = this.onClickRadio;
 		

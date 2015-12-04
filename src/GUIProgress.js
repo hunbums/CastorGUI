@@ -25,6 +25,7 @@
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.progressVisible = true;
 		this.onChangeProgress = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -49,7 +50,8 @@
 		}
 		this.progress.style.position = "absolute";
 		this.progress.id = this.id;
-		this.progress.class = this.class;	
+		this.progress.class = this.class;
+		this.progress.tabindex = this.tabindex;
 		this.progress.name = this.id;	
 		this.progress.style.zIndex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {

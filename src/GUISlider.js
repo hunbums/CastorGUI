@@ -22,6 +22,7 @@
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.sliderVisible = true;
 		this.onChangeSlider = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -38,6 +39,7 @@
 		slider.value= this.value;
 		slider.stip = this.stip;
 		slider.class = this.class;
+		slider.tabindex = this.tabindex;
 		slider.style.width = this.sliderSize.width+"px";
 		slider.style.height = this.sliderSize.height+"px";	
 		if(append == true) {				

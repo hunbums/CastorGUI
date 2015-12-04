@@ -20,6 +20,7 @@ Name | Type | Description
 * **placeholder**: value by default of textfield (string)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 * **class**: css class to customize the element. By default is GUITextfield
+* **tabindex**: Tab order of the field.
 
 ##Methods
 

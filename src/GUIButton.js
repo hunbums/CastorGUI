@@ -22,6 +22,7 @@
 		this.borderButton = options.borderButton || "2px solid black";
 		this.colorText = options.colorText || "black";
 		this.zIndex = options.zIndex || 1;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -47,6 +48,7 @@
 		button.name = this.id;
 		button.style.zIndex = this.zIndex;
 		button.class = this.class;
+		button.tabindex = this.tabindex;
 		button.style.background = this.colorButton;
 		button.style.borderRadius = this.borderRadiusButton;
 		button.style.backgroundImage = this.imageButton;		

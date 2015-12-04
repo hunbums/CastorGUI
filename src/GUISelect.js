@@ -16,6 +16,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.selectVisible = true;
 		this.onChangeSelectoptions = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -39,6 +40,7 @@
 		select.id = this.id;	
 		select.name = this.id;
 		select.class = this.class;
+		select.tabindex = this.tabindex;
 		select.style.zIndex = this.zIndex;
 		select.onchange = this.onChangeSelectoptions;	
 				

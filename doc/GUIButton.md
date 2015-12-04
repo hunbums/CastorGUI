@@ -25,6 +25,7 @@ Name | Type | Description
 * **colorText**: color text of button (string)  =&gt; "black" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 * **class**: css class to customize the element. By default is GUIButton
+* **tabindex**: Tab order of the field.
 
 ##Methods
 

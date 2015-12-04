@@ -21,6 +21,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.textfieldVisible = true;
 		this.onChangeTextfield = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -45,6 +46,7 @@
 		textfield.id = this.id;	
 		textfield.name = this.id;
 		textfield.class = this.class;
+		textfield.tabindex = this.tabindex;
 		textfield.value = this.value;
 		textfield.placeholder = this.placeholder;
 		textfield.style.zIndex = this.zIndex;

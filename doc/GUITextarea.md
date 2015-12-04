@@ -21,6 +21,7 @@ Name | Type | Description
 * **color**: color the textarea (string) =&gt; "black" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 * **class**: css class to customize the element. By default is GUITextarea
+* **tabindex**: Tab order of the field.
 
 ##Methods
 

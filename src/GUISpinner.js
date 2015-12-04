@@ -21,6 +21,7 @@
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.numberVisible = true;
 		this.onChangeNumber = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -49,6 +50,7 @@
 		number.id = this.id;	
 		number.name = this.id;
 		number.class = this.class;
+		number.tabindex = this.tabindex;
 		number.style.zIndex = this.zIndex;		
 		number.oninput = this.onChangeNumber;
 		

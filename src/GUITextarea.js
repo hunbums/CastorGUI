@@ -20,6 +20,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.textareaVisible = true;
 		this.onChangeTextarea = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -43,6 +44,7 @@
 		textarea.id = this.id;	
 		textarea.name = this.id;
 		textarea.class = this.class;
+		textarea.tabindex = this.tabindex;
 		textarea.innerHTML = this.value;
 		textarea.style.zIndex = this.zIndex;
 		textarea.style.background = this.background;		

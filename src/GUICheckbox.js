@@ -16,6 +16,7 @@
 		this.zIndex = options.zIndex || 1.0;
 		this.checkboxVisible = true;
 		this.onClickCheckbox = callback || false;
+		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
 			this.addElement(append);
@@ -40,8 +41,9 @@
 		checkbox.style.padding = "0px";
 		checkbox.style.margin = "0px";
 		checkbox.id = this.id;	
-		checkbox.name = this.id;
+		checkbox.name = this.id;		
 		checkbox.class = this.class;
+		checkbox.tabindex = this.tabindex;
 		checkbox.style.zIndex = this.zIndex;
 		checkbox.onclick = this.onClickCheckbox;
 		
