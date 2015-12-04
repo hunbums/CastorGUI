@@ -45,11 +45,11 @@
 		- Added Method updateText() for GUIText
 		- Added fadIn fadOut for SetVisible
 		- Added image button with event customise or button close for GUIDialog
-Version 1.1
+- Version 1.1
 
 	- Bugs:
 		- Fixed divers all GUIxxx
 
-Version 1.0
+- Version 1.0
 
 	- Initial commit
