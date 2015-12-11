@@ -70,7 +70,7 @@ var createGUI = function()
 			break;
 		}
 	};
-	var button = new CASTORGUI.GUIButton("button", {x:(guisystem.getCanvasWidth().width / 2 - 100), y: 10, w:200, h:35, value:"Click me five times"}, guisystem, myFunction);
+	var button = new CASTORGUI.GUIButton("button", {x:(guisystem.getCanvasWidth().width / 2 - 100), y: 10, w:200, h:35, value:"Click me five times"}, guisystem, myFunction);	
 };
 
 var createScene = function () {	

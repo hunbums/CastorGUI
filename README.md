@@ -11,19 +11,20 @@ Library to display a GUI game as a layer on top of the canvas HTML/CSS. This lib
 
 * Create texture
 * Create text
+* Create label
 * Create window draggable (with title & button close)
 * Create dialog (with button close)
 * Create panel (simple dialog without button close)
 * Create button
 * Create slider
 * Create progress
+* Create meter (jauge de measure)
+* Create select color
 * Create spinner
-* Create meter
 * Create radio button
 * Create checkbox
 * Create textfield
 * Create textarea
-* Create label
 * Create fieldset
 * Create select with options
 

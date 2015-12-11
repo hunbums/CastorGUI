@@ -19,7 +19,7 @@ Name | Type | Description
 * **y**: position top of input number (in pixel)
 * **min**: min value input number =&gt; 0 by default (optional)
 * **max**: max value input number =&gt; 100 by default (optional)
-* **stip**: graduation of input number =&gt; 1 by default (optional)
+* **step**: graduation of input number =&gt; 1 by default (optional)
 * **value**: Current value of the input number =&gt; 50 by default (optional)
 * **orient**: orientation of the input number =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default

@@ -15,8 +15,7 @@
 		this.sliderSize = {width:options.w, height:options.h};	
 		this.min = options.min || 0;
 		this.max = options.max || 100;
-		this.stip = options.stip || 1;
-		
+		this.step = options.step || 1;		
 		this.value = options.value || (this.max/2);
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
@@ -37,7 +36,7 @@
 		slider.min= this.min;
 		slider.max= this.max;
 		slider.value= this.value;
-		slider.stip = this.stip;
+		slider.step = this.step;
 		slider.class = this.class;
 		slider.tabindex = this.tabindex;
 		slider.style.width = this.sliderSize.width+"px";
@@ -57,7 +56,7 @@
 			slider.style.writingMode = "bt-lr";
 			slider.style.WebkitAppearance = "slider-vertical";
 		}	
-		slider.oninput = this.onChangeSlider;
+		slider.onInput = this.onChangeSlider;
 		
 		if(append == true) {
 			this.html.appendChild(slider);
@@ -77,11 +76,11 @@
 		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.textVisible = true;
+			this.sliderVisible = true;
 			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.textVisible = false;
+			this.sliderVisible = false;
 			if(fade == true) { this.fadeOut(element);}
 		}
 		if(fade == false) { element.style.display = display; }

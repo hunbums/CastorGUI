@@ -1,3 +1,11 @@
+- Version 1.5:
+
+	- New functionnality:
+		- Add class GUIColor with documentation
+	- Bugs:
+		- fix step for GUISpinner and GUISlider
+	- Update:
+		
 - Version 1.4:
 
 	- New functionnality:

@@ -15,7 +15,7 @@
 		this.numberSize = {width:options.w, height:options.h};	
 		this.min = options.min || 0;
 		this.max = options.max || 100;
-		this.stip = options.stip || 1;
+		this.step = options.step || 1;
 		this.value = options.value || (this.max/2);
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
@@ -36,7 +36,7 @@
 		number.min= this.min;
 		number.max= this.max;
 		number.value= this.value;
-		number.stip = this.stip;
+		number.step = this.step;
 		number.style.width = this.numberSize.width+"px";
 		number.style.height = this.numberSize.height+"px";	
 		if(append == true) {				
@@ -52,7 +52,7 @@
 		number.class = this.class;
 		number.tabindex = this.tabindex;
 		number.style.zIndex = this.zIndex;		
-		number.oninput = this.onChangeNumber;
+		number.onInput = this.onChangeNumber;
 		
 		if(append == true) {
 			this.html.appendChild(number);

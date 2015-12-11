@@ -41,6 +41,7 @@
 			textarea.style.left = this.textareaPosition.x+"px";
 		}
 		textarea.style.position = "absolute";
+		textarea.placeholder = this.placeholder;
 		textarea.id = this.id;	
 		textarea.name = this.id;
 		textarea.class = this.class;
