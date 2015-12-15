@@ -14,7 +14,7 @@
 		this.textareaPosition = {x:options.x, y:options.y};
 		this.textareaSize = {width:options.w, height:options.h};
 		this.value = options.value || "";
-		this.placeholder = options.placeholder;
+		this.placeholder = options.placeholder || "";
 		this.background = options.background || "white";		
 		this.color = options.color || "black";
 		this.zIndex = options.zIndex || 1;

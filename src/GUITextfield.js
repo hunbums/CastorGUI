@@ -17,7 +17,7 @@
 		this.background = options.background || "white";
 		this.border	= options.border || "1px solid black";
 		this.color = options.color || "black";
-		this.placeholder = options.placeholder;
+		this.placeholder = options.placeholder || "";
 		this.zIndex = options.zIndex || 1;
 		this.textfieldVisible = true;
 		this.onChangeTextfield = callback || false;
