@@ -20,7 +20,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.sliderVisible = true;
-		this.onChangeSlider = callback || false;
+		this.onchangeSlider = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -51,12 +51,12 @@
 		slider.style.position = "absolute";
 		slider.id = this.id;	
 		slider.name = this.id;	
-		slider.style.zIndex = this.zIndex;
+		slider.style.zindex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {
 			slider.style.writingMode = "bt-lr";
 			slider.style.WebkitAppearance = "slider-vertical";
 		}	
-		slider.onInput = this.onChangeSlider;
+		slider.oninput = this.onchangeSlider;
 		
 		if(append == true) {
 			this.html.appendChild(slider);

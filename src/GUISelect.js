@@ -15,7 +15,7 @@
 		this.selectSize = {width:options.w, height:options.h};
 		this.zIndex = options.zIndex || 1;
 		this.selectVisible = true;
-		this.onChangeSelectoptions = callback || false;
+		this.onchangeSelectoptions = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -41,8 +41,8 @@
 		select.name = this.id;
 		select.class = this.class;
 		select.tabindex = this.tabindex;
-		select.style.zIndex = this.zIndex;
-		select.onchange = this.onChangeSelectoptions;	
+		select.style.zindex = this.zIndex;
+		select.onchange = this.onchangeSelectoptions;	
 				
 		if(append == true) {
 			this.html.appendChild(select);	

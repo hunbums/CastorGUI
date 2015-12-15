@@ -20,7 +20,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.numberVisible = true;
-		this.onChangeNumber = callback || false;
+		this.onchangeNumber = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -51,8 +51,8 @@
 		number.name = this.id;
 		number.class = this.class;
 		number.tabindex = this.tabindex;
-		number.style.zIndex = this.zIndex;		
-		number.onInput = this.onChangeNumber;
+		number.style.zindex = this.zIndex;		
+		number.oninput = this.onchangeNumber;
 		
 		if(append == true) {
 			this.html.appendChild(number);

@@ -19,7 +19,7 @@
 		this.color = options.color || "black";
 		this.zIndex = options.zIndex || 1;
 		this.textareaVisible = true;
-		this.onChangeTextarea = callback || false;
+		this.onchangeTextarea = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -47,10 +47,10 @@
 		textarea.class = this.class;
 		textarea.tabindex = this.tabindex;
 		textarea.innerHTML = this.value;
-		textarea.style.zIndex = this.zIndex;
+		textarea.style.zindex = this.zIndex;
 		textarea.style.background = this.background;		
 		textarea.style.color = this.color;
-		textarea.onchange = this.onChangeTextarea;
+		textarea.onchange = this.onchangeTextarea;
 		
 		if(append == true) {
 			this.html.appendChild(textarea);

@@ -20,7 +20,7 @@
 		this.placeholder = options.placeholder || "";
 		this.zIndex = options.zIndex || 1;
 		this.textfieldVisible = true;
-		this.onChangeTextfield = callback || false;
+		this.onchangeTextfield = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -49,11 +49,11 @@
 		textfield.tabindex = this.tabindex;
 		textfield.value = this.value;
 		textfield.placeholder = this.placeholder;
-		textfield.style.zIndex = this.zIndex;
+		textfield.style.zindex = this.zIndex;
 		textfield.style.background = this.background;
 		textfield.style.border = this.border;
 		textfield.style.color = this.color;
-		textfield.onchange = this.onChangeTextfield;
+		textfield.onchange = this.onchangeTextfield;
 		
 		if(append == true) {
 			this.html.appendChild(textfield);

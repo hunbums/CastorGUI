@@ -44,7 +44,7 @@
 		checkbox.name = this.id;		
 		checkbox.class = this.class;
 		checkbox.tabindex = this.tabindex;
-		checkbox.style.zIndex = this.zIndex;
+		checkbox.style.zindex = this.zIndex;
 		checkbox.onclick = this.onClickCheckbox;
 		
 		if(append == true) {

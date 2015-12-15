@@ -17,7 +17,7 @@
 		this.value = options.value || "red";
 		this.zIndex = options.zIndex || 1;
 		this.colorVisible = true;
-		this.onChangeColor = callback || false;
+		this.onchangeColor = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -45,9 +45,9 @@
 		color.style.position = "absolute";
 		color.id = this.id;	
 		color.name = this.id;	
-		color.style.zIndex = this.zIndex;		
-		color.onInput = this.onChangeColor;
-		color.onChange = this.onChangeColor;
+		color.style.zindex = this.zIndex;		
+		color.oninput = this.onchangeColor;
+		color.onchange = this.onchangeColor;
 		
 		if(append == true) {
 			this.html.appendChild(color);

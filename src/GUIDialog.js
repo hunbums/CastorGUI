@@ -42,7 +42,7 @@
 		dialog.id = this.id;
 		dialog.name = this.id;
 		dialog.class = this.class;
-		dialog.style.zIndex = this.zIndex;
+		dialog.style.zindex = this.zIndex;
 		dialog.style.background = this.colorDialog;
 		dialog.style.borderRadius = this.radius+"px";
 		dialog.style.backgroundImage = this.imageDialog;
@@ -68,7 +68,7 @@
 			eventButton.style.marginTop = "-12px";
 			eventButton.style.width = "25px";
 			eventButton.style.height = "25px";
-			eventButton.style.zIndex = 10000;
+			eventButton.style.zindex = 10000;
 			eventButton.onclick = function () { document.body.removeChild(dialog);};			
 			this.getElementById(this.id).appendChild(eventButton);
 		} else if(this.imageButtonDialog == "true") {			
@@ -85,7 +85,7 @@
 				eventButton.style.width = sizeImageW+"px";
 				eventButton.style.height = sizeImageH+"px";
 				eventButton.style.cursor = "pointer";
-				eventButton.style.zIndex = 10000;
+				eventButton.style.zindex = 10000;
 				eventButton.onclick = that.callback;
 				that.getElementById(that.id).appendChild(eventButton);
 			});			
@@ -109,8 +109,8 @@
 	CASTORGUI.GUIDialog.prototype.add = function(element)
 	{
 		var contentDialog = this.getElementById(this.id);
-		contentDialog.style.zIndex = this.zIndex + 1;
-		element.style.zIndex + 2;
+		contentDialog.style.zindex = this.zIndex + 1;
+		element.style.zindex + 2;
 		element.addElement(false, contentDialog);
 	};	
 

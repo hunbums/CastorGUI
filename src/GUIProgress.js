@@ -24,7 +24,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.progressVisible = true;
-		this.onChangeProgress = callback || false;
+		this.onchangeProgress = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -53,7 +53,7 @@
 		this.progress.class = this.class;
 		this.progress.tabindex = this.tabindex;
 		this.progress.name = this.id;	
-		this.progress.style.zIndex = this.zIndex;
+		this.progress.style.zindex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {
 			this.progress.style.writingMode = "bt-lr";
 			this.progress.style.WebkitAppearance = "progress-vertical";
@@ -82,7 +82,7 @@
 		"}";
 		this.addStyle(cssProgress);
 		
-		this.progress.onchange = this.onChangeProgress;
+		this.progress.onchange = this.onchangeProgress;
 		
 		if(append == true) {
 			this.html.appendChild(this.progress);

@@ -44,7 +44,7 @@
 		window.id = this.id;	
 		window.name = this.id;
 		window.class = this.class;
-		window.style.zIndex = this.zIndex;
+		window.style.zindex = this.zIndex;
 		window.style.background = this.colorWindow;
 		window.style.borderRadius = this.radiusWindow+"px";
 		window.style.backgroundImage = this.imageWindow;
@@ -67,7 +67,7 @@
 		titreWindow.style.border = this.borderTitle;
 		titreWindow.style.cursor = "move";
 		titreWindow.innerHTML = this.title;
-		titreWindow.style.zIndex = this.zIndex + 1;
+		titreWindow.style.zindex = this.zIndex + 1;
 		titreWindow.style.color = this.colorTextTitle;
 		titreWindow.style.wordWrap = "break-word";
 		
@@ -83,7 +83,7 @@
 			close.style.marginTop = "-12px";
 			close.style.width = "25px";
 			close.style.height = "25px";
-			close.style.zIndex = 10000;
+			close.style.zindex = 10000;
 			close.onclick = function () { that.getElementById(that.id).style.display = "none"; that.windowVisible = false; };		
 		}
 		
@@ -97,7 +97,7 @@
 		contentWindow.style.borderRadius = "8px";			
 		contentWindow.style.background = this.colorContent;
 		contentWindow.style.backgroundImage = this.imageContent;
-		contentWindow.style.zIndex = this.zIndex + 2;
+		contentWindow.style.zindex = this.zIndex + 2;
 		
 		this.html.appendChild(window);		
 		this.getElementById(this.id).appendChild(titreWindow);
@@ -112,8 +112,8 @@
 	CASTORGUI.GUIWindow.prototype.add = function(element)
 	{
 		var contentForm = this.getElementById(this.id+"_content");	
-		contentForm.style.zIndex = this.zIndex + 1;
-		element.style.zIndex + 2;
+		contentForm.style.zindex = this.zIndex + 1;
+		element.style.zindex + 2;
 		element.addElement(false, contentForm);
 	};	
 

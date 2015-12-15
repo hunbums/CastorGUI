@@ -23,7 +23,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.meterVisible = true;
-		this.onChangeMeter = callback || false;
+		this.onchangeMeter = callback || false;
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
@@ -52,12 +52,12 @@
 		this.meter.name = this.id;	
 		this.meter.class = this.class;
 		this.meter.tabindex = this.tabindex;
-		this.meter.style.zIndex = this.zIndex;
+		this.meter.style.zindex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {
 			this.meter.style.writingMode = "bt-lr";
 			this.meter.style.WebkitAppearance = "meter-vertical";
 		}	
-		this.meter.onchange = this.onChangeMeter;
+		this.meter.onchange = this.onchangeMeter;
 		
 		var cssMeter = "#"+this.id+" {"+
 			"border:"+this.border+";"+

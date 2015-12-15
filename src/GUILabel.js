@@ -38,7 +38,7 @@
 		label.name = this.id;
 		label.class = this.class;
 		label.innerHTML = this.textLabel;
-		label.style.zIndex = this.zIndex;
+		label.style.zindex = this.zIndex;
 		
 		if(append == true) {
 			this.html.appendChild(label);
