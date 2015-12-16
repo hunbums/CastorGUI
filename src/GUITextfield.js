@@ -14,11 +14,11 @@
 		this.textfieldPosition = {x:options.x, y:options.y};
 		this.textfieldSize = {width:options.w, height:options.h};
 		this.value = options.value || "";
-		this.background = options.background || "white";
+		this.background = options.background || "green";
 		this.border	= options.border || "1px solid black";
 		this.color = options.color || "black";
 		this.placeholder = options.placeholder || "";
-		this.zIndex = options.zIndex || 1;
+		this.zIndex = options.zIndex || 2;
 		this.textfieldVisible = true;
 		this.onchangeTextfield = callback || false;
 		this.tabindex = options.tabindex || 0;
@@ -43,13 +43,14 @@
 			textfield.style.left = this.textfieldPosition.x+"px";
 		}
 		textfield.style.position = "absolute";
+		textfield.style.display = "block";
 		textfield.id = this.id;	
 		textfield.name = this.id;
 		textfield.class = this.class;
 		textfield.tabindex = this.tabindex;
 		textfield.value = this.value;
 		textfield.placeholder = this.placeholder;
-		textfield.style.zindex = this.zIndex;
+		textfield.style.zIndex = this.zIndex;
 		textfield.style.background = this.background;
 		textfield.style.border = this.border;
 		textfield.style.color = this.color;

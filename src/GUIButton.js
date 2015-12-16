@@ -46,7 +46,7 @@
 		button.style.position = "absolute";
 		button.id = this.id;	
 		button.name = this.id;
-		button.style.zindex = this.zIndex;
+		button.style.zIndex = this.zIndex;
 		button.class = this.class;
 		button.tabindex = this.tabindex;
 		button.style.background = this.colorButton;

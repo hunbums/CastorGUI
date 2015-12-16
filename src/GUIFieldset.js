@@ -34,7 +34,7 @@
 		fieldset.id = this.id;	
 		fieldset.name = this.id;
 		fieldset.class = this.class;
-		fieldset.style.zindex = this.zIndex;
+		fieldset.style.zIndex = this.zIndex;
 		this.html.appendChild(fieldset);		
 		var legend = document.createElement("legend");
 		legend.innerHTML = this.legend;

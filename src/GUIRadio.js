@@ -45,7 +45,7 @@
 		radio.tabindex = this.tabindex;
 		radio.class = this.class;
 		radio.name = this.name;
-		radio.style.zindex = this.zIndex;
+		radio.style.zIndex = this.zIndex;
 		radio.onclick = this.onClickRadio;
 		
 		if(append == true) {

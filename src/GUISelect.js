@@ -41,7 +41,7 @@
 		select.name = this.id;
 		select.class = this.class;
 		select.tabindex = this.tabindex;
-		select.style.zindex = this.zIndex;
+		select.style.zIndex = this.zIndex;
 		select.onchange = this.onchangeSelectoptions;	
 				
 		if(append == true) {

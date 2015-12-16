@@ -52,7 +52,7 @@
 		this.meter.name = this.id;	
 		this.meter.class = this.class;
 		this.meter.tabindex = this.tabindex;
-		this.meter.style.zindex = this.zIndex;
+		this.meter.style.zIndex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {
 			this.meter.style.writingMode = "bt-lr";
 			this.meter.style.WebkitAppearance = "meter-vertical";

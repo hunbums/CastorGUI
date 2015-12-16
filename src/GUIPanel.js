@@ -55,7 +55,7 @@
 		div.class = this.class;		
 		div.style.position = this.position;
 		div.style.overflow = this.overflow;
-		div.style.zindex = this.zIndex;			
+		div.style.zIndex = this.zIndex;			
 		div.style.backgroundImage = this.imageDiv;	
 		div.style.backgroundColor = this.colorDiv;
 		div.style.borderRadius = this.borderRadiusDiv;
@@ -73,8 +73,8 @@
 	CASTORGUI.GUIPanel.prototype.add = function(element)
 	{
 		var contentPanel = this.getElementById(this.id);
-		contentPanel.style.zindex = this.zIndex + 1;
-		element.style.zindex + 2;
+		contentPanel.style.zIndex = this.zIndex + 1;
+		element.style.zIndex + 2;
 		element.addElement(false, contentPanel);
 	};
 

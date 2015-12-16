@@ -38,7 +38,7 @@
 			img.style.left = this.imagePosition.x+"px";
 		}
 		img.style.position = "absolute";
-		img.style.zindex = this.zIndex;
+		img.style.zIndex = this.zIndex;
 		img.id = this.id;	
 		img.name = this.id;
 		img.class = this.class;		

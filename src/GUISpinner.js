@@ -51,7 +51,7 @@
 		number.name = this.id;
 		number.class = this.class;
 		number.tabindex = this.tabindex;
-		number.style.zindex = this.zIndex;		
+		number.style.zIndex = this.zIndex;		
 		number.oninput = this.onchangeNumber;
 		
 		if(append == true) {

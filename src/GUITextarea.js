@@ -17,7 +17,7 @@
 		this.placeholder = options.placeholder || "";
 		this.background = options.background || "white";		
 		this.color = options.color || "black";
-		this.zIndex = options.zIndex || 1;
+		this.zIndex = options.zIndex || 2;
 		this.textareaVisible = true;
 		this.onchangeTextarea = callback || false;
 		this.tabindex = options.tabindex || 0;
@@ -41,13 +41,14 @@
 			textarea.style.left = this.textareaPosition.x+"px";
 		}
 		textarea.style.position = "absolute";
+		textarea.style.display = "block";
 		textarea.placeholder = this.placeholder;
 		textarea.id = this.id;	
 		textarea.name = this.id;
 		textarea.class = this.class;
 		textarea.tabindex = this.tabindex;
 		textarea.innerHTML = this.value;
-		textarea.style.zindex = this.zIndex;
+		textarea.style.zIndex = this.zIndex;
 		textarea.style.background = this.background;		
 		textarea.style.color = this.color;
 		textarea.onchange = this.onchangeTextarea;

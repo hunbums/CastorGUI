@@ -45,7 +45,7 @@
 		color.style.position = "absolute";
 		color.id = this.id;	
 		color.name = this.id;	
-		color.style.zindex = this.zIndex;		
+		color.style.zIndex = this.zIndex;		
 		color.oninput = this.onchangeColor;
 		color.onchange = this.onchangeColor;
 		

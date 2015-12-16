@@ -53,7 +53,7 @@
 		this.progress.class = this.class;
 		this.progress.tabindex = this.tabindex;
 		this.progress.name = this.id;	
-		this.progress.style.zindex = this.zIndex;
+		this.progress.style.zIndex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {
 			this.progress.style.writingMode = "bt-lr";
 			this.progress.style.WebkitAppearance = "progress-vertical";

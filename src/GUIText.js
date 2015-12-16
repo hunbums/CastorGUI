@@ -61,7 +61,7 @@
 		this.textElement.id = this.id;	
 		this.textElement.name = this.id;
 		this.textElement.class = this.class;
-		this.textElement.style.zindex = this.zIndex;
+		this.textElement.style.zIndex = this.zIndex;
 		
 		if(append == true) {
 			if(this.centerVertical == "true") {

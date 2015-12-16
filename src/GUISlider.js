@@ -51,7 +51,7 @@
 		slider.style.position = "absolute";
 		slider.id = this.id;	
 		slider.name = this.id;	
-		slider.style.zindex = this.zIndex;
+		slider.style.zIndex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {
 			slider.style.writingMode = "bt-lr";
 			slider.style.WebkitAppearance = "slider-vertical";
