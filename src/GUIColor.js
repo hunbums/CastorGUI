@@ -14,7 +14,7 @@
 		this.colorPosition = {x:options.x, y:options.y};
 		this.colorSize = {width:options.w, height:options.h};			
 		
-		this.value = options.value || "red";
+		this.value = options.value || "#e30000";
 		this.zIndex = options.zIndex || 1;
 		this.colorVisible = true;
 		this.onchangeColor = callback || false;
@@ -30,7 +30,7 @@
 	CASTORGUI.GUIColor.prototype.addElement = function(append, element)  {
 		var color = document.createElement("input");
 		color.type= "color";		
-		color.value= this.value;
+		color.value = this.value;
 		color.class = this.class;
 		color.tabindex = this.tabindex;
 		color.style.width = this.colorSize.width+"px";
@@ -46,7 +46,10 @@
 		color.id = this.id;	
 		color.name = this.id;	
 		color.style.zIndex = this.zIndex;		
-		color.oninput = this.onchangeColor;
+		color.oninput = function() { 
+			color.defaultValue = color.value;
+			color.value = color.value;
+		}
 		color.onchange = this.onchangeColor;
 		
 		if(append == true) {
