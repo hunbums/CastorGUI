@@ -35,7 +35,7 @@
 		number.type= "number";
 		number.min= this.min;
 		number.max= this.max;
-		number.value= this.value;
+		number.value = this.value;
 		number.step = this.step;
 		number.style.width = this.numberSize.width+"px";
 		number.style.height = this.numberSize.height+"px";	
@@ -60,7 +60,11 @@
 			element.appendChild(number);
 		}
 		this.addGuiElements(number);
-    };	
+    };
+
+	CASTORGUI.GUISpinner.prototype.getNumber = function() {
+		return this.getElementById(this.id).value;
+    };
 
 	CASTORGUI.GUISpinner.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));

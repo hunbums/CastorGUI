@@ -46,11 +46,8 @@
 		color.id = this.id;	
 		color.name = this.id;	
 		color.style.zIndex = this.zIndex;		
-		color.oninput = function() { 
-			color.defaultValue = color.value;
-			color.value = color.value;
-		}
 		color.onchange = this.onchangeColor;
+		
 		
 		if(append == true) {
 			this.html.appendChild(color);
@@ -58,8 +55,12 @@
 			element.appendChild(color);
 		}
 		this.addGuiElements(color);
-    };	
-
+    };
+	
+	CASTORGUI.GUIColor.prototype.getColor = function() {
+		return this.getElementById(this.id).value;
+    };
+	
 	CASTORGUI.GUIColor.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
     };
