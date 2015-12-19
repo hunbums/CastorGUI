@@ -84,7 +84,7 @@
 			this.input = this.inputs[inputId];
 			this.color = this.getColor();
 			this.input.value = this.color;
-			nativeColorPicker.css(this.input, {
+			nativeColorGUI.css(this.input, {
 				backgroundColor: this.color,
 				color: this.color
 			});
@@ -107,5 +107,5 @@
 		}
 	};
 	// expose to global
-	window.nativeColorPicker = nativeColorPicker;
+	window.nativeColorGUI = nativeColorGUI;
 }(window));

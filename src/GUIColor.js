@@ -58,8 +58,16 @@
 		this.addGuiElements(color);
     };
 	
-	CASTORGUI.GUIColor.prototype.getColor = function() {
-		return this.getElementById(this.id).value;
+	CASTORGUI.GUIColor.prototype.getColor = function(rgb, hex) {
+		if(rgb == undefined) {rgb = true;}
+		if(hex == undefined) {hex = false;}
+		var valueColor = null;
+		if(rgb == true) {
+			valueColor = hexToRgb(this.getElementById(this.id).value);
+		} else if(hex == true) {
+			valueColor = this.getElementById(this.id).value;
+		}
+		return valueColor;
     };
 	
 	CASTORGUI.GUIColor.prototype.dispose = function() {
@@ -85,5 +93,16 @@
     CASTORGUI.GUIColor.prototype.isVisible = function() {
 		return this.colorVisible;
     };
-
+	
 })();
+
+var hexToR = function(h) {return parseInt((cutHex(h)).substring(0,2),16)};
+var hexToG = function(h) {return parseInt((cutHex(h)).substring(2,4),16)};
+var hexToB = function(h) {return parseInt((cutHex(h)).substring(4,6),16)};
+var cutHex = function(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h};
+var hexToRgb = function(hex) {
+	var c_r = hexToR(hex) / 255,
+		c_g = hexToG(hex) / 255,
+		c_b = hexToB(hex) / 255;
+	return {r: c_r, g: c_g, b: c_b};
+};
