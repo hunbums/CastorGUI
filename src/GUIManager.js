@@ -71,7 +71,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.GUItheme.rel = 'stylesheet';
 			this.GUItheme.media = 'screen';
 			this.GUItheme.id = "themeGUI";
-			this.GUItheme.href = this.themeRoot+"themes/"+theme+".css";		
+			this.GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";		
 			this.head.appendChild(this.GUItheme);
 		}
 	};
