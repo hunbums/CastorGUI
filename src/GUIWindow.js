@@ -117,7 +117,6 @@
 	{
 		var contentForm = this.getElementById(this.id+"_content");	
 		contentForm.style.zIndex = this.zIndex + 1;
-		element.style.zIndex + 20;
 		element.addElement(false, contentForm);
 	};	
 

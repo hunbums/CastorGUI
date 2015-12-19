@@ -1,10 +1,20 @@
 - Version 1.5:
 
 	- New functionnality:
-		- Add class GUIColor with documentation
+		- Added class GUIColor (commpatible IE and Edge also)
+		- Added setChecked() and isChecked() for GUIRadio and GUICheckbox
+		- Added theme for GUIManager
+		- Added group for GUIRadio (option name)
+		- Added getNumber() for GUISpinner
+		
 	- Bugs:
-		- fix step for GUISpinner and GUISlider
+		- Fixe step for GUISpinner and GUISlider
+		- Fixe for the element in the window no moves the window when selecting an input or text
+		- Fix for GUIPanel with append false
+		
 	- Update:
+		- Update doc.
+		- Drad and drop window compatible IPhone, Ipad... (event touch)
 		
 - Version 1.4:
 
@@ -28,6 +38,7 @@
 		- rename className by classe for the options GUI.
 		- Update doc.
 		- Update demo.
+		
 - Version 1.3:
 
 	- New functionnality:

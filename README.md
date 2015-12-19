@@ -1,4 +1,4 @@
-# CastorGUI V1.4
+# CastorGUI V1.5
 
 Library to display a GUI game as a layer on top of the canvas HTML/CSS. This library has been created for [CastorEngine](http://www.castorengine.com/), the editor of game and as extention for [BabylonJS](http://www.babylonjs.com/), the game engine 3d.
 
@@ -9,6 +9,7 @@ Library to display a GUI game as a layer on top of the canvas HTML/CSS. This lib
 
 ## Features:
 
+Select or create themes.
 Create GUI (element html5 and css3):
 * texture
 * text
@@ -37,7 +38,8 @@ A GUIManager can have a CSS that Formatted anything you want to customize your G
 ```javascript
 var canvas = document.getElementById("game");
 var css = "button {cursor:pointer;}";
-var guisystem = new CASTORGUI.GUIManager(canvas, css);
+var options = {themeRoot: "../style/", themeGUI: "default"};
+var guisystem = new CASTORGUI.GUIManager(canvas, css, options);
 ```
 Then we create interfaces items. eg textures and dialog with text:
 
