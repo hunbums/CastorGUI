@@ -47,8 +47,9 @@
 		color.name = this.id;	
 		color.style.zIndex = this.zIndex;		
 		color.onchange = this.onchangeColor;
-		
-		
+		if((navigator.userAgent.indexOf("MSIE") != -1 ) || (navigator.appName == "Netscape") || (!!document.documentMode == true ) || navigator.appVersion.indexOf('Edge')> -1 || (navigator.appVersion.indexOf('Trident') == -1)) {
+			window.nativeColorGUI.init(this.id);
+		}
 		if(append == true) {
 			this.html.appendChild(color);
 		} else {
