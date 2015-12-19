@@ -1,7 +1,9 @@
 ##new [GUIColor](#)(id, options, guimanager, callback, append)
+
 Creates a new GUIColor
 
 ####Parameters
+
 Name | Type | Description
 ---|---|---
 **id** | string | The id and name element
@@ -24,8 +26,8 @@ Name | Type | Description
 
 ##Methods
 
-###getColor() → void
-Get the color value of element
+###getColor(bool: rgb, bool: hex) → void
+Get the color value of element in rgb (default) or hex
 
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
