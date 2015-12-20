@@ -18,13 +18,13 @@
 		this.max = options.max || 100;
 		this.value = options.value || 0;
 		this.border =  options.border || 0;
-		this.background = options.background || "rgba(0, 0, 0, 0.2)";
+		this.background = options.background || "rgba(0, 0, 0, 0.5)";
 		this.backgroundValue = options.backgroundValue || "#0f4fff";
 		this.borderRadius = options.borderRadius || (options.h / 2)+"px";
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.progressVisible = true;
-		this.onchangeProgress = callback || false;
+		this.onchangeProgress = callback || "";
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {

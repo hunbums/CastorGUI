@@ -15,7 +15,7 @@
 		this.dialogPosition = {x:options.x, y:options.y};
 		this.overflow = options.overflow || "auto";
 		this.borderDialog = options.border || "2px solid black";
-		this.colorDialog = options.backgroundColor || "rgba(0,0,0,0.5)";
+		this.colorDialog = options.backgroundColor || "rgba(0, 0, 0, 0.5)";
 		this.imageDialog = options.backgroundImage || "";
 		this.buttonDialog = options.closeDialog || "true";
 		this.imageButtonDialog = options.imageButtonDialog || "false";

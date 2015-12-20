@@ -15,7 +15,7 @@
 		this.meterPosition = {x:options.x, y:options.y};
 		this.meterSize = {width:options.w, height:options.h};	 
 		this.border =  options.border || 0;
-		this.background = options.background || "rgba(0, 0, 0, 0.2)";
+		this.background = options.background || "rgba(0, 0, 0, 0.5)";
 		this.backgroundValue = options.backgroundValue || "#1e9100";
 		this.min = options.min || 0;
 		this.max = options.max || 100;
@@ -23,7 +23,7 @@
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.meterVisible = true;
-		this.onchangeMeter = callback || false;
+		this.onchangeMeter = callback || "";
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {

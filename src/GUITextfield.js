@@ -14,13 +14,13 @@
 		this.textfieldPosition = {x:options.x, y:options.y};
 		this.textfieldSize = {width:options.w, height:options.h};
 		this.value = options.value || "";
-		this.background = options.background || "green";
+		this.background = options.background || "rgba(0, 0, 0, 0.5)";
 		this.border	= options.border || "1px solid black";
 		this.color = options.color || "black";
 		this.placeholder = options.placeholder || "";
 		this.zIndex = options.zIndex || 2;
 		this.textfieldVisible = true;
-		this.onchangeTextfield = callback || false;
+		this.onchangeTextfield = callback || "";
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {

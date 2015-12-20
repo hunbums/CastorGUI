@@ -15,11 +15,11 @@
 		this.textareaSize = {width:options.w, height:options.h};
 		this.value = options.value || "";
 		this.placeholder = options.placeholder || "";
-		this.background = options.background || "white";		
+		this.background = options.background || "rgba(0, 0, 0, 0.5)";		
 		this.color = options.color || "black";
 		this.zIndex = options.zIndex || 2;
 		this.textareaVisible = true;
-		this.onchangeTextarea = callback || false;
+		this.onchangeTextarea = callback || "";
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {

@@ -12,12 +12,11 @@
 		this.class = options.class || "GUIColor";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.colorPosition = {x:options.x, y:options.y};
-		this.colorSize = {width:options.w, height:options.h};			
-		
+		this.colorSize = {width:options.w, height:options.h};	
 		this.value = options.value || "#e30000";
 		this.zIndex = options.zIndex || 1;
 		this.colorVisible = true;
-		this.onchangeColor = callback || false;
+		this.onchangeColor = callback || "";
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {

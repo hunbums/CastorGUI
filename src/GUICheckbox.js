@@ -15,7 +15,7 @@
 		this.checkboxSize = options.size || 1.0;
 		this.zIndex = options.zIndex || 1.0;
 		this.checkboxVisible = true;
-		this.onClickCheckbox = callback || false;
+		this.onClickCheckbox = callback || "";
 		this.tabindex = options.tabindex || 0;
 		
 		if(append == true) {
