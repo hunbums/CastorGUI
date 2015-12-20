@@ -6,7 +6,7 @@ var objectCreate = function(proto) { //Alternative aux anciens navigateurs qui n
 	construct.prototype = proto;
 	return new construct();
 };
-var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de classA (parent)
+var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de classNameA (parent)
 	ChildClass.prototype = Object.create(ParentClass.prototype) || objectCreate(ParentClass.prototype);
 	ChildClass.prototype.constructor = ChildClass;
 };

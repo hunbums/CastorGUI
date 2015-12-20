@@ -23,7 +23,7 @@ Name | Type | Description
 * **value**: Current value of the slider =&gt; 50 by default (optional)
 * **orient**: orientation of the slider =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **class**: css class to customize the element. By default is GUISlider
+* **className**: css className to customize the element. By default is GUISlider
 * **tabindex**: Tab order of the field.
 
 ##Methods

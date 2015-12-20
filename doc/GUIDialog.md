@@ -25,7 +25,7 @@ Name | Type | Description
 * **radius**: radius border of dialog (int)  =&gt; 8 by default
 * **border**: border of button (string)  =&gt; "2px solid black" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **class**: css class to customize the element. By default is GUIDialog
+* **className**: css className to customize the element. By default is GUIDialog
 * **overflow**: overflow auto or hidden (auto by default)
 
 ##Methods

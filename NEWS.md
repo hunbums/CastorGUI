@@ -15,6 +15,7 @@
 	- Update:
 		- Update doc.
 		- Drad and drop window compatible IPhone, Ipad... (event touch)
+		- rename class by className for the options GUI.
 		
 - Version 1.4:
 
@@ -35,7 +36,6 @@
 	- Update:
 		- Change callback: event onInput in GUISlider and GUIspinner
 		- Change to the text position in a container window and improvement of container
-		- rename className by classe for the options GUI.
 		- Update doc.
 		- Update demo.
 		

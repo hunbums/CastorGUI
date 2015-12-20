@@ -26,7 +26,7 @@ Name | Type | Description
 * **value**: current value of the meter =&gt; 0 by default (optional)
 * **orient**: orientation of the meter =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **class**: css class to customize the element. By default is GUIMeter
+* **className**: css className to customize the element. By default is GUIMeter
 * **tabindex**: Tab order of the field.
 
 ##Methods

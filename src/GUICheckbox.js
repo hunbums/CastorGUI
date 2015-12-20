@@ -9,7 +9,7 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.class = options.class || "GUICheckbox";
+		this.className  = options.className  || "GUICheckbox";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.checkboxPosition = {x:options.x, y:options.y};
 		this.checkboxSize = options.size || 1.0;
@@ -42,7 +42,7 @@
 		checkbox.style.margin = "0px";
 		checkbox.id = this.id;	
 		checkbox.name = this.id;		
-		checkbox.class = this.class;
+		checkbox.className  = this.className;
 		checkbox.tabindex = this.tabindex;
 		checkbox.style.zIndex = this.zIndex;
 		checkbox.onclick = this.onClickCheckbox;
