@@ -18,8 +18,8 @@
 		this.max = options.max || 100;
 		this.value = options.value || 0;
 		this.border =  options.border || 0;
-		this.background = options.background || "rgba(0, 0, 0, 0.5)";
-		this.backgroundValue = options.backgroundValue || "#0f4fff";
+		this.background = options.background || null;
+		this.backgroundValue = options.backgroundValue || null;
 		this.borderRadius = options.borderRadius || (options.h / 2)+"px";
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"

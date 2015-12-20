@@ -15,8 +15,8 @@
 		this.textareaSize = {width:options.w, height:options.h};
 		this.value = options.value || "";
 		this.placeholder = options.placeholder || "";
-		this.background = options.background || "rgba(0, 0, 0, 0.5)";		
-		this.color = options.color || "black";
+		this.background = options.background || null;		
+		this.color = options.color || null;
 		this.zIndex = options.zIndex || 2;
 		this.textareaVisible = true;
 		this.onchangeTextarea = callback || "";

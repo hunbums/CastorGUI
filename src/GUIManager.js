@@ -21,8 +21,8 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.GUIstyle = null;
 		this.GUItheme = null;
 		if(options) {
-			this.themeRoot = options.themeRoot;
-			this.theme = options.themeGUI;
+			this.themeRoot = options.themeRoot || "/";
+			this.theme = options.themeGUI || "default";
 		} else {
 			this.themeRoot = "/";
 			this.theme = "default";
@@ -61,19 +61,17 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		}
 		this.head.appendChild(this.GUIstyle);	
 
-		//Theme	
-		if(theme != "default") {
-			if(this.GUItheme) {
-				this.head.removeChild(this.getElementById("themeGUI"));
-			}
-			this.GUItheme = document.createElement('link');
-			this.GUItheme.type = 'text/css';
-			this.GUItheme.rel = 'stylesheet';
-			this.GUItheme.media = 'screen';
-			this.GUItheme.id = "themeGUI";
-			this.GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";		
-			this.head.appendChild(this.GUItheme);
+		//Theme			
+		if(this.GUItheme) {
+			this.head.removeChild(this.getElementById("themeGUI"));
 		}
+		this.GUItheme = document.createElement('link');
+		this.GUItheme.type = 'text/css';
+		this.GUItheme.rel = 'stylesheet';
+		this.GUItheme.media = 'screen';
+		this.GUItheme.id = "themeGUI";
+		this.GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";		
+		this.head.appendChild(this.GUItheme);		
 	};
 	
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {

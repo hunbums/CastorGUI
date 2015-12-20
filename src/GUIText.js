@@ -14,12 +14,12 @@
 		this.html = document.body || document.getElementsByTagName('body')[0];						
 		this.textPosition = {x:options.x, y:options.y};
 		this.textSize = options.size || 30;	
-		this.color = options.color || "white";
-		this.police = options.police || "Segoe UI";
+		this.color = options.color || null;
+		this.police = options.police || null;
 		this.texte = options.text || "CastorGUI";
 		this.zIndex = options.zIndex || 1;
-		this.bold = options.bold || ""; // bold
-		this.italic = options.italic || ""; //italic
+		this.bold = options.bold || null; // bold
+		this.italic = options.italic || null; //italic
 		this.position = options.position || "absolute";		
 		this.centerVertical = options.centerVertical || false;
 		this.centerHorizontal = options.centerHorizontal || false;
@@ -115,10 +115,10 @@
 		tag.style.left = "-999em";
 		tag.style.display = "block";
 		tag.style.whiteSpace = "nowrap";
-		tag.style.font = font || "30px Segoe UI";
+		tag.style.font = font || this.textSize+"px "+this.police;
 		tag.innerHTML = texte;
 		document.body.appendChild(tag);		
-		var result = {w:tag.clientWidth,h:tag.clientHeight};
+		var result = {w:tag.clientWidth+10,h:tag.clientHeight};
 		document.body.removeChild(tag);
 		return result;
 	};

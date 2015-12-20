@@ -15,8 +15,8 @@
 		this.meterPosition = {x:options.x, y:options.y};
 		this.meterSize = {width:options.w, height:options.h};	 
 		this.border =  options.border || 0;
-		this.background = options.background || "rgba(0, 0, 0, 0.5)";
-		this.backgroundValue = options.backgroundValue || "#1e9100";
+		this.background = options.background || null;
+		this.backgroundValue = options.backgroundValue || null;
 		this.min = options.min || 0;
 		this.max = options.max || 100;
 		this.value = options.value || 0;

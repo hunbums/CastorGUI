@@ -1,40 +1,96 @@
 input
 {
-	
+	background-color:rgba(40, 40, 40, 0.6);
+	color:white;
+	border: 1px solid green;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	font-family: Segoe UI;
 }
 div
 {
-	
+	background-color:rgba(40, 40, 40, 0.6);
+	color:white;	
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	font-family: Segoe UI;
 }
 button
 {
-	
+	background-color:rgba(40, 40, 40, 0.6);
+	color:white;
+	border: 1px solid green;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	font-family: Segoe UI;
 }
 textarea
 {
-	
+	background-color:rgba(40, 40, 40, 0.6);
+	color:white;
+	border: 1px solid green;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	font-family: Segoe UI;
 }
-img
+a img
 {
-	
+	border: none;
 }
 select
 {
-	
+	background-color:rgba(40, 40, 40, 0.6);
+	color:white;
+	border: 1px solid green;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	font-family: Segoe UI;
 }
 fieldset
 {
-	
+	background-color:rgba(40, 40, 40, 0.6);
+	color:white;
+	border: 1px solid green;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	padding:10px;
+	font-family: Segoe UI;
 }
 legend
 {
-	
+	margin-bottom:0px;
+	margin-left:16px;
+	color:white;
+	font-weight: bold;	
+}
+meter::-webkit-meter-bar
+{
+	background-color: "red";
 }
 meter
 {
-	
+	background-color: #eee;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
-progress
+progress::-webkit-progress-value
 {
-	
+	background-color: "green";	
+}
+progress::-webkit-progress-bar, progress::-moz-progress-bar, progress
+{	
+	border: 1px solid black;
+	background-color: #eee;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }

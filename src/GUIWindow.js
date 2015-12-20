@@ -11,21 +11,20 @@
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.windowPosition = {x:options.x, y:options.y};
 		this.windowSize = {width:options.w, height:options.h};			
-		this.colorWindow = options.bakgroundColor || "rgba(0, 0, 0, 0.5)";
-		this.imageWindow = options.bakgroundImage || "";
-		this.colorContent = options.colorContent || "rgba(0, 0, 0, 0.1)";
+		this.colorWindow = options.bakgroundColor || null;
+		this.imageWindow = options.bakgroundImage || null;
+		this.colorContent = options.colorContent || null;
 		this.imageContent = options.imageContent;
 		this.buttonClose = typeof options.closeButton;	
 		this.overflow = options.overflow || "auto";
-		this.borderWindow = options.borderWindow || "2px solid black";
-		this.borderTitle = options.borderTitle || "1px solid black";
+		this.borderWindow = options.borderWindow || "rgb(0, 0, 0)";
+		this.borderTitle = options.borderTitle || null;
 		this.radiusWindow = options.radiusWindow || 8;		
 		this.colorTitle = options.colorTitle || "rgba(0, 0, 0, 0.5)";		
-		this.imageTitle = options.imageTitle || "";		
-		this.heightTitle = options.heightTitle || 30;		
+		this.imageTitle = options.imageTitle || null;	
 		this.textAlign = options.titleTextAlign || "center";	
-		this.colorTextTitle = options.titleColor || "white";		
-		this.title = options.textTitle || "Title window";	
+		this.colorTextTitle = options.titleColor || null;		
+		this.title = options.textTitle || "Title";	
 		if(options.draggable == true || options.draggable == undefined) {
 			this.draggable = true;		
 		} else {
@@ -59,7 +58,7 @@
 				
 		var titreWindow = document.createElement("div");	
 		titreWindow.style.width = this.windowSize.width+"px";		
-		titreWindow.style.height = this.heightTitle+"px";	
+		titreWindow.style.height = "30px";	
 		titreWindow.style.textAlign = this.textAlign;		
 		titreWindow.style.borderRadius = "8px";
 		titreWindow.id = this.id+"_titre";		
@@ -97,7 +96,8 @@
 		contentWindow.style.height = this.windowSize.height - 38 +"px";
 		contentWindow.style.overflow = this.overflow;
 		contentWindow.style.wordBreak = "keep-all";
-		contentWindow.style.marginTop = "5px";
+		contentWindow.style.marginTop = "0px";
+		contentWindow.style.paddingTop = "5px";
 		contentWindow.style.borderRadius = "8px";			
 		contentWindow.style.background = this.colorContent;
 		contentWindow.style.backgroundImage = this.imageContent;

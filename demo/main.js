@@ -8,7 +8,7 @@ var createGUI = function()
 
 	// GUI manager
 	var css = "button{cursor:pointer;}";
-	guisystem = new CASTORGUI.GUIManager(canvas, css);
+	guisystem = new CASTORGUI.GUIManager(canvas, css, {themeRoot: "../dist/"});
 
 	// GUI life
 	var guiTextureLife_0 = new CASTORGUI.GUITexture("life0", "data/coeur.png", {w:50,h:50,x:10,y:0}, guisystem, null);

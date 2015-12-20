@@ -17,8 +17,8 @@
 		this.overflow = options.overflow || "auto";
 		this.borderRadiusDiv = options.borderRadiusPanel || "10px";
 		this.imageDiv = options.backgroundImage || null;
-		this.colorDiv = options.backgroundColor || "black";
-		this.borderDiv = options.borderPanel || "2px solid black";
+		this.colorDiv = options.backgroundColor || null;
+		this.borderDiv = options.borderPanel || null;
 		this.position = options.position || "absolute";	
 		this.zIndex = options.zIndex || 1;
 		
