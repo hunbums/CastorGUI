@@ -17,10 +17,10 @@
 		this.buttonVisible = true;
 		this.onClickButton = callback || false;		
 		this.imageButton = options.backgroundImage || null;
-		this.colorButton = options.backgroundColor || "rgba(0.5, 0.5, 0.5, 0.6)";		
+		this.colorButton = options.backgroundColor || "rgba(128, 128, 128, 0.6)";		
 		this.borderRadiusButton = options.borderRadiusButton || "10px";
 		this.borderButton = options.borderButton || "2px solid black";
-		this.colorText = options.colorText || "black";
+		this.colorText = options.colorText || "white";
 		this.zIndex = options.zIndex || 1;
 		this.tabindex = options.tabindex || 0;
 		
