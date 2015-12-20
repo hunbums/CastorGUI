@@ -9,7 +9,7 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.class = options.class || "GUIMeter";
+		this.className  = options.className  || "GUIMeter";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.divPosition = {x:options.x, y:options.y};
 		this.divSize = {width:options.w, height:options.h};
@@ -52,7 +52,7 @@
 		}		
 		div.id = this.id;	
 		div.name = this.id;
-		div.class = this.class;		
+		div.className  = this.className;		
 		div.style.position = this.position;
 		div.style.overflow = this.overflow;
 		div.style.zIndex = this.zIndex;			

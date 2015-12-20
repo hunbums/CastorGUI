@@ -7,20 +7,20 @@
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 		
 		this.id = id;	
-		this.class = options.class || "GUIWindow";
+		this.className  = "GUIWindow";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.windowPosition = {x:options.x, y:options.y};
-		this.windowSize = {width:options.w, height:options.h};			
+		this.windowSize = {width:options.w, height:options.h};
 		this.colorWindow = options.bakgroundColor || null;
 		this.imageWindow = options.bakgroundImage || null;
 		this.colorContent = options.colorContent || null;
 		this.imageContent = options.imageContent;
 		this.buttonClose = typeof options.closeButton;	
 		this.overflow = options.overflow || "auto";
-		this.borderWindow = options.borderWindow || "rgb(0, 0, 0)";
+		this.borderWindow = options.borderWindow || null;
 		this.borderTitle = options.borderTitle || null;
 		this.radiusWindow = options.radiusWindow || 8;		
-		this.colorTitle = options.colorTitle || "rgba(0, 0, 0, 0.5)";		
+		this.colorTitle = options.colorTitle || "rgba(0, 0, 0, 0.4)";		
 		this.imageTitle = options.imageTitle || null;	
 		this.textAlign = options.titleTextAlign || "center";	
 		this.colorTextTitle = options.titleColor || null;		
@@ -47,7 +47,7 @@
 		window.style.left = (this.windowPosition.x + this.getCanvasOrigine().left)+"px";
 		window.id = this.id;	
 		window.name = this.id;
-		window.class = this.class;
+		window.className  = this.className;
 		window.style.zIndex = this.zIndex || 0;
 		window.style.background = this.colorWindow;
 		window.style.borderRadius = this.radiusWindow+"px";
@@ -56,15 +56,16 @@
 		window.style.wordWrap = "break-word";
 		window.style.display = "none";	
 				
-		var titreWindow = document.createElement("div");	
+		var titreWindow = document.createElement("div");
+		titreWindow.className  = "titleWindoWGUI";
 		titreWindow.style.width = this.windowSize.width+"px";		
 		titreWindow.style.height = "30px";	
 		titreWindow.style.textAlign = this.textAlign;		
-		titreWindow.style.borderRadius = "8px";
+		titreWindow.style.borderRadius = this.radiusWindow+"px "+this.radiusWindow+"px 0 0";
 		titreWindow.id = this.id+"_titre";		
 		titreWindow.style.background = this.colorTitle;
 		titreWindow.style.backgroundImage = this.imageTitle;
-		titreWindow.style.border = this.borderTitle;
+		titreWindow.style.borderBottom = this.borderTitle;
 		if(this.draggable == true) {
 			titreWindow.ondragstart = CASTORGUI.draggable(window, titreWindow);		
 			titreWindow.style.cursor = "move";
@@ -81,7 +82,6 @@
 			close.id = this.id+"_button";
 			close.style.position = "absolute";
 			close.style.borderRadius = "12px";
-			close.style.border = "none";
 			close.style.left = this.windowSize.width - 12+"px";		
 			close.style.marginTop = "-12px";
 			close.style.width = "24px";

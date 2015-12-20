@@ -10,7 +10,7 @@
 		
 		this.meter = null
 		this.id = id;	
-		this.class = options.class || "GUIMeter";
+		this.className  = options.className  || "GUIMeter";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.meterPosition = {x:options.x, y:options.y};
 		this.meterSize = {width:options.w, height:options.h};	 
@@ -50,7 +50,7 @@
 		this.meter.style.position = "absolute";
 		this.meter.id = this.id;	
 		this.meter.name = this.id;	
-		this.meter.class = this.class;
+		this.meter.className  = this.className;
 		this.meter.tabindex = this.tabindex;
 		this.meter.style.zIndex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {

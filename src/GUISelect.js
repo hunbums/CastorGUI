@@ -9,7 +9,7 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.class = options.class || "GUISelect";
+		this.className  = options.className  || "GUISelect";
 		this.html = document.body || document.getElementsByTagName('body')[0];	
 		this.selectPosition = {x:options.x, y:options.y};
 		this.selectSize = {width:options.w, height:options.h};
@@ -39,7 +39,7 @@
 		select.style.position = "absolute";
 		select.id = this.id;	
 		select.name = this.id;
-		select.class = this.class;
+		select.className  = this.className;
 		select.tabindex = this.tabindex;
 		select.style.zIndex = this.zIndex;
 		select.onchange = this.onchangeSelectoptions;	

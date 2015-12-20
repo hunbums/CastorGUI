@@ -21,7 +21,7 @@ Name | Type | Description
 * **y**: position top of slider (in pixel)
 * **value**: Current value of the slider =&gt; "red" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **class**: css class to customize the element. By default is GUIColor
+* **className**: css className to customize the element. By default is GUIColor
 * **tabindex**: Tab order of the field.
 
 ##Methods

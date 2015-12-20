@@ -2,7 +2,7 @@ input
 {
 	background-color:rgba(40, 40, 40, 0.6);
 	color:white;
-	border: 1px solid green;
+	border: 3px solid white;
 	-moz-border-radius:8px;
     -webkit-border-radius:8px;	
     border-radius:8px;
@@ -17,11 +17,19 @@ div
     border-radius:8px;
 	font-family: Segoe UI;
 }
+div.GUIWindow
+{
+	border: 3px solid white;
+}
+div.titleWindoWGUI
+{
+	border-bottom: 3px solid white;
+}
 button
 {
 	background-color:rgba(40, 40, 40, 0.6);
 	color:white;
-	border: 1px solid green;
+	border: 3px solid white;
 	-moz-border-radius:8px;
     -webkit-border-radius:8px;	
     border-radius:8px;
@@ -31,7 +39,7 @@ textarea
 {
 	background-color:rgba(40, 40, 40, 0.6);
 	color:white;
-	border: 1px solid green;
+	border: 3px solid white;
 	-moz-border-radius:8px;
     -webkit-border-radius:8px;	
     border-radius:8px;
@@ -45,7 +53,7 @@ select
 {
 	background-color:rgba(40, 40, 40, 0.6);
 	color:white;
-	border: 1px solid green;
+	border: 3px solid white;
 	-moz-border-radius:8px;
     -webkit-border-radius:8px;	
     border-radius:8px;
@@ -55,7 +63,7 @@ fieldset
 {
 	background-color:rgba(40, 40, 40, 0.6);
 	color:white;
-	border: 1px solid green;
+	border: 3px solid white;
 	-moz-border-radius:8px;
     -webkit-border-radius:8px;	
     border-radius:8px;
@@ -71,7 +79,7 @@ legend
 }
 meter::-webkit-meter-bar
 {
-	background-color: "red";
+	background-color: #26a0da;
 }
 meter
 {
@@ -83,7 +91,7 @@ meter
 }
 progress::-webkit-progress-value
 {
-	background-color: "green";	
+	background-color: #007e11;	
 }
 progress::-webkit-progress-bar, progress::-moz-progress-bar, progress
 {	
