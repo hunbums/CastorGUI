@@ -81,11 +81,11 @@
 			close.id = this.id+"_button";
 			close.style.position = "absolute";
 			close.style.borderRadius = "12px";
-			close.style.border = "2px solid black";
+			close.style.border = "none";
 			close.style.left = this.windowSize.width - 12+"px";		
 			close.style.marginTop = "-12px";
-			close.style.width = "25px";
-			close.style.height = "25px";
+			close.style.width = "24px";
+			close.style.height = "24px";
 			close.style.zIndex = 10000;
 			close.onclick = function () { that.getElementById(that.id).style.display = "none"; that.windowVisible = false; };		
 		}

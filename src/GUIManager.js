@@ -21,10 +21,10 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.GUIstyle = null;
 		this.GUItheme = null;
 		if(options) {
-			this.themeRoot = options.themeRoot || "/";
+			this.themeRoot = options.themeRoot || "";
 			this.theme = options.themeGUI || "default";
 		} else {
-			this.themeRoot = "/";
+			this.themeRoot = "";
 			this.theme = "default";
 		}
 		this.head = document.head || document.getElementsByTagName('head')[0] || null;
