@@ -8,9 +8,10 @@
 		- Added getNumber() for GUISpinner
 		
 	- Bugs:
-		- Fixe step for GUISpinner and GUISlider
-		- Fixe for the element in the window no moves the window when selecting an input or text
-		- Fix for GUIPanel with append false
+		- Fixed step for GUISpinner and GUISlider
+		- Fixed for the element in the window no moves the window when selecting an input or text
+		- Fixed for GUIPanel with append false
+		- Fixed GUISelect when added in a window (with append false)
 		
 	- Update:
 		- Update doc.
@@ -29,10 +30,10 @@
 		- Added option overflow for GUIPanel, GUIWindow and GUIDialog.
 		- Added option inline for GUIText for support back to the line of text
 	- Bugs:
-		- Fix the bad position of checkbox resize
-		- Fix for GUISelect and addOptions
-		- Fix resize the button radio and checkbox
-		- Fix GUIPanel with append false
+		- Fixed the bad position of checkbox resize
+		- Fixed for GUISelect and addOptions
+		- Fixed resize the button radio and checkbox
+		- Fixed GUIPanel with append false
 	- Update:
 		- Change callback: event onInput in GUISlider and GUIspinner
 		- Change to the text position in a container window and improvement of container

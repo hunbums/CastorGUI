@@ -17,15 +17,18 @@
 		this.selectVisible = true;
 		this.onchangeSelectoptions = callback || false;
 		this.tabindex = options.tabindex || 0;
+		this.optionsListe = [];
+		this.append = append;
 		
-		if(append == true) {
-			this.addElement(append);
+		if(this.append == true) {
+			this.addElement(this.append);
 		}
 	};
 
 	Extends(CASTORGUI.GUISelect, CASTORGUI.GUIManager);
 	
 	CASTORGUI.GUISelect.prototype.addElement = function(append, element)  {
+		var that = this;
 		var select = document.createElement("select");
 		select.style.width = this.selectSize.width+"px";
 		select.style.height = this.selectSize.height+"px";	
@@ -45,9 +48,12 @@
 		select.onchange = this.onchangeSelectoptions;	
 				
 		if(append == true) {
-			this.html.appendChild(select);	
+			this.html.appendChild(select);			
 		} else {
 			element.appendChild(select);
+			this.optionsListe.forEach(function(options) {
+				that.getElementById(that.id).appendChild(options);
+			});
 		}
 		
 		this.addGuiElements(select);
@@ -56,8 +62,12 @@
 	CASTORGUI.GUISelect.prototype.addOptions = function(value, text) {
 		var options = document.createElement("option");
 		options.value = value;
-		options.innerHTML = text;		
-		this.getElementById(this.id).appendChild(options);
+		options.innerHTML = text;	
+		if(this.append == false) {
+			this.optionsListe.push(options);
+		} else{
+			this.getElementById(this.id).appendChild(options);
+		}
 	};
 
 	CASTORGUI.GUISelect.prototype.dispose = function() {
