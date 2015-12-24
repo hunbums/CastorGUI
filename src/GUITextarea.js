@@ -9,7 +9,6 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;
-		this.className  = options.className  || "GUITextarea";
 		this.html = document.body || document.getElementsByTagName('body')[0];	
 		this.textareaPosition = {x:options.x, y:options.y};
 		this.textareaSize = {width:options.w, height:options.h};
@@ -45,7 +44,7 @@
 		textarea.placeholder = this.placeholder;
 		textarea.id = this.id;	
 		textarea.name = this.id;
-		textarea.className  = this.className;
+		textarea.className = "GUITextarea";
 		textarea.tabindex = this.tabindex;
 		textarea.innerHTML = this.value;
 		textarea.style.zIndex = this.zIndex;

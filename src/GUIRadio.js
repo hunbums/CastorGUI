@@ -10,7 +10,6 @@
 		
 		this.id = id;
 		this.name = options.name || "NameRadio"+id;
-		this.className  = options.className  || "GUIRadio";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.radioPosition = {x:options.x, y:options.y};
 		this.radioSize = options.size || 1.0;
@@ -43,7 +42,7 @@
 		radio.style.margin = "0px";		
 		radio.id = this.id;	
 		radio.tabindex = this.tabindex;
-		radio.className  = this.className;
+		radio.className = "GUIRadio";
 		radio.name = this.name;
 		radio.style.zIndex = this.zIndex;
 		radio.onclick = this.onClickRadio;

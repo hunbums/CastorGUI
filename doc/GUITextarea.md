@@ -20,7 +20,6 @@ Name | Type | Description
 * **background**: background of textarea (int) =&gt; "white" by default (optional)
 * **color**: color the textarea (string) =&gt; "black" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css className to customize the element. By default is GUITextarea
 * **tabindex**: Tab order of the field.
 
 ##Methods

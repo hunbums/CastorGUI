@@ -9,7 +9,6 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.className  = options.className  || "GUISlider";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.sliderPosition = {x:options.x, y:options.y};
 		this.sliderSize = {width:options.w, height:options.h};	
@@ -37,7 +36,7 @@
 		slider.max= this.max;
 		slider.value= this.value;
 		slider.step = this.step;
-		slider.className  = this.className;
+		slider.className = "GUISlider";
 		slider.tabindex = this.tabindex;
 		slider.style.width = this.sliderSize.width+"px";
 		slider.style.height = this.sliderSize.height+"px";	

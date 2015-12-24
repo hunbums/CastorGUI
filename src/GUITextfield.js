@@ -9,7 +9,6 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.className  = options.className  || "GUITextfield";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.textfieldPosition = {x:options.x, y:options.y};
 		this.textfieldSize = {width:options.w, height:options.h};
@@ -46,7 +45,7 @@
 		textfield.style.display = "block";
 		textfield.id = this.id;	
 		textfield.name = this.id;
-		textfield.className  = this.className;
+		textfield.className = "GUITextfield";
 		textfield.tabindex = this.tabindex;
 		textfield.value = this.value;
 		textfield.placeholder = this.placeholder;

@@ -9,7 +9,6 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;
-		this.className  = options.className  || "GUITexture";
 		this.imageUrl = imageUrl;
 		this.textureClicked = callback || false;
 		this.imageSize = {width:options.w, height:options.h};				
@@ -41,7 +40,7 @@
 		img.style.zIndex = this.zIndex;
 		img.id = this.id;	
 		img.name = this.id;
-		img.className  = this.className;		
+		img.className = "GUITexture";		
 		if(this.textureClicked) {
 			var that = this;
 			img.addEventListener('click', that.textureClicked, false);

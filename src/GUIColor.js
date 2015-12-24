@@ -9,7 +9,6 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.className  = options.className  || "GUIColor";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.colorPosition = {x:options.x, y:options.y};
 		this.colorSize = {width:options.w, height:options.h};	
@@ -30,7 +29,7 @@
 		var color = document.createElement("input");
 		color.type= "color";		
 		color.value = this.value;
-		color.className  = this.className;
+		color.className = "GUIColor";
 		color.tabindex = this.tabindex;
 		color.style.width = this.colorSize.width+"px";
 		color.style.height = this.colorSize.height+"px";	

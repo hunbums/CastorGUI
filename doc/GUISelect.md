@@ -18,7 +18,6 @@ Name | Type | Description
 * **x**: position left of select (in pixel)
 * **y**: position top of select (in pixel)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css className to customize the element. By default is GUISelect
 * **tabindex**: Tab order of the field.
 
 ##Methods

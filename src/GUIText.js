@@ -10,7 +10,6 @@
 		if(append == null || append == undefined) { this.append = true; }
 		
 		this.id = id;
-		this.className  = options.className  || "GUIText";
 		this.html = document.body || document.getElementsByTagName('body')[0];						
 		this.textPosition = {x:options.x, y:options.y};
 		this.textSize = options.size || 30;	
@@ -60,7 +59,7 @@
 		this.textElement.innerHTML = this.texte;
 		this.textElement.id = this.id;	
 		this.textElement.name = this.id;
-		this.textElement.className  = this.className;
+		this.textElement.className = "GUIText";
 		this.textElement.style.zIndex = this.zIndex;
 		
 		if(append == true) {

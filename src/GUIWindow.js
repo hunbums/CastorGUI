@@ -7,7 +7,6 @@
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 		
 		this.id = id;	
-		this.className  = "GUIWindow";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.windowPosition = {x:options.x, y:options.y};
 		this.windowSize = {width:options.w, height:options.h};
@@ -47,7 +46,7 @@
 		window.style.left = (this.windowPosition.x + this.getCanvasOrigine().left)+"px";
 		window.id = this.id;	
 		window.name = this.id;
-		window.className  = this.className;
+		window.className = "GUIWindow";
 		window.style.zIndex = this.zIndex || 0;
 		window.style.background = this.colorWindow;
 		window.style.borderRadius = this.radiusWindow+"px";

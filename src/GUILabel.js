@@ -9,7 +9,6 @@
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;
-		this.className  = options.className  || "GUILabel";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.labelPosition = {x:options.x, y:options.y};
 		this.labelSize = {width:options.w, height:options.h};
@@ -36,7 +35,7 @@
 		label.style.position = "absolute";
 		label.id = this.id;	
 		label.name = this.id;
-		label.className  = this.className;
+		label.className = "GUILabel";
 		label.innerHTML = this.textLabel;
 		label.style.zIndex = this.zIndex;
 		

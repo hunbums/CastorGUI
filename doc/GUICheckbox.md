@@ -17,7 +17,6 @@ Name | Type | Description
 * **y**: position top of checkbox (in pixel)
 * **size**: size of checkbox (float) =&gt; "1.0" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css className to customize the element. By default is GUICheckbox
 * **tabindex**: Tab order of the field.
 
 ##Methods

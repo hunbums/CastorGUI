@@ -3,7 +3,7 @@
 	- New functionnality:
 		- Added class GUIColor (commpatible IE and Edge also)
 		- Added setChecked() and isChecked() for GUIRadio and GUICheckbox
-		- Added theme for GUIManager
+		- Added theme for GUIManager for all elements (with css)
 		- Added group for GUIRadio (option name)
 		- Added getNumber() for GUISpinner
 		

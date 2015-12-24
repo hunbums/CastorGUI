@@ -18,7 +18,6 @@ Name | Type | Description
 * **y**: Position top of radio button (in pixel)
 * **size**: Size of radio button (float) =&gt; "1.0" by default
 * **zIndex**: Depth of the element (int) =&gt; 1 by default
-* **className**: Css className to customize the element. By default is GUIRadio
 * **tabindex**: Tab order of the field.
 
 ##Methods
