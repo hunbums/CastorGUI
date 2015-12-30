@@ -1,17 +1,17 @@
 ﻿var CASTORGUI = CASTORGUI || {};
 
 (function() {
-   
+
 	CASTORGUI.GUISpinner = function (id, options, guimanager, callback, append) {
-    
+
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
-		
+
 		if(append == null || append == undefined) { append = true; }
-		
-		this.id = id;	
+
+		this.id = id;
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.numberPosition = {x:options.x, y:options.y};
-		this.numberSize = {width:options.w, height:options.h};	
+		this.numberSize = {width:options.w, height:options.h};
 		this.min = options.min || 0;
 		this.max = options.max || 100;
 		this.step = options.step || 1;
@@ -21,14 +21,14 @@
 		this.numberVisible = true;
 		this.onchangeNumber = callback || false;
 		this.tabindex = options.tabindex || 0;
-		
+
 		if(append == true) {
 			this.addElement(append);
-		}	
+		}
 	};
 
 	Extends(CASTORGUI.GUISpinner, CASTORGUI.GUIManager);
-	
+
 	CASTORGUI.GUISpinner.prototype.addElement = function(append, element)  {
 		var number = document.createElement("input");
 		number.type= "number";
@@ -37,8 +37,8 @@
 		number.value = this.value;
 		number.step = this.step;
 		number.style.width = this.numberSize.width+"px";
-		number.style.height = this.numberSize.height+"px";	
-		if(append == true) {				
+		number.style.height = this.numberSize.height+"px";
+		if(append == true) {
 			number.style.top = (this.numberPosition.y + this.getCanvasOrigine().top)+"px";
 			number.style.left = (this.numberPosition.x + this.getCanvasOrigine().left)+"px";
 		} else {
@@ -46,13 +46,13 @@
 			number.style.left = this.numberPosition.x+"px";
 		}
 		number.style.position = "absolute";
-		number.id = this.id;	
+		number.id = this.id;
 		number.name = this.id;
 		number.className = "GUISpinner";
 		number.tabindex = this.tabindex;
-		number.style.zIndex = this.zIndex;		
+		number.style.zIndex = this.zIndex;
 		number.oninput = this.onchangeNumber;
-		
+
 		if(append == true) {
 			this.html.appendChild(number);
 		} else {
@@ -68,7 +68,7 @@
 	CASTORGUI.GUISpinner.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
     };
-   
+
     CASTORGUI.GUISpinner.prototype.setVisible = function(bool, fade) {
 		var display;
 		if(fade == undefined) fade = true;

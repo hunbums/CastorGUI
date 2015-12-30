@@ -2,14 +2,14 @@
 
 !(function(moduleName, definition) {
 	if (typeof define === 'function' && typeof define.amd === 'object') {
-		define(definition); 
-	} else { 
+		define(definition);
+	} else {
 		this[moduleName] = definition();
 	}
 })('draggable', function definition() {
-	
+
 	var currentElement, fairlyHighZIndex = '10';
-	
+
 	CASTORGUI.addEventListener = function(element, eventName, handler) {
         if (element.addEventListener) {
             element.addEventListener(eventName, handler, false);
@@ -19,7 +19,7 @@
              element['on' + eventName] = handler;
         }
     };
-	
+
 	CASTORGUI.removeEventListener = function(element, eventName, handler) {
 		if (element.removeEventListener) {
 			element.removeEventListener(eventName, handler, false);
@@ -150,7 +150,7 @@
 		CASTORGUI.removeEventListener(document, "touchmove", CASTORGUI.repositionElement);
 		CASTORGUI.removeEventListener(document, "touchend", CASTORGUI.removeDocumentListeners);
 		CASTORGUI.removeEventListener(document, "touchcancel", CASTORGUI.removeDocumentListeners);
-		
+
 		var left = parseInt(currentElement.style.left, 10);
 		var top = parseInt(currentElement.style.top, 10);
 		CASTORGUI.triggerEvent('stop', { x: left, y: top, mouseEvent: event });

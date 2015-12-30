@@ -6,18 +6,18 @@
 		- Added theme for GUIManager for all elements (with css)
 		- Added group for GUIRadio (option name)
 		- Added getNumber() for GUISpinner
-		
+
 	- Bugs:
 		- Fixed step for GUISpinner and GUISlider
 		- Fixed for the element in the window no moves the window when selecting an input or text
 		- Fixed for GUIPanel with append false
 		- Fixed GUISelect when added in a window (with append false)
-		
+
 	- Update:
 		- Update doc.
 		- Drad and drop window compatible IPhone, Ipad... (event touch)
 		- rename class by className for the options GUI.
-		
+
 - Version 1.4:
 
 	- New functionnality:
@@ -39,7 +39,7 @@
 		- Change to the text position in a container window and improvement of container
 		- Update doc.
 		- Update demo.
-		
+
 - Version 1.3:
 
 	- New functionnality:

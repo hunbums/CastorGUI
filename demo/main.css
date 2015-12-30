@@ -5,9 +5,8 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 }
-
-#game {    
-	background-color:blue; 
+#game {
+	background-color:blue;
 	height: 80%;
 	width: 60%;
 	margin-left:20%;

@@ -1,16 +1,16 @@
 ﻿var CASTORGUI = CASTORGUI || {};
 
 (function() {
-   
+
     CASTORGUI.GUIDialog = function (id, options, guimanager, callback, append) {
-    
+
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
-		
+
 		if(append == null || append == undefined) { append = true; }
-				
+
 		this.id = id;
-		this.html = document.body || document.getElementsByTagName('body')[0];	
-		this.dialogSize = {width:options.w, height:options.h};				
+		this.html = document.body || document.getElementsByTagName('body')[0];
+		this.dialogSize = {width:options.w, height:options.h};
 		this.dialogPosition = {x:options.x, y:options.y};
 		this.overflow = options.overflow || "auto";
 		this.borderDialog = options.border || null;
@@ -22,19 +22,19 @@
 		this.callback = callback || null;
 		this.radius = options.radius || 8;
 		this.zIndex = options.zIndex || 0;
-		this.dialogVisible = false;		
-		
+		this.dialogVisible = false;
+
 		if(append == true) {
 			this.addElement(append);
 		}
 	};
 
 	Extends(CASTORGUI.GUIDialog, CASTORGUI.GUIManager);
-	
+
 	CASTORGUI.GUIDialog.prototype.addElement = function(append, element)  {
-		var dialog = document.createElement("div");		
+		var dialog = document.createElement("div");
 		dialog.style.width = this.dialogSize.width+"px";
-		dialog.style.height = this.dialogSize.height+"px";		
+		dialog.style.height = this.dialogSize.height+"px";
 		dialog.style.top = (this.dialogPosition.y + this.getCanvasOrigine().top)+"px";
 		dialog.style.left = (this.dialogPosition.x + this.getCanvasOrigine().left)+"px";
 		dialog.style.position = "absolute";
@@ -46,16 +46,16 @@
 		dialog.style.borderRadius = this.radius+"px";
 		dialog.style.backgroundImage = this.imageDialog;
 		dialog.style.border = this.borderDialog;
-		dialog.style.display = "none";	
+		dialog.style.display = "none";
 		dialog.style.overflow = this.overflow;
 		var eventButton = null;
-		
+
 		if(append == true) {
-			this.html.appendChild(dialog);			
+			this.html.appendChild(dialog);
 		} else {
-			element.appendChild(dialog);			
+			element.appendChild(dialog);
 		}
-		
+
 		if(this.buttonDialog == "true") {
 			eventButton = document.createElement("button");
 			eventButton.innerHTML = "X";
@@ -63,23 +63,23 @@
 			eventButton.style.position = "absolute";
 			eventButton.style.borderRadius = "12px";
 			eventButton.style.border = "2px solid black";
-			eventButton.style.left = this.dialogSize.width - 12+"px";		
+			eventButton.style.left = this.dialogSize.width - 12+"px";
 			eventButton.style.marginTop = "-12px";
 			eventButton.style.width = "25px";
 			eventButton.style.height = "25px";
 			eventButton.style.zIndex = 10000;
-			eventButton.onclick = function () { document.body.removeChild(dialog);};			
+			eventButton.onclick = function () { document.body.removeChild(dialog);};
 			this.getElementById(this.id).appendChild(eventButton);
-		} else if(this.imageButtonDialog == "true") {			
+		} else if(this.imageButtonDialog == "true") {
 			var that = this;
-			this._getSizeImage(this.urlImage, function(result){				
+			this._getSizeImage(this.urlImage, function(result){
 				var sizeImageW = result.w;
 				var sizeImageH = result.h;
 				eventButton = document.createElement("img");
 				eventButton.src = that.urlImage;
 				eventButton.id = that.id+"_button";
-				eventButton.style.position = "absolute";				
-				eventButton.style.left = that.dialogSize.width - (sizeImageW / 2)+"px";		
+				eventButton.style.position = "absolute";
+				eventButton.style.left = that.dialogSize.width - (sizeImageW / 2)+"px";
 				eventButton.style.marginTop = "-"+(sizeImageH / 2)+"px";
 				eventButton.style.width = sizeImageW+"px";
 				eventButton.style.height = sizeImageH+"px";
@@ -87,15 +87,15 @@
 				eventButton.style.zIndex = 10000;
 				eventButton.onclick = that.callback;
 				that.getElementById(that.id).appendChild(eventButton);
-			});			
+			});
 		} else if(this.buttonDialog == "false" && this.imageButtonDialog == "false" && this.callback) {
 			dialog.onclick = this.callback;
 			dialog.style.cursor = "pointer";
-		}	
-		
+		}
+
 		this.addGuiElements(dialog);
     };
-	
+
 	CASTORGUI.GUIDialog.prototype._getSizeImage = function(URL, callback) {
 		var image = new Image();
 		image.src = URL;
@@ -111,12 +111,12 @@
 		contentDialog.style.zIndex = this.zIndex + 1;
 		element.style.zIndex + 2;
 		element.addElement(false, contentDialog);
-	};	
+	};
 
 	CASTORGUI.GUIDialog.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
     };
-   
+
     CASTORGUI.GUIDialog.prototype.setVisible = function(bool, fade) {
 		var display;
 		if(fade == undefined) fade = true;

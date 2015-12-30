@@ -12,10 +12,10 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 };
 
 (function()
-{     
-	CASTORGUI.GUIManager = function(canvas, css, options) {		
+{
+	CASTORGUI.GUIManager = function(canvas, css, options) {
 		this.canvasCss = css;
-		this.canvas = canvas;		
+		this.canvas = canvas;
 		this.groups = [];
 		this.guiVisible = true;
 		this.GUIstyle = null;
@@ -32,20 +32,20 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		if(this.head == null) {
 			this.header = document.createElement('head');
 			this.head.appendChild(this.header);
-		}		
+		}
 		this.addStyle(this.canvasCss, this.theme);
     };
-		
+
 	CASTORGUI.GUIManager.prototype.addGuiElements = function(elem)
 	{
 		guiElements.push(elem);
-	};	
-	
+	};
+
 	CASTORGUI.GUIManager.prototype.addStyle = function(css, theme)
 	{
 		// CSS
 		if(this.GUIstyle) {
-			this.head.removeChild(this.getElementById("styleGUI")); 
+			this.head.removeChild(this.getElementById("styleGUI"));
 			this.canvasCss = this.canvasCss+css;
 		} else {
 			this.canvasCss = this.canvasCss;
@@ -59,9 +59,9 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		} else {
 			this.GUIstyle.appendChild(document.createTextNode(this.canvasCss));
 		}
-		this.head.appendChild(this.GUIstyle);	
+		this.head.appendChild(this.GUIstyle);
 
-		//Theme			
+		//Theme
 		if(this.GUItheme) {
 			this.head.removeChild(this.getElementById("themeGUI"));
 		}
@@ -70,13 +70,13 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.GUItheme.rel = 'stylesheet';
 		this.GUItheme.media = 'screen';
 		this.GUItheme.id = "themeGUI";
-		this.GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";		
-		this.head.appendChild(this.GUItheme);		
+		this.GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";
+		this.head.appendChild(this.GUItheme);
 	};
-	
+
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {
 		if(el) {
-			el.style.opacity = 1;		
+			el.style.opacity = 1;
 			(function fade_moin() {
 				if ((el.style.opacity -= 0.1) < 0.1) {
 					el.style.display = "none";
@@ -91,7 +91,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 	CASTORGUI.GUIManager.prototype.fadeIn = function(el){
 		if(el) {
 			el.style.opacity = 0;
-			el.style.display = "block";		
+			el.style.display = "block";
 			(function fade_plus() {
 				var val = parseFloat(el.style.opacity);
 				if (!((val += 0.1) > 0.9)) {
@@ -101,35 +101,35 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			})();
 		}
 	};
-	
+
 	CASTORGUI.GUIManager.prototype.getElementById = function(id) {
 		return document.getElementById(id);
     };
-	
+
 	CASTORGUI.GUIManager.prototype.getCanvasOrigine = function() {
         var offsets = this.canvas.getBoundingClientRect(),
 		offsetsTop = offsets.top || 0,
 		offsetsLeft = offsets.left || 0;
 		return {top:offsetsTop, left:offsetsLeft};
     };
-	
+
 	CASTORGUI.GUIManager.prototype.getCanvasWidth = function() {
 		var offsets = this.canvas.getBoundingClientRect(),
 		offsetsWidth = offsets.width || 0,
 		offsetsHeight = offsets.height || 0;
 		return {width:offsetsWidth, height:offsetsHeight};
 	};
-		
+
     CASTORGUI.GUIManager.prototype.dispose = function() {
-		var that = this;		
-		guiElements.forEach(function(e) {			
+		var that = this;
+		guiElements.forEach(function(e) {
 			if(that.getElementById(e.id)) {
 				that.html.removeChild(that.getElementById(e.id));
 			}
-		});	
+		});
 		return;
     };
-   
+
     CASTORGUI.GUIManager.prototype.setVisible = function(bool, fade) {
 		var display;
 		var that = this;
@@ -144,15 +144,15 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.guiVisible = false;
 			if(fade == true) { this.fadeOut(element);}
 		}
-		if(fade == false) { 
-			guiElements.forEach(function(e) {	
+		if(fade == false) {
+			guiElements.forEach(function(e) {
 				that.getElementById(e.id).style.display = display;
 			});
-		}		
-    };	
-	
+		}
+    };
+
 	CASTORGUI.GUIManager.prototype.isVisible = function() {
 		return this.guiVisible;
     };
-	
+
 })();

@@ -31,7 +31,7 @@ Create GUI (element html5 and css3):
 * fieldset
 * select with options
 
-## Quick overview of use 
+## Quick overview of use
 
 We must create a GUIManager that allows to recover the origin of the canvas and provides other basic thing.
 A GUIManager can have a CSS that Formatted anything you want to customize your GUI.

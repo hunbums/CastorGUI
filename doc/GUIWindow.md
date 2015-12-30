@@ -20,7 +20,7 @@ Name | Type | Description
 * **backgroundImage**: Image background of window (string) =&gt; "null" by default
 * **colorContent**: Color background of content window (string) =&gt; "rgba(0.5, 0.5, 0.5, 0.1)" by default
 * **imageContent**: Image background of content window (string) =&gt; "null" by default
-* **borderWindow**: border of window (string) =&gt; "2px solid black" by default 
+* **borderWindow**: border of window (string) =&gt; "2px solid black" by default
 * **borderTitle**: Border of window (string) =&gt; "1px solid black" by default
 * **radiusWindow**: Radius border of dialog (int)  =&gt; 8 by default
 * **colorTitle**: Color background title window (string) =&gt; "rgba(0, 0, 0, 0.4)" by default

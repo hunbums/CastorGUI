@@ -1,5 +1,5 @@
-(function (window) {
-	var document = window.document, nativeColorGUI = {		
+﻿(function (window) {
+	var document = window.document, nativeColorGUI = {
 		started: false, // initialized flag
 		color: '#000000', // start color
 		inputs: {}, 	// inputs where plugin was initialized
@@ -79,7 +79,7 @@
 			width: '',
 			cursor: ''
 			});
-		},		
+		},
 		onFocus: function (inputId) { // input focus function
 			this.input = this.inputs[inputId];
 			this.color = this.getColor();
@@ -89,7 +89,7 @@
 				color: this.color
 			});
 			this.input.blur();
-		},		
+		},
 		getColor: function () { // gets the color from the object and normalize it
 			// get decimal color, (passing the previous one) and change to hex
 			var hex = colorHelperObj.ChooseColorDlg(this.color.replace(/#/, '')).toString(16);
@@ -99,7 +99,7 @@
 				hex = tmpstr.concat(hex);
 			}
 			return '#' + hex;
-		},		
+		},
 		css: function (el, props) { // set css properties
 			for (var prop in props) {
 				el.style[prop] = props[prop];

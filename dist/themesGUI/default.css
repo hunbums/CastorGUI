@@ -4,7 +4,7 @@ input.GUITextfield
 	color:white;
 	border: 2px solid white;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	font-family: Segoe UI;
 }
@@ -12,23 +12,23 @@ input.GUIColor
 {
 	border: 1px solid white;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 }
 .GUIRadio
 {
-	
+
 }
 .GUILabel
 {
-	
+
 }
 .GUIPanel, .GUIDialog
 {
 	background-color:rgba(40, 40, 40, 0.6);
-	color:white;	
+	color:white;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	font-family: Segoe UI;
 }
@@ -46,7 +46,7 @@ input.GUIColor
 	color:white;
 	border: 2px solid white;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	font-family: Segoe UI;
 }
@@ -56,7 +56,7 @@ input.GUIColor
 	color:white;
 	border: 2px solid white;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	font-family: Segoe UI;
 }
@@ -70,7 +70,7 @@ a img.GUITexture
 	color:white;
 	border: 2px solid white;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	font-family: Segoe UI;
 }
@@ -80,7 +80,7 @@ a img.GUITexture
 	color:white;
 	border: 2px solid white;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	padding:10px;
 	font-family: Segoe UI;
@@ -90,23 +90,23 @@ a img.GUITexture
 	margin-bottom:0px;
 	margin-left:16px;
 	color:white;
-	font-weight: bold;	
+	font-weight: bold;
 }
 .GUIText
 {
-	
+
 }
 .GUISpinner
 {
-	
+
 }
 .GUISlider
 {
-	
+
 }
 .GUICheckbox
 {
-	
+
 }
 .GUIMeter::-webkit-meter-bar
 {
@@ -116,20 +116,20 @@ a img.GUITexture
 {
 	background-color: #eee;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 .GUIProgress::-webkit-progress-value
 {
-	background-color: #007e11;	
+	background-color: #007e11;
 }
 .GUIProgress::-webkit-progress-bar, .GUIProgress::-moz-progress-bar, .GUIProgress
-{	
+{
 	border: 1px solid black;
 	background-color: #eee;
 	-moz-border-radius:8px;
-    -webkit-border-radius:8px;	
+    -webkit-border-radius:8px;
     border-radius:8px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }

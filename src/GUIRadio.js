@@ -1,13 +1,13 @@
 ﻿var CASTORGUI = CASTORGUI || {};
 
 (function() {
-   
+
     CASTORGUI.GUIRadio = function (id, options, guimanager, callback, append) {
-     
+
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
-		
+
 		if(append == null || append == undefined) { append = true; }
-		
+
 		this.id = id;
 		this.name = options.name || "NameRadio"+id;
 		this.html = document.body || document.getElementsByTagName('body')[0];
@@ -17,19 +17,19 @@
 		this.radioVisible = true;
 		this.onClickRadio = callback || false;
 		this.tabindex = options.tabindex || 0;
-		
+
 		if(append == true) {
 			this.addElement(append);
 		}
 	};
 
 	Extends(CASTORGUI.GUIRadio, CASTORGUI.GUIManager);
-	
+
 	CASTORGUI.GUIRadio.prototype.addElement = function(append, element)  {
 		var radio = document.createElement("input");
 		radio.type = "radio";
 		radio.style.width = (this.radioSize * 16)+"px";
-		radio.style.height = (this.radioSize * 16)+"px";		
+		radio.style.height = (this.radioSize * 16)+"px";
 		if(append == true) {
 			radio.style.top = (this.radioPosition.y + this.getCanvasOrigine().top)+"px";
 			radio.style.left = (this.radioPosition.x + this.getCanvasOrigine().left)+"px";
@@ -39,20 +39,20 @@
 		}
 		radio.style.position = "absolute";
 		radio.style.padding = "0px";
-		radio.style.margin = "0px";		
-		radio.id = this.id;	
+		radio.style.margin = "0px";
+		radio.id = this.id;
 		radio.tabindex = this.tabindex;
 		radio.className = "GUIRadio";
 		radio.name = this.name;
 		radio.style.zIndex = this.zIndex;
 		radio.onclick = this.onClickRadio;
-		
+
 		if(append == true) {
 			this.html.appendChild(radio);
 		} else {
 			element.appendChild(radio);
 		}
-		
+
 		this.addGuiElements(radio);
     };
 
@@ -63,19 +63,19 @@
 			return false;
 		}
 	};
-	
+
 	CASTORGUI.GUIRadio.prototype.setChecked = function(value)  {
-		if(value == true) { 
+		if(value == true) {
 			this.getElementById(this.id).checked = value;
 		} else{
 			this.getElementById(this.id).checked = false;
 		}
-	};	
+	};
 
 	CASTORGUI.GUIRadio.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
     };
-   
+
     CASTORGUI.GUIRadio.prototype.setVisible = function(bool, fade) {
 		var display;
 		if(fade == undefined) fade = true;
