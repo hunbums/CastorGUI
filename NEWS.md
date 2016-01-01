@@ -1,3 +1,13 @@
+- Version 1.6:
+
+	- New functionnality:
+		- Added function findOptionSelected(withIndex), removeOption(value), changeItem(oldValue, newValue) for GUISelect
+		
+	- Bugs:
+	
+	- Update:
+	
+	
 - Version 1.5:
 
 	- New functionnality:

@@ -68,6 +68,48 @@
 			this.getElementById(this.id).appendChild(options);
 		}
 	};
+	
+	CASTORGUI.GUISelect.prototype.findOptionSelected = function(withIndex) {
+		if(withIndex == undefined) withIndex = false;
+		var elSel = this.getElementById(this.id);
+		var str = elSele.options[elSel.selectedIndex].text;		
+		if(withIndex == true) {
+			return elSel.selectedIndex;
+		} else {
+			return str;
+		}
+	};
+	
+	CASTORGUI.GUISelect.prototype.removeOption = function(value) {
+		var elSel = this.getElementById(this.id);
+		for(var i = elSel.length - 1; i >= 0; i--) {
+			if (elSel.options[i].text == value) {
+				elSel.remove(i);
+				break;
+			}
+		}
+		if(this.append == false) {
+			for(var b in arr ){
+				if(arr[b] == value) {
+					arr.splice(b, 1);
+					break;
+				} 
+			} 
+		}	
+		return;
+	};
+	
+	CASTORGUI.GUISelect.prototype.changeItem = function(oldValue, newValue) {
+		var elSel = this.getElementById(this.id);
+		for(var i = elSel.length - 1; i >= 0; i--) {
+			if (elSel.options[i].text == oldValue) {
+				elSel.options[i].text = newValue;
+				elSel.options[i].value = newValue;
+				break;
+			}
+		}
+		return;
+	};
 
 	CASTORGUI.GUISelect.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));

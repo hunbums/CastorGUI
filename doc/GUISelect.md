@@ -23,7 +23,16 @@ Name | Type | Description
 ##Methods
 
 ###addOptions(value, text) → void
-add option in the GUISelect
+Add option in the GUISelect
+
+###findOptionSelected(bool: withIndex) → void
+Find option selected in the GUISelect
+
+###removeOption(value) → void
+Delete option value in the GUISelect
+
+###changeItem(oldValue, newValue) → void
+Change old value by new value
 
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
