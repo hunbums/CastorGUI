@@ -2,6 +2,7 @@
 
 	- New functionnality:
 		- Added function findOptionSelected(withIndex), removeOption(value), changeItem(oldValue, newValue) for GUISelect
+		- Added function selectedItem(item) for GUISelect
 		
 	- Bugs:
 	

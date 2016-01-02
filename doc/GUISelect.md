@@ -34,6 +34,9 @@ Delete option value in the GUISelect
 ###changeItem(oldValue, newValue) → void
 Change old value by new value
 
+###selectedItem(item) → void
+Add atribute selected item
+
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 

@@ -72,7 +72,7 @@
 	CASTORGUI.GUISelect.prototype.findOptionSelected = function(withIndex) {
 		if(withIndex == undefined) withIndex = false;
 		var elSel = this.getElementById(this.id);
-		var str = elSele.options[elSel.selectedIndex].text;		
+		var str = elSel.options[elSel.selectedIndex].text;		
 		if(withIndex == true) {
 			return elSel.selectedIndex;
 		} else {
@@ -82,8 +82,8 @@
 	
 	CASTORGUI.GUISelect.prototype.removeOption = function(value) {
 		var elSel = this.getElementById(this.id);
-		for(var i = elSel.length - 1; i >= 0; i--) {
-			if (elSel.options[i].text == value) {
+		for(var i = 0; i <= elSel.length - 1; i++) {
+			if(elSel.options[i].text == value) {
 				elSel.remove(i);
 				break;
 			}
@@ -101,11 +101,23 @@
 	
 	CASTORGUI.GUISelect.prototype.changeItem = function(oldValue, newValue) {
 		var elSel = this.getElementById(this.id);
-		for(var i = elSel.length - 1; i >= 0; i--) {
-			if (elSel.options[i].text == oldValue) {
+		for(var i = 0; i <= elSel.length - 1; i++) {
+			if(elSel.options[i].text == oldValue) {
 				elSel.options[i].text = newValue;
 				elSel.options[i].value = newValue;
 				break;
+			}
+		}
+		return;
+	};
+	
+	CASTORGUI.GUISelect.prototype.selectedItem = function(item) {
+		var elSel = this.getElementById(this.id);
+		for(var i = 0; i <= elSel.length - 1; i++) {
+			if(elSel.options[i].text == item) {
+				elSel.options[i].setAttribute('selected', true);				
+			} else {
+				elSel.options[i].removeAttribute('selected');
 			}
 		}
 		return;
