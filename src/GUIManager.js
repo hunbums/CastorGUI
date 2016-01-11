@@ -34,6 +34,10 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.head.appendChild(this.header);
 		}
 		this.addStyle(this.canvasCss, this.theme);
+		document.addEventListener('webkitfullscreenchange', function() {location.reload();}, false);
+		document.addEventListener('mozfullscreenchange',  function() {location.reload();}, false);
+		document.addEventListener('fullscreenchange',  function() {location.reload();}, false);
+		document.addEventListener('MSFullscreenChange',  function() {location.reload();}, false);
     };
 
 	CASTORGUI.GUIManager.prototype.addGuiElements = function(elem)
@@ -53,7 +57,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.GUIstyle = document.createElement('style');
 		this.GUIstyle.type = 'text/css';
 		this.GUIstyle.media = 'screen';
-		this.GUIstyle.id = "styleGUI";
+		this.GUIstyle.id = "styleGUI";		
 		if (this.GUIstyle.styleSheet){
 			this.GUIstyle.styleSheet.cssText = this.canvasCss;
 		} else {
@@ -73,7 +77,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";
 		this.head.appendChild(this.GUItheme);
 	};
-
+	
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {
 		if(el) {
 			el.style.opacity = 1;

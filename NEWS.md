@@ -3,7 +3,7 @@
 	- New functionnality:
 		- Added function findOptionSelected(withIndex), removeOption(value), changeItem(oldValue, newValue) for GUISelect
 		- Added function selectedItem(item) for GUISelect
-		
+		- Added event reload after fullscreen browser
 	- Bugs:
 	
 	- Update:
