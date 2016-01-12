@@ -65,11 +65,7 @@
 	};
 
 	CASTORGUI.GUIRadio.prototype.setChecked = function(value)  {
-		if(value == true) {
-			this.getElementById(this.id).checked = value;
-		} else{
-			this.getElementById(this.id).checked = false;
-		}
+		this.getElementById(this.id).checked = value;
 	};
 
 	CASTORGUI.GUIRadio.prototype.dispose = function() {
