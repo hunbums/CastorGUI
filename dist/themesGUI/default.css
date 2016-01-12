@@ -38,6 +38,11 @@ input.GUIColor
 }
 .titleWindoWGUI
 {
+	color:white;
+	padding-top:5px;
+}
+.titleWindoWGUI
+{
 	border-bottom: 1px solid black;
 }
 .GUIButton
