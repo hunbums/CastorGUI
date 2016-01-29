@@ -25,10 +25,10 @@ Name | Type | Description
 
 ##Methods
 
-###getColor(bool: rgb, bool: hex) → void
-Get the color value of element in rgb (default) or hex
+###getColor(bool: rgb) → void
+Get the color value of element in rgb (true by default) or hex (false by default)
 
-###setVisible(bool, fade) → void
+###setVisible(bool: fade) → void
 Set this GUI element to visible or invisible
 
 ###isVisible() → void

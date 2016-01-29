@@ -56,9 +56,17 @@
 		this.addGuiElements(color);
     };
 
-	CASTORGUI.GUIColor.prototype.getColor = function(rgb, hex) {
-		if(rgb == undefined) {rgb = true;}
-		if(hex == undefined) {hex = false;}
+	CASTORGUI.GUIColor.prototype.getColor = function(rgb) {
+		if(rgb == undefined) {
+			rgb = true; 
+			hex = false;
+		} else if(rgb == true) {
+			rgb = true;
+			hex = false;
+		} else {
+			rgb = false;
+			hex = true;
+		}
 		var valueColor = null;
 		if(rgb == true) {
 			valueColor = hexToRgb(this.getElementById(this.id).value);
@@ -99,8 +107,6 @@ var hexToG = function(h) {return parseInt((cutHex(h)).substring(2,4),16)};
 var hexToB = function(h) {return parseInt((cutHex(h)).substring(4,6),16)};
 var cutHex = function(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h};
 var hexToRgb = function(hex) {
-	var c_r = hexToR(hex) / 255,
-		c_g = hexToG(hex) / 255,
-		c_b = hexToB(hex) / 255;
+	var c_r = hexToR(hex) / 255, c_g = hexToG(hex) / 255, c_b = hexToB(hex) / 255;
 	return {r: c_r, g: c_g, b: c_b};
 };
