@@ -1,10 +1,9 @@
 # CastorGUI V1.5
 
-Library to display a GUI game as a layer on top of the canvas HTML/CSS. This library has been created for [CastorEngine](http://www.castorengine.com/), the editor of game and as extention for [BabylonJS](http://www.babylonjs.com/), the game engine 3d.
+Library to display a GUI game as a layer on top of the canvas HTML/CSS.
 
-* [Demo online of this extension](http://www.castorengine.com/babylon/demoCastorGUI/)
-* [Tutorial English](https://github.com/dad72/CastorGUI/wiki)
-* [Tutorial French](http://www.castorengine.com/forum/index.php?/tutorials/article/28-cr%C3%A9er-une-interface-graphique-avec-castorgui/)
+* [Demo online of this extension](http://www.babylon.actifgames.com/demoCastorGUI/)
+* [Tutorial](https://github.com/dad72/CastorGUI/wiki)
 * [Documentation](https://github.com/dad72/CastorGUI/tree/master/doc)
 
 ## Features:
