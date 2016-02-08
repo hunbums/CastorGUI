@@ -56,6 +56,7 @@
 			slider.style.WebkitAppearance = "slider-vertical";
 		}
 		slider.oninput = this.onchangeSlider;
+		slider.onchange = this.onchangeSlider;
 
 		if(append == true) {
 			this.html.appendChild(slider);

@@ -52,6 +52,7 @@
 		number.tabindex = this.tabindex;
 		number.style.zIndex = this.zIndex;
 		number.oninput = this.onchangeNumber;
+		number.onchange = this.onchangeNumber;
 
 		if(append == true) {
 			this.html.appendChild(number);
