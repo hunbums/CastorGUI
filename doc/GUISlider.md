@@ -27,6 +27,9 @@ Name | Type | Description
 
 ##Methods
 
+###getValue() → void
+Get the number value of element
+
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 

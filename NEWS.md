@@ -4,10 +4,11 @@
 		- Added function findOptionSelected(withIndex), removeOption(value), changeItem(oldValue, newValue) for GUISelect
 		- Added function selectedItem(item) for GUISelect
 		- Added event reload after fullscreen browser
+		- Added getValue for GUISlider
 	- Bugs:
 	
 	- Update:
-	
+		- Change getNumber for getValue in the GUISpinner
 	
 - Version 1.5:
 

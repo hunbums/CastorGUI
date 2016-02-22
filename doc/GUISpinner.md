@@ -27,7 +27,7 @@ Name | Type | Description
 
 ##Methods
 
-###getNumber() → void
+###getValue() → void
 Get the number value of element
 
 ###setVisible(bool, fade) → void

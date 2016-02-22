@@ -65,6 +65,10 @@
 		}
 		this.addGuiElements(slider);
     };
+	
+	CASTORGUI.GUISlider.prototype.getValue = function() {
+		return this.getElementById(this.id).value;
+	};
 
 	CASTORGUI.GUISlider.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));

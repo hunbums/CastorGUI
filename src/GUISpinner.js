@@ -62,7 +62,7 @@
 		this.addGuiElements(number);
     };
 
-	CASTORGUI.GUISpinner.prototype.getNumber = function() {
+	CASTORGUI.GUISpinner.prototype.getValue = function() {
 		return this.getElementById(this.id).value;
     };
 
