@@ -51,7 +51,7 @@
 		dialog.className = "GUIDialog";
 		dialog.style.zIndex = this.zIndex;
 		dialog.style.background = this.colorDialog;
-		dialog.style.borderRadius = this.radius+signe;
+		dialog.style.borderRadius = this.radius+"px";
 		dialog.style.backgroundImage = this.imageDialog;
 		dialog.style.border = this.borderDialog;
 		dialog.style.display = "none";
