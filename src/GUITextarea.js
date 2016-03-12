@@ -29,15 +29,28 @@
 	Extends(CASTORGUI.GUITextarea, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUITextarea.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var textarea = document.createElement("textarea");
 		textarea.cols = this.textareaSize.width;
 		textarea.rows = this.textareaSize.height;
-		if(append == true) {
-			textarea.style.top = (this.textareaPosition.y + this.getCanvasOrigine().top)+"px";
-			textarea.style.left = (this.textareaPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {
+			if(append == true) {
+				textarea.style.top = this.convertPixelToPercentHeight(this.textareaPosition.y + this.getCanvasOrigine().top)+"%";
+				textarea.style.left = this.convertPixelToPercentWidth(this.textareaPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				textarea.style.top = (this.textareaPosition.y)+"px";
+				textarea.style.left = (this.textareaPosition.x)+"ox";
+			}
 		} else {
-			textarea.style.top = this.textareaPosition.y+"px";
-			textarea.style.left = this.textareaPosition.x+"px";
+			if(append == true) {
+				textarea.style.top = (this.textareaPosition.y + this.getCanvasOrigine().top)+signe;
+				textarea.style.left = (this.textareaPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				textarea.style.top = this.textareaPosition.y+signe;
+				textarea.style.left = this.textareaPosition.x+signe;
+			}
 		}
 		textarea.style.position = "absolute";
 		textarea.style.display = "block";

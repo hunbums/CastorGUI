@@ -26,16 +26,29 @@
 	Extends(CASTORGUI.GUIRadio, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIRadio.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var radio = document.createElement("input");
 		radio.type = "radio";
 		radio.style.width = (this.radioSize * 16)+"px";
 		radio.style.height = (this.radioSize * 16)+"px";
-		if(append == true) {
-			radio.style.top = (this.radioPosition.y + this.getCanvasOrigine().top)+"px";
-			radio.style.left = (this.radioPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				radio.style.top = this.convertPixelToPercentHeight(this.radioPosition.y + this.getCanvasOrigine().top)+"%";
+				radio.style.left = this.convertPixelToPercentWidth(this.radioPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				radio.style.top = (this.radioPosition.y)+"px";
+				radio.style.left = (this.radioPosition.x)+"px";
+			}
 		} else {
-			radio.style.top = this.radioPosition.y+"px";
-			radio.style.left = this.radioPosition.x+"px";
+			if(append == true) {
+				radio.style.top = (this.radioPosition.y + this.getCanvasOrigine().top)+signe;
+				radio.style.left = (this.radioPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				radio.style.top = this.radioPosition.y+signe;
+				radio.style.left = this.radioPosition.x+signe;
+			}
 		}
 		radio.style.position = "absolute";
 		radio.style.padding = "0px";

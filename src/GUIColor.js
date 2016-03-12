@@ -26,19 +26,32 @@
 	Extends(CASTORGUI.GUIColor, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIColor.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var color = document.createElement("input");
 		color.type= "color";
 		color.value = this.value;
 		color.className = "GUIColor";
 		color.tabindex = this.tabindex;
 		color.style.width = this.colorSize.width+"px";
-		color.style.height = this.colorSize.height+"px";
-		if(append == true) {
-			color.style.top = (this.colorPosition.y + this.getCanvasOrigine().top)+"px";
-			color.style.left = (this.colorPosition.x + this.getCanvasOrigine().left)+"px";
+		color.style.height = this.colorSize.height+"px";		
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				color.style.top = this.convertPixelToPercentHeight(this.colorPosition.y + this.getCanvasOrigine().top)+"%";
+				color.style.left = this.convertPixelToPercentWidth(this.colorPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				color.style.top = (this.colorPosition.y)+"px";
+				color.style.left = (this.colorPosition.x)+"px";
+			}
 		} else {
-			color.style.top = this.colorPosition.y+"px";
-			color.style.left = this.colorPosition.x+"px";
+			if(append == true) {
+				color.style.top = (this.colorPosition.y + this.getCanvasOrigine().top)+signe;
+				color.style.left = (this.colorPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				color.style.top = this.colorPosition.y+signe;
+				color.style.left = this.colorPosition.x+signe;
+			}
 		}
 		color.style.position = "absolute";
 		color.id = this.id;

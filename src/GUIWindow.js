@@ -38,18 +38,26 @@
 	Extends(CASTORGUI.GUIWindow, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIWindow.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var window = document.createElement("div");
 		window.style.position = "absolute";
 		window.style.width = this.windowSize.width+"px";
 		window.style.height = this.windowSize.height+"px";
-		window.style.top = (this.windowPosition.y + this.getCanvasOrigine().top)+"px";
-		window.style.left = (this.windowPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			window.style.top = this.convertPixelToPercentHeight(this.windowPosition.y + this.getCanvasOrigine().top)+"%";
+			window.style.left = this.convertPixelToPercentWidth(this.windowPosition.x + this.getCanvasOrigine().left)+"%";
+		} else {
+			window.style.top = (this.windowPosition.y + this.getCanvasOrigine().top)+signe;
+			window.style.left = (this.windowPosition.x + this.getCanvasOrigine().left)+signe;			
+		}
+		window.style.borderRadius = this.radiusWindow+"px";
 		window.id = this.id;
 		window.name = this.id;
 		window.className = "GUIWindow";
 		window.style.zIndex = this.zIndex || 0;
-		window.style.background = this.colorWindow;
-		window.style.borderRadius = this.radiusWindow+"px";
+		window.style.background = this.colorWindow;		
 		window.style.backgroundImage = this.imageWindow;
 		window.style.border = this.borderWindow;
 		window.style.wordWrap = "break-word";
@@ -57,7 +65,7 @@
 
 		var titreWindow = document.createElement("div");
 		titreWindow.className  = "titleWindoWGUI";
-		titreWindow.style.width = this.windowSize.width+"px";
+		titreWindow.style.width = this.windowSize.width+"px";		
 		titreWindow.style.height = "30px";
 		titreWindow.style.textAlign = this.textAlign;
 		titreWindow.style.borderRadius = this.radiusWindow+"px "+this.radiusWindow+"px 0 0";
@@ -80,7 +88,7 @@
 			close.innerHTML = "X";
 			close.id = this.id+"_button";
 			close.style.position = "absolute";
-			close.style.borderRadius = "12px";
+			close.style.borderRadius = "12px";			
 			close.style.left = this.windowSize.width - 12+"px";
 			close.style.marginTop = "-12px";
 			close.style.width = "24px";
@@ -90,7 +98,7 @@
 		}
 
 		var contentWindow = document.createElement("div");
-		contentWindow.id = this.id+"_content";
+		contentWindow.id = this.id+"_content";		
 		contentWindow.style.width = this.windowSize.width+"px";
 		contentWindow.style.height = this.windowSize.height - 38 +"px";
 		contentWindow.style.overflow = this.overflow;

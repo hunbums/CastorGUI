@@ -30,20 +30,33 @@
 	Extends(CASTORGUI.GUISpinner, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUISpinner.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var number = document.createElement("input");
 		number.type= "number";
 		number.min= this.min;
 		number.max= this.max;
 		number.value = this.value;
-		number.step = this.step;
-		number.style.width = this.numberSize.width+"px";
-		number.style.height = this.numberSize.height+"px";
-		if(append == true) {
-			number.style.top = (this.numberPosition.y + this.getCanvasOrigine().top)+"px";
-			number.style.left = (this.numberPosition.x + this.getCanvasOrigine().left)+"px";
+		number.step = this.step;		
+		number.style.width = this.numberSize.width+signe;
+		number.style.height = this.numberSize.height+signe;
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				number.style.top = this.convertPixelToPercentHeight(this.numberPosition.y + this.getCanvasOrigine().top)+"%";
+				number.style.left = this.convertPixelToPercentWidth(this.numberPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				number.style.top = (this.numberPosition.y)+"px";
+				number.style.left = (this.numberPosition.x)+"px";
+			}
 		} else {
-			number.style.top = this.numberPosition.y+"px";
-			number.style.left = this.numberPosition.x+"px";
+			if(append == true) {
+				number.style.top = (this.numberPosition.y + this.getCanvasOrigine().top)+signe;
+				number.style.left = (this.numberPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				number.style.top = this.numberPosition.y+signe;
+				number.style.left = this.numberPosition.x+signe;
+			}		
 		}
 		number.style.position = "absolute";
 		number.id = this.id;

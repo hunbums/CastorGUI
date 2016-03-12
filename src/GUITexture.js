@@ -25,16 +25,29 @@
 	Extends(CASTORGUI.GUITexture, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUITexture.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var img = document.createElement("img");
 		img.src = this.imageUrl;
 		img.style.width = this.imageSize.width+"px";
 		img.style.height = this.imageSize.height+"px";
-		if(append == true) {
-			img.style.top = (this.imagePosition.y + this.getCanvasOrigine().top)+"px";
-			img.style.left = (this.imagePosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				img.style.top = this.convertPixelToPercentHeight(this.imagePosition.y + this.getCanvasOrigine().top)+"%";
+				img.style.left = this.convertPixelToPercentWidth(this.imagePosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				img.style.top = (this.imagePosition.y)+"px";
+				img.style.left = (this.imagePosition.x)+"px";
+			}
 		} else {
-			img.style.top = this.imagePosition.y+"px";
-			img.style.left = this.imagePosition.x+"px";
+			if(append == true) {
+				img.style.top = (this.imagePosition.y + this.getCanvasOrigine().top)+signe;
+				img.style.left = (this.imagePosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				img.style.top = this.imagePosition.y+signe;
+				img.style.left = this.imagePosition.x+signe;
+			}
 		}
 		img.style.position = "absolute";
 		img.style.zIndex = this.zIndex;

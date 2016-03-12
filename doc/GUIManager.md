@@ -11,13 +11,25 @@ Name | Type | Description
 
 ##Options
 
-### themeRoot
+###themeRoot (string: root fileName)
 Root of file css of theme
 
-### themeGUI
+###themeGUI (string: fileName)
 file css of theme
 
+###pixel (bool)
+use pixel or percentage
+
 ##Methods
+
+###CASTORGUI.GUIManager.convertPixelToPercent (static bool)
+This option is 'true' converted pixels in poucentage (false by default)
+
+###convertPixelToPercentWidth(pixel) → void
+Return convert pixel width in percentage
+
+###convertPixelToPercentHeight(pixel) → void
+Return convert pixel height in percentage
 
 ###addStyle(string:css) → void
 Add style on GUI

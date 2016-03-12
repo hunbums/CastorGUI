@@ -25,16 +25,29 @@
 	Extends(CASTORGUI.GUICheckbox, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUICheckbox.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.style.width = (this.checkboxSize * 16)+"px";
 		checkbox.style.height = (this.checkboxSize * 16)+"px";
-		if(append == true) {
-			checkbox.style.top = (this.checkboxPosition.y + this.getCanvasOrigine().top)+"px";
-			checkbox.style.left = (this.checkboxPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				checkbox.style.top = this.convertPixelToPercentHeight(this.checkboxPosition.y + this.getCanvasOrigine().top)+"%";
+				checkbox.style.left = this.convertPixelToPercentWidth(this.checkboxPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				checkbox.style.top = (this.checkboxPosition.y)+"px";
+				checkbox.style.left = (this.checkboxPosition.x)+"px";
+			}
 		} else {
-			checkbox.style.top = this.checkboxPosition.y+"px";
-			checkbox.style.left = this.checkboxPosition.x+"px";
+			if(append == true) {
+				checkbox.style.top = (this.checkboxPosition.y + this.getCanvasOrigine().top)+signe;
+				checkbox.style.left = (this.checkboxPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				checkbox.style.top = this.checkboxPosition.y+signe;
+				checkbox.style.left = this.checkboxPosition.x+signe;
+			}
 		}
 		checkbox.style.position = "absolute";
 		checkbox.style.padding = "0px";

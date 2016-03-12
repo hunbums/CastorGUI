@@ -24,13 +24,26 @@
 	Extends(CASTORGUI.GUILabel, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUILabel.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var label = document.createElement("label");
-		if(append == true) {
-			label.style.top = (this.labelPosition.y + this.getCanvasOrigine().top)+"px";
-			label.style.left = (this.labelPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {
+			if(append == true) {
+				label.style.top = this.convertPixelToPercentHeight(this.labelPosition.y + this.getCanvasOrigine().top)+"%";
+				label.style.left = this.convertPixelToPercentWidth(this.labelPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				label.style.top = (this.labelPosition.y)+"px";
+				label.style.left = (this.labelPosition.x)+"px";
+			}
 		} else {
-			label.style.top = this.labelPosition.y+"px";
-			label.style.left = this.labelPosition.x+"px";
+			if(append == true) {
+				label.style.top = (this.labelPosition.y + this.getCanvasOrigine().top)+signe;
+				label.style.left = (this.labelPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				label.style.top = this.labelPosition.y+signe;
+				label.style.left = this.labelPosition.x+signe;
+			}
 		}
 		label.style.position = "absolute";
 		label.id = this.id;

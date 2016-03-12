@@ -32,18 +32,26 @@
 	Extends(CASTORGUI.GUIDialog, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIDialog.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var dialog = document.createElement("div");
 		dialog.style.width = this.dialogSize.width+"px";
 		dialog.style.height = this.dialogSize.height+"px";
-		dialog.style.top = (this.dialogPosition.y + this.getCanvasOrigine().top)+"px";
-		dialog.style.left = (this.dialogPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {
+			dialog.style.top = this.convertPixelToPercentHeight(this.dialogPosition.y + this.getCanvasOrigine().top)+"%";
+			dialog.style.left = this.convertPixelToPercentWidth(this.dialogPosition.x + this.getCanvasOrigine().left)+"%";
+		} else {			
+			dialog.style.top = (this.dialogPosition.y + this.getCanvasOrigine().top)+signe;
+			dialog.style.left = (this.dialogPosition.x + this.getCanvasOrigine().left)+signe;
+		}
 		dialog.style.position = "absolute";
 		dialog.id = this.id;
 		dialog.name = this.id;
 		dialog.className = "GUIDialog";
 		dialog.style.zIndex = this.zIndex;
 		dialog.style.background = this.colorDialog;
-		dialog.style.borderRadius = this.radius+"px";
+		dialog.style.borderRadius = this.radius+signe;
 		dialog.style.backgroundImage = this.imageDialog;
 		dialog.style.border = this.borderDialog;
 		dialog.style.display = "none";
@@ -63,7 +71,7 @@
 			eventButton.style.position = "absolute";
 			eventButton.style.borderRadius = "12px";
 			eventButton.style.border = "2px solid black";
-			eventButton.style.left = this.dialogSize.width - 12+"px";
+			eventButton.style.left = this.dialogSize.width - 12+signe;
 			eventButton.style.marginTop = "-12px";
 			eventButton.style.width = "25px";
 			eventButton.style.height = "25px";
@@ -79,10 +87,10 @@
 				eventButton.src = that.urlImage;
 				eventButton.id = that.id+"_button";
 				eventButton.style.position = "absolute";
-				eventButton.style.left = that.dialogSize.width - (sizeImageW / 2)+"px";
-				eventButton.style.marginTop = "-"+(sizeImageH / 2)+"px";
-				eventButton.style.width = sizeImageW+"px";
-				eventButton.style.height = sizeImageH+"px";
+				eventButton.style.left = that.dialogSize.width - (sizeImageW / 2)+signe;
+				eventButton.style.marginTop = "-"+(sizeImageH / 2)+signe;
+				eventButton.style.width = sizeImageW+signe;
+				eventButton.style.height = sizeImageH+signe;
 				eventButton.style.cursor = "pointer";
 				eventButton.style.zIndex = 10000;
 				eventButton.onclick = that.callback;

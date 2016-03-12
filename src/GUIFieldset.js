@@ -24,11 +24,29 @@
 	Extends(CASTORGUI.GUIFieldset, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIFieldset.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var fieldset = document.createElement("fieldset");
 		fieldset.style.width = this.fieldsetSize.width+"px";
-		fieldset.style.height = this.fieldsetSize.height+"px";
-		fieldset.style.top = (this.fieldsetPosition.y + this.getCanvasOrigine().top)+"px";
-		fieldset.style.left = (this.fieldsetPosition.x + this.getCanvasOrigine().left)+"px";
+		fieldset.style.height = this.fieldsetSize.height+"px";		
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {
+			if(append == true) {
+				fieldset.style.top = this.convertPixelToPercentHeight(this.fieldsetPosition.y + this.getCanvasOrigine().top)+"%";
+				fieldset.style.left = this.convertPixelToPercentWidth(this.fieldsetPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				fieldset.style.top = (this.fieldsetPosition.y)+"px";
+				fieldset.style.left = (this.fieldsetPosition.x)+"px";
+			}
+		} else {
+			if(append == true) {
+				fieldset.style.top = (this.fieldsetPosition.y + this.getCanvasOrigine().top)+signe;
+				fieldset.style.left = (this.fieldsetPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				fieldset.style.top = (this.fieldsetPosition.y)+signe;
+				fieldset.style.left = (this.fieldsetPosition.x)+signe;
+			}
+		}		
 		fieldset.style.position = "absolute";
 		fieldset.id = this.id;
 		fieldset.name = this.id;

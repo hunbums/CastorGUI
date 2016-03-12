@@ -29,24 +29,45 @@
 	Extends(CASTORGUI.GUIPanel, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIPanel.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var div = document.createElement("div");
 		if(this.divSize.width > 0 || this.divSize.height > 0) {
 			div.style.width = this.divSize.width+"px";
 			div.style.height = this.divSize.height+"px";
 		}
-		if(append == true) {
-			if(this.divPosition.x > 0) {
-				div.style.left = (this.divPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {
+			if(append == true) {
+				if(this.divPosition.x > 0) {
+					div.style.left = this.convertPixelToPercentWidth(this.divPosition.x + this.getCanvasOrigine().left)+"%";
+				}
+				if(this.divPosition.y > 0) {
+					div.style.top = this.convertPixelToPercentHeight(this.divPosition.y + this.getCanvasOrigine().top)+"%";
+				}
+			} else {
+				if(this.divPosition.x > 0) {
+					div.style.marginLeft = this.convertPixelToPercentWidth(this.divPosition.x)+"%";
+				}
+				if(this.divPosition.y > 0) {
+					div.style.marginTop = this.convertPixelToPercentHeight(this.divPosition.y)+"%";
+				}
 			}
-			if(this.divPosition.y > 0) {
-				div.style.top = (this.divPosition.y + this.getCanvasOrigine().top)+"px";
-			}
-		} else {
-			if(this.divPosition.x > 0) {
-				div.style.marginLeft = this.divPosition.x+"px";
-			}
-			if(this.divPosition.y > 0) {
-				div.style.marginTop = this.divPosition.y+"px";
+		} else {			
+			if(append == true) {
+				if(this.divPosition.x > 0) {
+					div.style.left = (this.divPosition.x + this.getCanvasOrigine().left)+signe;
+				}
+				if(this.divPosition.y > 0) {
+					div.style.top = (this.divPosition.y + this.getCanvasOrigine().top)+signe;
+				}
+			} else {
+				if(this.divPosition.x > 0) {
+					div.style.marginLeft = this.divPosition.x+signe;
+				}
+				if(this.divPosition.y > 0) {
+					div.style.marginTop = this.divPosition.y+signe;
+				}
 			}
 		}
 		div.id = this.id;

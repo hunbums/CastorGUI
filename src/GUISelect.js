@@ -27,17 +27,30 @@
 	Extends(CASTORGUI.GUISelect, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUISelect.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var that = this;
 		var select = document.createElement("select");
 		select.style.width = this.selectSize.width+"px";
 		select.style.height = this.selectSize.height+"px";
-		if(append == true) {
-			select.style.top = (this.selectPosition.y + this.getCanvasOrigine().top)+"px";
-			select.style.left = (this.selectPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				select.style.top = this.convertPixelToPercentHeight(this.selectPosition.y + this.getCanvasOrigine().top)+"%";
+				select.style.left = this.convertPixelToPercentWidth(this.selectPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				select.style.top = (this.selectPosition.y)+"px";
+				select.style.left = (this.selectPosition.x)+"px";
+			}
 		} else {
-			select.style.top = this.selectPosition.y+"px";
-			select.style.left = this.selectPosition.x+"px";
-		}
+			if(append == true) {
+				select.style.top = (this.selectPosition.y + this.getCanvasOrigine().top)+signe;
+				select.style.left = (this.selectPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				select.style.top = this.selectPosition.y+signe;
+				select.style.left = this.selectPosition.x+signe;
+			}
+		}		
 		select.style.position = "absolute";
 		select.id = this.id;
 		select.name = this.id;

@@ -19,7 +19,7 @@
 		this.border =  options.border || 0;
 		this.background = options.background || null;
 		this.backgroundValue = options.backgroundValue || null;
-		this.borderRadius = options.borderRadius || (options.h / 2)+"px";
+		this.borderRadius = options.borderRadius || (options.h / 2)+signe;
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.progressVisible = true;
@@ -34,18 +34,31 @@
 	Extends(CASTORGUI.GUIProgress, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIProgress.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		this.progress = document.createElement("progress");
 		this.progress.min = this.min;
 		this.progress.max = this.max;
 		this.progress.value = this.value;
-		this.progress.style.width = this.progressSize.width+"px";
-		this.progress.style.height = this.progressSize.height+"px";
-		if(append == true) {
-			this.progress.style.top = (this.progressPosition.y + this.getCanvasOrigine().top)+"px";
-			this.progress.style.left = (this.progressPosition.x + this.getCanvasOrigine().left)+"px";
+		this.progress.style.width = this.progressSize.width+"%";
+		this.progress.style.height = this.progressSize.height+"%";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				this.progress.style.top = this.convertPixelToPercentWidth(this.progressPosition.y + this.getCanvasOrigine().top)+"%";
+				this.progress.style.left = this.convertPixelToPercentHeight(this.progressPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				this.progress.style.top = (this.progressPosition.y)+"px";
+				this.progress.style.left = (this.progressPosition.x)+"px";
+			}
 		} else {
-			this.progress.style.top = this.progressPosition.y+"px";
-			this.progress.style.left = this.progressPosition.x+"px";
+			if(append == true) {
+				this.progress.style.top = (this.progressPosition.y + this.getCanvasOrigine().top)+signe;
+				this.progress.style.left = (this.progressPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				this.progress.style.top = (this.progressPosition.y)+signe;
+				this.progress.style.left = (this.progressPosition.x)+signe;
+			}
 		}
 		this.progress.style.position = "absolute";
 		this.progress.id = this.id;

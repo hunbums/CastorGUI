@@ -31,15 +31,28 @@
 	Extends(CASTORGUI.GUIButton, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIButton.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		var button = document.createElement("button");
 		button.style.width = this.buttonSize.width+"px";
 		button.style.height = this.buttonSize.height+"px";
-		if(append == true) {
-			button.style.top = (this.buttonPosition.y + this.getCanvasOrigine().top)+"px";
-			button.style.left = (this.buttonPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				button.style.top = this.convertPixelToPercentHeight(this.buttonPosition.y + this.getCanvasOrigine().top)+"%";
+				button.style.left = this.convertPixelToPercentWidth(this.buttonPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				button.style.top = (this.buttonPosition.y)+"px";
+				button.style.left = (this.buttonPosition.x)+"px";
+			}
 		} else {
-			button.style.top = this.buttonPosition.y+"px";
-			button.style.left = this.buttonPosition.x+"px";
+			if(append == true) {
+				button.style.top = (this.buttonPosition.y + this.getCanvasOrigine().top)+signe;
+				button.style.left = (this.buttonPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				button.style.top = this.buttonPosition.y+signe;
+				button.style.left = this.buttonPosition.x+signe;
+			}
 		}
 		button.innerHTML = this.value;
 		button.style.position = "absolute";

@@ -5,6 +5,8 @@
 		- Added function selectedItem(item) for GUISelect
 		- Added event reload after fullscreen browser
 		- Added getValue for GUISlider
+		- System convertion pixel to percentage with option for GUIManager for use pixel or percent
+		
 	- Bugs:
 	
 	- Update:

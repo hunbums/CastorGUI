@@ -19,14 +19,16 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.groups = [];
 		this.guiVisible = true;
 		this.GUIstyle = null;
-		this.GUItheme = null;
+		this.GUItheme = null;		
 		if(options) {
+			this.pixel = options.pixel;
 			this.themeRoot = options.themeRoot || "";
 			this.theme = options.themeGUI || "default";
 		} else {
+			this.pixel = true;
 			this.themeRoot = "";
 			this.theme = "default";
-		}
+		}			
 		this.head = document.head || document.getElementsByTagName('head')[0] || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		if(this.head == null) {
@@ -44,7 +46,23 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 	{
 		guiElements.push(elem);
 	};
-
+	
+	CASTORGUI.GUIManager.convertPixelToPercent = false;
+	
+	CASTORGUI.GUIManager.prototype.convertPixelToPercentWidth = function(pixel)
+	{
+		var screenWidth = window.innerWidth;
+		var valueWidth = (pixel / screenWidth) * 100;
+		return valueWidth;
+	};
+	
+	CASTORGUI.GUIManager.prototype.convertPixelToPercentHeight = function(pixel)
+	{
+		var screenHeight = window.innerHeight;		
+		var valueHeight = (pixel / screenHeight) * 100;
+		return valueHeight;
+	};
+	
 	CASTORGUI.GUIManager.prototype.addStyle = function(css, theme)
 	{
 		// CSS
@@ -117,7 +135,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		return {top:offsetsTop, left:offsetsLeft};
     };
 
-	CASTORGUI.GUIManager.prototype.getCanvasWidth = function() {
+	CASTORGUI.GUIManager.prototype.getCanvasSize = function() {
 		var offsets = this.canvas.getBoundingClientRect(),
 		offsetsWidth = offsets.width || 0,
 		offsetsHeight = offsets.height || 0;

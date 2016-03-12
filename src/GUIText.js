@@ -35,21 +35,34 @@
 	Extends(CASTORGUI.GUIText, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIText.prototype.addElement = function(append, element) {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		this.font = this.textSize+"px "+this.police;
 		this.textElement = document.createElement("span");
 		if(this.inline == false) {
 			this.textElement.style.width = "auto";
 		} else {
-			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w+"px";
+			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w+"px";			
 		}
 		this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h+"px";
-		if(append == true) {
-			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
-			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				this.textElement.style.top = this.convertPixelToPercentHeight(this.textPosition.y + this.getCanvasOrigine().top)+"%";
+				this.textElement.style.left = this.convertPixelToPercentWidth(this.textPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				this.textElement.style.top = (this.textPosition.y)+"px";
+				this.textElement.style.left = (this.textPosition.x)+"px";
+			}
 		} else {
-			this.textElement.style.top = this.textPosition.y+"px";
-			this.textElement.style.left = this.textPosition.x+"px";
-		}
+			if(append == true) {
+				this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+signe;
+				this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				this.textElement.style.top = this.textPosition.y+signe;
+				this.textElement.style.left = this.textPosition.x+signe;
+			}
+		}		
 		this.textElement.style.display = "block";
 		this.textElement.style.position = this.position;
 		this.textElement.style.font = this.font;
@@ -64,13 +77,13 @@
 
 		if(append == true) {
 			if(this.centerVertical == "true") {
-				var marginTop = ((this.getCanvasWidth().height / 2) - (CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h / 2));
-				this.textElement.style.top = (marginTop + this.getCanvasOrigine().top)+"px";
+				var marginTop = ((this.getCanvasSize().height / 2) - (CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h / 2));
+				this.textElement.style.top = (marginTop + this.getCanvasOrigine().top)+signe;
 			}
 			if(this.centerHorizontal == "true") {
-				var marginTotal = (this.getCanvasWidth().width - CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w);
+				var marginTotal = (this.getCanvasSize().width - CASTORGUI.GUIText.getTextWidth(this.texte, this.font).w);
 				var marginLeft = (marginTotal / 2);
-				this.textElement.style.left = (marginLeft + this.getCanvasOrigine().left)+"px";
+				this.textElement.style.left = (marginLeft + this.getCanvasOrigine().left)+signe;
 			}
 			this.html.appendChild(this.textElement);
 		} else {
@@ -88,22 +101,22 @@
 
 	CASTORGUI.GUIText.prototype.updateText = function(texte){
 		if(this.append == true) {
-			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(texte, this.font).w+"px";
-			this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(texte, this.font).h+"px";
-			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
-			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";
+			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(texte, this.font).w+signe;
+			this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(texte, this.font).h+signe;
+			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+signe;
+			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+signe;
 		} else {
-			this.textElement.style.top = this.textPosition.y+"px";
-			this.textElement.style.left = this.textPosition.x+"px";
+			this.textElement.style.top = this.textPosition.y+signe;
+			this.textElement.style.left = this.textPosition.x+signe;
 		}
 		if(this.centerVertical == "true") {
-			var marginTop = ((this.getCanvasWidth().height / 2) - (CASTORGUI.GUIText.getTextWidth(texte, this.font).h / 2));
-			this.textElement.style.top = (marginTop + this.getCanvasOrigine().top)+"px";
+			var marginTop = ((this.getCanvasSize().height / 2) - (CASTORGUI.GUIText.getTextWidth(texte, this.font).h / 2));
+			this.textElement.style.top = (marginTop + this.getCanvasOrigine().top)+signe;
 		}
 		if(this.centerHorizontal == "true") {
-			var marginTotal = (this.getCanvasWidth().width - CASTORGUI.GUIText.getTextWidth(texte, this.font).w);
+			var marginTotal = (this.getCanvasSize().width - CASTORGUI.GUIText.getTextWidth(texte, this.font).w);
 			var marginLeft = (marginTotal / 2);
-			this.textElement.style.left = (marginLeft + this.getCanvasOrigine().left)+"px";
+			this.textElement.style.left = (marginLeft + this.getCanvasOrigine().left)+signe;
 		}
 		this.textElement.innerHTML = texte;
 	};

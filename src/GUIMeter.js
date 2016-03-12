@@ -33,18 +33,31 @@
 	Extends(CASTORGUI.GUIMeter, CASTORGUI.GUIManager);
 
 	CASTORGUI.GUIMeter.prototype.addElement = function(append, element)  {
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }		
 		this.meter = document.createElement("meter");
 		this.meter.min= this.min;
 		this.meter.max= this.max;
-		this.meter.value= this.value;
+		this.meter.value= this.value;		
 		this.meter.style.width = this.meterSize.width+"px";
 		this.meter.style.height = this.meterSize.height+"px";
-		if(append == true) {
-			this.meter.style.top = (this.meterPosition.y + this.getCanvasOrigine().top)+"px";
-			this.meter.style.left = (this.meterPosition.x + this.getCanvasOrigine().left)+"px";
+		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
+			if(append == true) {
+				this.meter.style.top = this.convertPixelToPercentWidth(this.meterPosition.y + this.getCanvasOrigine().top)+"%";
+				this.meter.style.left = this.convertPixelToPercentHeight(this.meterPosition.x + this.getCanvasOrigine().left)+"%";
+			} else {
+				this.meter.style.top = (this.meterPosition.y)+"px";
+				this.meter.style.left = (this.meterPosition.x)+"px";
+			}
 		} else {
-			this.meter.style.top = this.meterPosition.y+"px";
-			this.meter.style.left = this.meterPosition.x+"px";
+			if(append == true) {
+				this.meter.style.top = (this.meterPosition.y + this.getCanvasOrigine().top)+signe;
+				this.meter.style.left = (this.meterPosition.x + this.getCanvasOrigine().left)+signe;
+			} else {
+				this.meter.style.top = this.meterPosition.y+signe;
+				this.meter.style.left = this.meterPosition.x+signe;
+			}
 		}
 		this.meter.style.position = "absolute";
 		this.meter.id = this.id;
