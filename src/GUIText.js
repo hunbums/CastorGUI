@@ -14,6 +14,7 @@
 		this.textPosition = {x:options.x, y:options.y};
 		this.textSize = options.size || 30;
 		this.color = options.color || null;
+		this.background = options.background || null;
 		this.police = options.police || null;
 		this.texte = options.text || "CastorGUI";
 		this.zIndex = options.zIndex || 1;
@@ -67,6 +68,7 @@
 		this.textElement.style.position = this.position;
 		this.textElement.style.font = this.font;
 		this.textElement.style.color = this.color;
+		this.textElement.style.background = this.background;
 		this.textElement.style.fontStyle = this.italic;
 		this.textElement.style.fontWeight = this.bold;
 		this.textElement.innerHTML = this.texte;

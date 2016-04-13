@@ -17,6 +17,7 @@ Name | Type | Description
 * **position**: set position "absolute" or "relative"
 * **size**: size the text (int) =&gt; 30 by default (optional)
 * **color**: color the text (string) =&gt; "white" by default (optional)
+* **background**: background of text (optional)
 * **police**: police font of text (string) =&gt; "Segoe UI" by default (optional)
 * **text**: value text label (string) =&gt; "CastorGUI" by default
 * **bold**: text bold or no =&gt; "none" by default else "bold"
