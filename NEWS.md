@@ -8,6 +8,7 @@
 		- System convertion pixel to percentage with option for GUIManager for use pixel or percent
 		
 	- Bugs:
+		- Fixe all backgroundImage (Textures did not display) 
 	
 	- Update:
 		- Change getNumber for getValue in the GUISpinner

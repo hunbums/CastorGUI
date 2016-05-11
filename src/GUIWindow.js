@@ -58,7 +58,7 @@
 		window.className = "GUIWindow";
 		window.style.zIndex = this.zIndex || 0;
 		window.style.background = this.colorWindow;		
-		window.style.backgroundImage = this.imageWindow;
+		window.style.backgroundImage = "url("+this.imageWindow+")";
 		window.style.border = this.borderWindow;
 		window.style.wordWrap = "break-word";
 		window.style.display = "none";
@@ -71,7 +71,7 @@
 		titreWindow.style.borderRadius = this.radiusWindow+"px "+this.radiusWindow+"px 0 0";
 		titreWindow.id = this.id+"_titre";
 		titreWindow.style.background = this.colorTitle;
-		titreWindow.style.backgroundImage = this.imageTitle;
+		titreWindow.style.backgroundImage = "url("+this.imageTitle+")";
 		titreWindow.style.borderBottom = this.borderTitle;
 		if(this.draggable == true) {
 			titreWindow.ondragstart = CASTORGUI.draggable(window, titreWindow);
@@ -107,7 +107,7 @@
 		contentWindow.style.paddingTop = "5px";
 		contentWindow.style.borderRadius = "8px";
 		contentWindow.style.background = this.colorContent;
-		contentWindow.style.backgroundImage = this.imageContent;
+		contentWindow.style.backgroundImage = "url("+this.imageContent+")";
 		contentWindow.style.zIndex = this.zIndex + 2;
 
 		this.html.appendChild(window);

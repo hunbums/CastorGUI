@@ -76,7 +76,7 @@
 		div.style.position = this.position;
 		div.style.overflow = this.overflow;
 		div.style.zIndex = this.zIndex;
-		div.style.backgroundImage = this.imageDiv;
+		div.style.backgroundImage = "url("+this.imageDiv+")";
 		div.style.backgroundColor = this.colorDiv;
 		div.style.borderRadius = this.borderRadiusDiv;
 		div.style.border = this.borderDiv;

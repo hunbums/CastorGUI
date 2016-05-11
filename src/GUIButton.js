@@ -60,10 +60,13 @@
 		button.name = this.id;
 		button.style.zIndex = this.zIndex;
 		button.className = "GUIButton";
-		button.tabindex = this.tabindex;
-		button.style.background = this.colorButton;
+		button.tabindex = this.tabindex;		
 		button.style.borderRadius = this.borderRadiusButton;
-		button.style.backgroundImage = this.imageButton;
+		if(this.imageButton != null) {
+			button.style.backgroundImage = "url("+this.imageButton+")";
+		} else {
+			button.style.background = this.colorButton;
+		}
 		button.style.border = this.borderButton;
 		button.style.color = this.colorText;
 		button.onclick = this.onClickButton;
