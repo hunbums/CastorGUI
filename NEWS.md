@@ -6,6 +6,7 @@
 		- Added event reload after fullscreen browser
 		- Added getValue for GUISlider
 		- System convertion pixel to percentage with option for GUIManager for use pixel or percent
+		- Permanent or temporary data storage system (localStorage gold sessionStorage)
 		
 	- Bugs:
 		- Fixe all backgroundImage (Textures did not display) 
