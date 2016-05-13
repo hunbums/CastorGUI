@@ -32,7 +32,7 @@ var createGUI = function()
 	var optionsGUIText = {
 		x: 10,
 		y: guisystem.getCanvasSize().height - 40,
-		text: "CastorGUI created by Dad72 for CastorEngine and BabylonJS",
+		text: "CastorGUI created by Dad72 for CastorStudio and BabylonJS",
 		color: "#fff809",
 		position: "absolute",
 		inline: true
