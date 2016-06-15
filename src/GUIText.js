@@ -102,6 +102,9 @@
     };
 
 	CASTORGUI.GUIText.prototype.updateText = function(texte){
+		var signe = "";
+		if(this.pixel) { signe = "px"; }
+		else { signe = "%"; }
 		if(this.append == true) {
 			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(texte, this.font).w+signe;
 			this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(texte, this.font).h+signe;
