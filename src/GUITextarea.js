@@ -20,9 +20,10 @@
 		this.textareaVisible = true;
 		this.onchangeTextarea = callback || "";
 		this.tabindex = options.tabindex || 0;
-
-		if(append == true) {
-			this.addElement(append);
+		this.append = append;
+		
+		if(this.append == true) {
+			this.addElement(this.append);
 		}
 	};
 

@@ -10,14 +10,15 @@
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.windowPosition = {x:options.x, y:options.y};
 		this.windowSize = {width:options.w, height:options.h};
-		this.colorWindow = options.bakgroundColor || null;
-		this.imageWindow = options.bakgroundImage || null;
+		this.colorWindow = options.backgroundColor || null;
+		this.imageWindow = options.backgroundImage || null;
 		this.colorContent = options.colorContent || null;
 		this.imageContent = options.imageContent;
 		this.buttonClose = typeof options.closeButton;
 		this.overflow = options.overflow || "auto";
 		this.borderWindow = options.borderWindow || null;
 		this.borderTitle = options.borderTitle || null;
+		this.heightTitle = options.heightTitle || 30;
 		this.radiusWindow = options.radiusWindow || 8;
 		this.colorTitle = options.colorTitle || "rgba(0, 0, 0, 0.4)";
 		this.imageTitle = options.imageTitle || null;
@@ -57,7 +58,7 @@
 		window.name = this.id;
 		window.className = "GUIWindow";
 		window.style.zIndex = this.zIndex || 0;
-		window.style.background = this.colorWindow;		
+		window.style.backgroundColor = this.colorWindow;		
 		window.style.backgroundImage = "url("+this.imageWindow+")";
 		window.style.border = this.borderWindow;
 		window.style.wordWrap = "break-word";
@@ -66,11 +67,11 @@
 		var titreWindow = document.createElement("div");
 		titreWindow.className  = "titleWindoWGUI";
 		titreWindow.style.width = this.windowSize.width+"px";		
-		titreWindow.style.height = "30px";
+		titreWindow.style.height = this.heightTitle+"px";
 		titreWindow.style.textAlign = this.textAlign;
 		titreWindow.style.borderRadius = this.radiusWindow+"px "+this.radiusWindow+"px 0 0";
 		titreWindow.id = this.id+"_titre";
-		titreWindow.style.background = this.colorTitle;
+		titreWindow.style.backgroundColor = this.colorTitle;
 		titreWindow.style.backgroundImage = "url("+this.imageTitle+")";
 		titreWindow.style.borderBottom = this.borderTitle;
 		if(this.draggable == true) {
@@ -106,7 +107,7 @@
 		contentWindow.style.marginTop = "0px";
 		contentWindow.style.paddingTop = "5px";
 		contentWindow.style.borderRadius = "8px";
-		contentWindow.style.background = this.colorContent;
+		contentWindow.style.backgroundColor = this.colorContent;
 		contentWindow.style.backgroundImage = "url("+this.imageContent+")";
 		contentWindow.style.zIndex = this.zIndex + 2;
 
