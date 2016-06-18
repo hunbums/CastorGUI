@@ -28,7 +28,7 @@
 		if(options.draggable == true || options.draggable == undefined) {
 			this.draggable = true;
 		} else {
-			this.draggable = typeof(options.draggable) || false;
+			this.draggable = false;
 		}
 		this.zIndex = options.zIndex || 0;
 		this.windowVisible = false;

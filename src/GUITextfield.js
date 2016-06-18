@@ -63,9 +63,13 @@
 		textfield.value = this.value;
 		textfield.placeholder = this.placeholder;
 		textfield.style.zIndex = this.zIndex;
-		textfield.style.background = this.background;
+		if(this.background != null) {
+			textfield.style.background = this.background;
+		}
 		textfield.style.border = this.border;
-		textfield.style.color = this.color;
+		if(this.color != null) {
+			textfield.style.color = this.color;
+		}
 		textfield.onchange = this.onchangeTextfield;
 
 		if(append == true) {

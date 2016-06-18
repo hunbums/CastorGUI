@@ -62,8 +62,12 @@
 		textarea.tabindex = this.tabindex;
 		textarea.innerHTML = this.value;
 		textarea.style.zIndex = this.zIndex;
-		textarea.style.background = this.background;
-		textarea.style.color = this.color;
+		if(this.background != null) {
+			textarea.style.background = this.background;
+		}
+		if(this.color != null) {
+			textarea.style.color = this.color;
+		}
 		textarea.onchange = this.onchangeTextarea;
 
 		if(append == true) {
