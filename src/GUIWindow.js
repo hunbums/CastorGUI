@@ -19,7 +19,7 @@
 		this.borderWindow = options.borderWindow || null;
 		this.borderTitle = options.borderTitle || null;
 		this.heightTitle = options.heightTitle || 30;
-		this.fontSize = options.fontSize || 12; 
+		this.fontSize = options.titleFontSize || 12; 
 		this.radiusWindow = options.radiusWindow || 8;
 		this.colorTitle = options.colorTitle || "rgba(0, 0, 0, 0.4)";
 		this.imageTitle = options.imageTitle || null;
