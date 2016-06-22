@@ -19,6 +19,7 @@
 		this.borderWindow = options.borderWindow || null;
 		this.borderTitle = options.borderTitle || null;
 		this.heightTitle = options.heightTitle || 30;
+		this.fontSize = options.fontSize || 12; 
 		this.radiusWindow = options.radiusWindow || 8;
 		this.colorTitle = options.colorTitle || "rgba(0, 0, 0, 0.4)";
 		this.imageTitle = options.imageTitle || null;
@@ -69,6 +70,7 @@
 		titreWindow.style.width = this.windowSize.width+"px";		
 		titreWindow.style.height = this.heightTitle+"px";
 		titreWindow.style.textAlign = this.textAlign;
+		titreWindow.style.fontSize = this.fontSize+"px";
 		titreWindow.style.borderRadius = this.radiusWindow+"px "+this.radiusWindow+"px 0 0";
 		titreWindow.id = this.id+"_titre";
 		titreWindow.style.backgroundColor = this.colorTitle;
