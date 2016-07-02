@@ -7,12 +7,18 @@
 		- Added getValue for GUISlider
 		- System convertion pixel to percentage with option for GUIManager for use pixel or percent
 		- Permanent or temporary data storage system (localStorage or sessionStorage)
+		- Added option titleFontSize pour title GUIWindow
+		- Added systeme of database (localStorage and sessionStorage)
 		
 	- Bugs:
 		- Fixe all backgroundImage (Textures did not display) 
+		- Fixe backgroundColor for GUIWindow
+		- Fixe updateText
+		- Fixe background and color text for GUITextarea and GUITextfield
 	
 	- Update:
 		- Change getNumber for getValue in the GUISpinner
+		- Update doc
 	
 - Version 1.5:
 

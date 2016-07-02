@@ -29,8 +29,9 @@ Create GUI (element html5 and css3):
 * textarea
 * fieldset
 * select with options
+* systeme of database (localStorage and sessionStorage)
 
-## Quick overview of use
+## Quick overview of use GUI
 
 We must create a GUIManager that allows to recover the origin of the canvas and provides other basic thing.
 A GUIManager can have a CSS that Formatted anything you want to customize your GUI.
@@ -56,3 +57,25 @@ var text = new CASTORGUI.GUIText("textDialog", {size:15, text:"Display text here
 dialog.add(text);
 ```
 That's it. Everything works the same way with the same simplicity.
+
+Test here on the playground : http://babylonjs-playground.azurewebsites.net/#12NLGN%233
+
+## For use Database
+
+```javascript
+var db = new CASTORGUI.DataBase(false); // true if use sessionStorage else use localStorage (stockage temporary)
+db.addTable("user");// create table
+db.createField("user", "member", {"pseudo":"dad72"});// create field
+
+db.selectItem("user", "member", "pseudo");// return dad72
+db.updateItem("user", "member", "pseudo", "Romeo"); // update pseudo
+db.selectItem("user", "member", "pseudo");// return Romeo
+
+//if delete table:
+db.deleteTable("member");
+// if delete database:
+db.deleteDataBase();
+```
+
+Test here on the playground : http://babylonjs-playground.azurewebsites.net/#12NLGN%232
+
