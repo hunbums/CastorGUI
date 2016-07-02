@@ -7,7 +7,7 @@
 		- Added getValue for GUISlider
 		- System convertion pixel to percentage with option for GUIManager for use pixel or percent
 		- Permanent or temporary data storage system (localStorage or sessionStorage)
-		- Added option titleFontSize pour title GUIWindow
+		- Added option titleFontSize for title GUIWindow
 		- Added systeme of database (localStorage and sessionStorage)
 		
 	- Bugs:
