@@ -13,6 +13,7 @@ Select or create themes.
 Create GUI (element html5 and css3):
 * texture
 * text
+* textLink
 * label
 * window draggable (with title & button close)
 * dialog (with button close)

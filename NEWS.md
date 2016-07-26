@@ -9,6 +9,7 @@
 		- Permanent or temporary data storage system (localStorage or sessionStorage)
 		- Added option titleFontSize for title GUIWindow
 		- Added systeme of database (localStorage and sessionStorage)
+		- Added class GUITextLink
 		
 	- Bugs:
 		- Fixe all backgroundImage (Textures did not display) 
