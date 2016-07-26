@@ -77,7 +77,7 @@
 		this.textElement.name = this.id;
 		this.textElement.className = "GUITextLink";
 		this.textElement.style.zIndex = this.zIndex;
-		this.textElement.setAttribute('href', "http://google.com");
+		this.textElement.setAttribute('href', this.href);
 
 		if(append == true) {
 			if(this.centerVertical) {
