@@ -27,7 +27,7 @@
 		this.textVisible = true;
 		this.textElement = null;
 		this.font = null;
-		this.href = options.href || "https://google.com";
+		this.href = options.href || "https:\/\/www.google.com";
 
 		if(this.append == true) {
 			this.addElement(this.append);

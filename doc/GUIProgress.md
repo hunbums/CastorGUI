@@ -20,8 +20,6 @@ Name | Type | Description
 * **min**: Min value progress bar =&gt; 0 by default (optional)
 * **max**: Max value progress bar =&gt; 100 by default (optional)
 * **value**: Current value of the progress bar =&gt; 0 by default (optional)
-* **border**: Border of element =&gt; 0 by default (optional)
-* **borderRadius**: Radius border of element =&gt; 5 by default (optional)
 * **background**: Background progress bar  =&gt; "rgba(0, 0, 0, 0.2)" by default (optional)
 * **backgroundValue**: Background value progress bar  =&gt; "#0f4fff" by default (optional)
 * **orient**: Orientation of the progress bar =&gt; "horizontal" by default (optional)

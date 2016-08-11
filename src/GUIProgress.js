@@ -15,11 +15,9 @@
 		this.progressSize = {width:options.w, height:options.h};
 		this.min = options.min || 0;
 		this.max = options.max || 100;
-		this.value = options.value || 0;
-		this.border =  options.border || 0;
+		this.value = options.value || 0;		
 		this.background = options.background || null;
-		this.backgroundValue = options.backgroundValue || null;
-		this.borderRadius = options.borderRadius || (options.h / 2)+signe;
+		this.backgroundValue = options.backgroundValue || null;		
 		this.zIndex = options.zIndex || 1;
 		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.progressVisible = true;
@@ -41,12 +39,12 @@
 		this.progress.min = this.min;
 		this.progress.max = this.max;
 		this.progress.value = this.value;
-		this.progress.style.width = this.progressSize.width+"%";
-		this.progress.style.height = this.progressSize.height+"%";
+		this.progress.style.width = this.progressSize.width+"px";
+		this.progress.style.height = this.progressSize.height+"px";
 		if(CASTORGUI.GUIManager.convertPixelToPercent == true) {			
-			if(append == true) {
-				this.progress.style.top = this.convertPixelToPercentWidth(this.progressPosition.y + this.getCanvasOrigine().top)+"%";
-				this.progress.style.left = this.convertPixelToPercentHeight(this.progressPosition.x + this.getCanvasOrigine().left)+"%";
+			if(append == true) {				
+				this.progress.style.top = this.convertPixelToPercentHeight(this.progressPosition.y + this.getCanvasOrigine().top)+"%";
+				this.progress.style.left = this.convertPixelToPercentWidth(this.progressPosition.x + this.getCanvasOrigine().left)+"%";
 			} else {
 				this.progress.style.top = (this.progressPosition.y)+"px";
 				this.progress.style.left = (this.progressPosition.x)+"px";
@@ -71,29 +69,19 @@
 			this.progress.style.WebkitAppearance = "progress-vertical";
 		}
 
-		var cssProgress = "#"+this.id+" {"+
-			"border:"+this.border+";"+
-			"border-radius:"+this.borderRadius+";"+
+		var cssProgress = "#"+this.id+" {"+			
 			"background-color:"+this.background+";"+
-		"} #"+this.id+"::after {"+
-			"border:"+this.border+";"+
-			"border-radius:"+this.borderRadius+";"+
+		"} #"+this.id+"::after {"+			
 			"background-color:"+this.backgroundValue+";"+
-		"} #"+this.id+"::-webkit-progress-bar {"+
-			"border:"+this.border+";"+
-			"border-radius:"+this.borderRadius+";"+
+		"} #"+this.id+"::-webkit-progress-bar {"+			
 			"background-color:"+this.background+";"+
-		"} #"+this.id+"::-webkit-progress-value {"+
-			"border:"+this.border+";"+
-			"border-radius:"+this.borderRadius+";"+
+		"} #"+this.id+"::-webkit-progress-value {"+			
 			"background-color:"+this.backgroundValue+";"+
-		"} #"+this.id+"::-moz-progress-bar {"+
-			"border:"+this.border+";"+
-			"border-radius:"+this.borderRadius+";"+
+		"} #"+this.id+"::-moz-progress-bar {"+			
 			"background-color:"+this.background+";"+
 		"}";
-		this.addStyle(cssProgress);
-
+		this.addStyle(cssProgress);		
+		
 		this.progress.onchange = this.onchangeProgress;
 
 		if(append == true) {
