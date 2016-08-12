@@ -14,7 +14,8 @@ Name | Type | Description
 
 * **x**: position left of textfield (in pixel)
 * **y**: position top of textfield (in pixel)
-* **size**: size the textfield (int) =&gt; 30 by default (optional)
+* **w**: size width the textfield (in pixel)
+* **h**: size height the textfield (in pixel)
 * **color**: color the textfield (string) =&gt; "white" by default (optional)
 * **value**: value of textfield (string)
 * **placeholder**: value by default of textfield (string)
