@@ -50,7 +50,7 @@ Then we create interfaces items. eg textures and dialog with text:
 var myFunction = function() { alert("Yes, this work!"); };
 var guiTexture = new CASTORGUI.GUITexture("life", "data/image.png", {w:50,h:50,x:10,y:0}, guisystem, myFunction);
 
-var optionsDialog = {w: (guisystem.getCanvasWidth().width - 20), h: 100, x: 8, y: (guisystem.getCanvasWidth().height - 110)};
+var optionsDialog = {w: (guisystem.getCanvasSize().width - 20), h: 100, x: 8, y: (guisystem.getCanvasSize().height - 110)};
 var dialog = new CASTORGUI.GUIDialog("dialog", optionsDialog, guisystem);
 dialog.setVisible(true);
 
