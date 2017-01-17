@@ -59,7 +59,7 @@ dialog.add(text);
 ```
 That's it. Everything works the same way with the same simplicity.
 
-Test here on the playground : http://babylonjs-playground.azurewebsites.net/#12NLGN%233
+Demo in the playground : http://babylonjs-playground.azurewebsites.net/#12NLGN#41
 
 ## For use Database
 
@@ -78,5 +78,5 @@ db.deleteTable("member");
 db.deleteDataBase();
 ```
 
-Test here on the playground : http://babylonjs-playground.azurewebsites.net/#12NLGN%232
+Demo in the playground : http://babylonjs-playground.azurewebsites.net/#12NLGN%232
 
