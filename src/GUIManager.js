@@ -36,10 +36,10 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.head.appendChild(this.header);
 		}
 		this.addStyle(this.canvasCss, this.theme);
-		document.addEventListener('webkitfullscreenchange', function() {location.reload();}, false);
-		document.addEventListener('mozfullscreenchange',  function() {location.reload();}, false);
-		document.addEventListener('fullscreenchange',  function() {location.reload();}, false);
-		document.addEventListener('MSFullscreenChange',  function() {location.reload();}, false);
+		//document.addEventListener('webkitfullscreenchange', function() {location.reload();}, false);
+		//document.addEventListener('mozfullscreenchange',  function() {location.reload();}, false);
+		//document.addEventListener('fullscreenchange',  function() {location.reload();}, false);
+		//document.addEventListener('MSFullscreenChange',  function() {location.reload();}, false);
     };
 
 	CASTORGUI.GUIManager.prototype.addGuiElements = function(elem)
