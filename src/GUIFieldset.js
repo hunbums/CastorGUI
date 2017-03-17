@@ -4,7 +4,7 @@
 
     CASTORGUI.GUIFieldset = function (id, options, guimanager, append) {
 
-		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
+		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.options);
 
 		if(append == null || append == undefined) { append = true; }
 

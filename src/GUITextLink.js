@@ -4,7 +4,7 @@
 
     CASTORGUI.GUITextLink = function(id, options, guimanager, append) {
 
-		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
+		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.options);
 
 		this.append = append;
 		if(append == null || append == undefined) { this.append = true; }

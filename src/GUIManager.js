@@ -1,6 +1,7 @@
 ﻿var CASTORGUI = CASTORGUI || {};
 var guiElements = [];
-
+var GUIstyle = null;
+var GUItheme = null;
 var objectCreate = function(proto) { //Alternative aux anciens navigateurs qui ne dispose pas de la methode Object.create()
 	function construct() { }
 	construct.prototype = proto;
@@ -17,9 +18,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.canvasCss = css;
 		this.canvas = canvas;
 		this.groups = [];
-		this.guiVisible = true;
-		this.GUIstyle = null;
-		this.GUItheme = null;		
+		this.guiVisible = true;		
 		if(options) {
 			this.pixel = options.pixel;
 			this.themeRoot = options.themeRoot || "";
@@ -35,11 +34,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.header = document.createElement('head');
 			this.head.appendChild(this.header);
 		}
-		this.addStyle(this.canvasCss, this.theme);
-		//document.addEventListener('webkitfullscreenchange', function() {location.reload();}, false);
-		//document.addEventListener('mozfullscreenchange',  function() {location.reload();}, false);
-		//document.addEventListener('fullscreenchange',  function() {location.reload();}, false);
-		//document.addEventListener('MSFullscreenChange',  function() {location.reload();}, false);
+		this.addStyle(this.canvasCss, options, this.theme);
     };
 
 	CASTORGUI.GUIManager.prototype.addGuiElements = function(elem)
@@ -63,37 +58,35 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		return valueHeight;
 	};
 	
-	CASTORGUI.GUIManager.prototype.addStyle = function(css, theme)
+	CASTORGUI.GUIManager.prototype.addStyle = function(css, options, theme)
 	{
-		// CSS
-		if(this.GUIstyle) {
-			this.head.removeChild(this.getElementById("styleGUI"));
-			this.canvasCss = this.canvasCss+css;
-		} else {
-			this.canvasCss = this.canvasCss;
+		if(css) {
+			// CSS
+			if(GUIstyle == null) {				
+				GUIstyle = document.createElement('style');
+				GUIstyle.type = 'text/css';
+				GUIstyle.media = 'screen';
+				GUIstyle.id = "styleGUI";		
+				if (GUIstyle.styleSheet){
+					GUIstyle.styleSheet.cssText = this.canvasCss;
+				} else {
+					GUIstyle.appendChild(document.createTextNode(this.canvasCss));
+				}
+				this.head.appendChild(GUIstyle);
+			}
 		}
-		this.GUIstyle = document.createElement('style');
-		this.GUIstyle.type = 'text/css';
-		this.GUIstyle.media = 'screen';
-		this.GUIstyle.id = "styleGUI";		
-		if (this.GUIstyle.styleSheet){
-			this.GUIstyle.styleSheet.cssText = this.canvasCss;
-		} else {
-			this.GUIstyle.appendChild(document.createTextNode(this.canvasCss));
+		if(theme && options) {
+			//Theme
+			if(GUItheme == null) {				
+				GUItheme = document.createElement('link');
+				GUItheme.type = 'text/css';
+				GUItheme.rel = 'stylesheet';
+				GUItheme.media = 'screen';
+				GUItheme.id = "themeGUI";
+				GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";
+				this.head.appendChild(GUItheme);
+			}
 		}
-		this.head.appendChild(this.GUIstyle);
-
-		//Theme
-		if(this.GUItheme) {
-			this.head.removeChild(this.getElementById("themeGUI"));
-		}
-		this.GUItheme = document.createElement('link');
-		this.GUItheme.type = 'text/css';
-		this.GUItheme.rel = 'stylesheet';
-		this.GUItheme.media = 'screen';
-		this.GUItheme.id = "themeGUI";
-		this.GUItheme.href = this.themeRoot+"themesGUI/"+theme+".css";
-		this.head.appendChild(this.GUItheme);
 	};
 	
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {

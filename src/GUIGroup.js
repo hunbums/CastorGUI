@@ -4,7 +4,7 @@
 
     CASTORGUI.GUIGroup = function(name, options, guimanager) {
 
-		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
+		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.options);
 
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		if(options) { this.groupPosition = {x:options.x, y:options.y}; }

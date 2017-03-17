@@ -1,4 +1,4 @@
-# CastorGUI V1.5
+# CastorGUI V1.6
 
 Library to display a GUI game as a layer on top of the canvas HTML/CSS.
 

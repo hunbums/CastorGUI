@@ -4,7 +4,7 @@
 
     CASTORGUI.GUIWindow = function (id, options, guimanager) {
 
-		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
+		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.options);		
 
 		this.id = id;
 		this.html = document.body || document.getElementsByTagName('body')[0];

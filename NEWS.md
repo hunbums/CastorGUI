@@ -16,6 +16,7 @@
 		- Fixe backgroundColor for GUIWindow
 		- Fixe updateText
 		- Fixe background and color text for GUITextarea and GUITextfield
+		- Fixed loading custom CSS theme
 	
 	- Update:
 		- Change getNumber for getValue in the GUISpinner
